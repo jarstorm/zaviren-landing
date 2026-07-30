@@ -1,6 +1,6 @@
 ## Deploy
 
-Antes de cada push, generar `public_html/` con `npm run build` y añadirlo al commit. El hosting (Hostinger) publica directamente desde `public_html/` en la raíz del repo.
+Antes de cada push, generar `dist/` con `npm run build` y añadirlo al commit.
 
 ## Development
 
