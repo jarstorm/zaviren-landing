@@ -1,33 +1,194 @@
 ---
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Zaviren</title>
+		<meta name="description" content="Zaviren implementa IA soberana con RAG para tu empresa: tus datos, bajo tu control. Muy pronto." />
+		<title>Zaviren — Muy pronto</title>
 		<style>
+			:root {
+				--bg: #0a0b0f;
+				--bg-glow: #12142099;
+				--blue: #3b82f6;
+				--purple: #8b5cf6;
+				--text: #f5f6f8;
+				--muted: #9a9dab;
+				--border: #ffffff1a;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
 			html,
 			body {
 				height: 100%;
 				margin: 0;
-				display: grid;
-				place-items: center;
-				background: #0f0f10;
-				color: #f5f5f5;
-				font-family: system-ui, sans-serif;
 			}
-			h1 {
-				font-size: 2rem;
+
+			body {
+				background:
+					radial-gradient(60% 50% at 80% 0%, #2c2a5a4d 0%, transparent 60%),
+					radial-gradient(50% 40% at 10% 100%, #1e3a8a4d 0%, transparent 60%),
+					var(--bg);
+				color: var(--text);
+				font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+				min-height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				padding: 2.5rem 1.5rem;
+			}
+
+			.logo {
+				display: flex;
+				align-items: center;
+				gap: 0.6rem;
+			}
+
+			.logo-mark {
+				width: 28px;
+				height: 28px;
+			}
+
+			.logo-word {
+				font-size: 1.1rem;
+				font-weight: 700;
+				letter-spacing: 0.28em;
+			}
+
+			main {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
 				text-align: center;
-				padding: 0 1rem;
+				max-width: 640px;
+				gap: 1.5rem;
+			}
+
+			.eyebrow {
+				font-size: 0.75rem;
+				font-weight: 700;
+				letter-spacing: 0.25em;
+				text-transform: uppercase;
+				color: var(--blue);
+			}
+
+			h1 {
+				font-size: clamp(2.25rem, 6vw, 3.75rem);
+				font-weight: 800;
+				line-height: 1.1;
+				margin: 0;
+			}
+
+			.gradient {
+				background: linear-gradient(90deg, var(--blue), var(--purple));
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+			}
+
+			p.subtitle {
+				font-size: 1.05rem;
+				line-height: 1.6;
+				color: var(--muted);
+				margin: 0;
+			}
+
+			.cta {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				margin-top: 0.75rem;
+				padding: 0.85rem 1.75rem;
+				border-radius: 999px;
+				font-size: 0.95rem;
+				font-weight: 700;
+				color: #fff;
+				text-decoration: none;
+				background: linear-gradient(90deg, var(--blue), var(--purple));
+				box-shadow: 0 8px 30px -8px #3b82f680;
+			}
+
+			.cta:hover {
+				filter: brightness(1.08);
+			}
+
+			.badges {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.6rem;
+				justify-content: center;
+				margin-top: 0.75rem;
+			}
+
+			.badge {
+				border: 1px solid var(--border);
+				border-radius: 999px;
+				padding: 0.4rem 0.9rem;
+				font-size: 0.8rem;
+				color: var(--text);
+				background: #ffffff08;
+			}
+
+			footer {
+				width: 100%;
+				max-width: 640px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.5rem;
+				text-align: center;
+				border-top: 1px solid var(--border);
+				padding-top: 1.25rem;
+				font-size: 0.8rem;
+				color: var(--muted);
+			}
+
+			footer a {
+				color: var(--blue);
+				text-decoration: none;
+			}
+
+			footer a:hover {
+				text-decoration: underline;
 			}
 		</style>
 	</head>
 	<body>
-		<h1>Zaviren we are working on it</h1>
+		<div class="logo">
+			<img class="logo-mark" src="/favicon.svg" alt="Zaviren" width="28" height="21" />
+			<span class="logo-word">ZAVIREN</span>
+		</div>
+
+		<main>
+			<span class="eyebrow">Muy pronto</span>
+			<h1>IA soberana, <span class="gradient">bajo tu control</span>.</h1>
+			<p class="subtitle">
+				Zaviren implementa IA que trabaja sobre tus documentos, dentro de tu perímetro,
+				sin que tu información salga a la nube de un tercero.
+			</p>
+			<a class="cta" href="mailto:contact@zaviren.com?subject=Quiero%20saber%20m%C3%A1s%20de%20Zaviren">
+				Avísame cuando esté listo
+			</a>
+			<div class="badges">
+				<span class="badge">Soberano</span>
+				<span class="badge">Verificable</span>
+				<span class="badge">A tu ritmo</span>
+			</div>
+		</main>
+
+		<footer>
+			<span>© 2026 Zaviren · <a href="https://www.zaviren.com">www.zaviren.com</a></span>
+			<span>Tus datos no se comparten con terceros</span>
+		</footer>
 	</body>
 </html>
