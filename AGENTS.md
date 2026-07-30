@@ -1,3 +1,7 @@
+## Deploy
+
+Antes de cada push, generar `dist/` con `npm run build` y añadirlo al commit.
+
 ## Development
 
 When starting the dev server, use background mode:
