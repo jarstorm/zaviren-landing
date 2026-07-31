@@ -34,10 +34,10 @@ const { lang, title, description, altHref } = Astro.props;
 	<body>
 		<div class="wrap">
 			<header class="topbar">
-				<div class="logo">
+				<a class="logo" href={lang === "es" ? "/" : "/en/"}>
 					<img class="logo-mark" src="/favicon.svg" alt="Zaviren" width="26" height="20" />
 					<span class="logo-word">ZAVIREN</span>
-				</div>
+				</a>
 				<a class="lang-link" href={altHref}>
 					{lang === "es" ? <><span class="flag">🇬🇧</span> EN</> : <><span class="flag">🇪🇸</span> ES</>}
 				</a>
@@ -47,7 +47,7 @@ const { lang, title, description, altHref } = Astro.props;
 		</div>
 
 		<footer class="site-footer">
-			<span>© 2026 Zaviren · <a href="https://www.zaviren.com">www.zaviren.com</a></span>
+			<span>© 2026 Zaviren · <a href="https://www.zaviren.com">www.zaviren.com</a> · <a href="mailto:contact@zaviren.com">contact@zaviren.com</a></span>
 			<span>{lang === "es" ? "Tus datos no se comparten con terceros" : "Your data is never shared with third parties"}</span>
 		</footer>
 	</body>

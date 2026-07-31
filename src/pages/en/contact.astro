@@ -10,32 +10,18 @@ import Layout from "../../layouts/Layout.astro";
 >
 	<section class="contact">
 		<span class="eyebrow">Contact</span>
-		<h1>Notify me when it's ready</h1>
-		<p class="subtitle">
-			Leave your company name, your name and your email. We'll reach out as
-			soon as Zaviren is available.
-		</p>
-		<form class="contact-form" action="https://formsubmit.co/contact@zaviren.com" method="POST">
-			<input type="hidden" name="_subject" value="New contact — Zaviren" />
-			<input type="hidden" name="_next" value="https://www.zaviren.com/en/contact/thanks" />
-			<input type="hidden" name="_captcha" value="false" />
-			<input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" />
-
-			<div class="field">
-				<label for="company">Company</label>
-				<input type="text" id="company" name="Company" required />
-			</div>
-			<div class="field">
-				<label for="name">Name</label>
-				<input type="text" id="name" name="Name" required />
-			</div>
-			<div class="field">
-				<label for="email">Email</label>
-				<input type="email" id="email" name="Email" required />
-			</div>
-
-			<button type="submit" class="cta">Send</button>
-		</form>
+		<div class="brevo-embed">
+			<iframe
+				title="Zaviren contact form"
+				width="640"
+				height="900"
+				src="https://8f5b0ece.sibforms.com/v2/serve/MUIFAGW_ttcGejRvaV6_nQDiPOfkrukL_6cMxIk1uNZfNw44_hS7dEUxPVIGhvygliLEkOibZcLbZd4KxWYLSTmpfcfvxtH_DrNefNt9n5T7Vx7xR9x6VYLil5e-07ltHsNIQosTxdrwDZ1r6WGIpABNEQFTmLH4VBP61PIKxPOrsAoicatvjZbuyi0d0qQsCLURhSvBF210ysU2Sw=="
+				frameborder="0"
+				scrolling="no"
+				allowfullscreen
+				style="display:block;margin-left:auto;margin-right:auto;max-width:100%;"
+			></iframe>
+		</div>
 		<a class="back-link" href="/en/">&larr; Back to home</a>
 	</section>
 </Layout>

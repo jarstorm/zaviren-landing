@@ -43,6 +43,8 @@ header.topbar {
 	display: flex;
 	align-items: center;
 	gap: 0.6rem;
+	text-decoration: none;
+	color: inherit;
 }
 
 .logo-mark {
@@ -400,7 +402,7 @@ footer.site-footer a:hover {
 
 /* Contact form */
 section.contact {
-	max-width: 480px;
+	max-width: 640px;
 	margin: 3rem auto 5rem;
 	display: flex;
 	flex-direction: column;
@@ -425,6 +427,18 @@ form.contact-form {
 	flex-direction: column;
 	gap: 1.1rem;
 	margin-top: 0.5rem;
+}
+
+.brevo-embed {
+	margin-top: 0.5rem;
+	border-radius: 16px;
+	overflow: hidden;
+	background: var(--card);
+}
+
+.brevo-embed iframe {
+	display: block;
+	background: #fff;
 }
 
 form.contact-form .cta {
