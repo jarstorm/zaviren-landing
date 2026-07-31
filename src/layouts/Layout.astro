@@ -1,0 +1,65 @@
+---
+import "../styles/site.css";
+
+interface Props {
+	lang: "es" | "en";
+	title: string;
+	description: string;
+	altHref: string;
+}
+
+const { lang, title, description, altHref } = Astro.props;
+---
+
+<html lang={lang}>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-M5JWQDV2");
+		</script>
+	</head>
+	<body>
+		<noscript>
+			<iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-M5JWQDV2"
+				height="0"
+				width="0"
+				style="display:none;visibility:hidden"></iframe>
+		</noscript>
+
+		<div class="wrap">
+			<header class="topbar">
+				<div class="logo">
+					<img class="logo-mark" src="/favicon.svg" alt="Zaviren" width="26" height="20" />
+					<span class="logo-word">ZAVIREN</span>
+				</div>
+				<a class="lang-link" href={altHref}>
+					{lang === "es" ? <><span class="flag">🇬🇧</span> EN</> : <><span class="flag">🇪🇸</span> ES</>}
+				</a>
+			</header>
+
+			<slot />
+		</div>
+
+		<footer class="site-footer">
+			<span>© 2026 Zaviren · <a href="https://www.zaviren.com">www.zaviren.com</a></span>
+			<span>{lang === "es" ? "Tus datos no se comparten con terceros" : "Your data is never shared with third parties"}</span>
+		</footer>
+	</body>
+</html>
