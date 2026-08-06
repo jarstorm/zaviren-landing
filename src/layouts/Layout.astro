@@ -6,9 +6,27 @@ interface Props {
 	title: string;
 	description: string;
 	altHref: string;
+	ogImage?: string;
 }
 
-const { lang, title, description, altHref } = Astro.props;
+const { lang, title, description, altHref, ogImage = "/og-image.png" } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const alternateURL = new URL(altHref, Astro.site);
+const esURL = lang === "es" ? canonicalURL : alternateURL;
+const enURL = lang === "en" ? canonicalURL : alternateURL;
+const ogImageURL = new URL(ogImage, Astro.site);
+const locale = lang === "es" ? "es_ES" : "en_US";
+const altLocale = lang === "es" ? "en_US" : "es_ES";
+
+const organizationSchema = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	name: "Zaviren",
+	url: "https://zaviren.com",
+	logo: new URL("/favicon.svg", Astro.site).toString(),
+	description,
+};
 ---
 
 <html lang={lang}>
@@ -20,6 +38,27 @@ const { lang, title, description, altHref } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<title>{title}</title>
+
+		<link rel="canonical" href={canonicalURL} />
+		<link rel="alternate" hreflang="es" href={esURL} />
+		<link rel="alternate" hreflang="en" href={enURL} />
+		<link rel="alternate" hreflang="x-default" href={esURL} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:locale" content={locale} />
+		<meta property="og:locale:alternate" content={altLocale} />
+		<meta property="og:site_name" content="Zaviren" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageURL} />
+
+		<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-EXXBQFZ869"></script>
 		<script>
@@ -47,7 +86,7 @@ const { lang, title, description, altHref } = Astro.props;
 		</div>
 
 		<footer class="site-footer">
-			<span>© 2026 Zaviren · <a href="https://www.zaviren.com">www.zaviren.com</a> · <a href="mailto:contact@zaviren.com">contact@zaviren.com</a></span>
+			<span>© 2026 Zaviren · <a href="https://zaviren.com">zaviren.com</a> · <a href="mailto:contact@zaviren.com">contact@zaviren.com</a></span>
 			<span>{lang === "es" ? "Tus datos no se comparten con terceros" : "Your data is never shared with third parties"}</span>
 		</footer>
 	</body>
