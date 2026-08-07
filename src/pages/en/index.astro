@@ -4,22 +4,81 @@ import Layout from "../../layouts/Layout.astro";
 
 <Layout
 	lang="en"
-	title="Zaviren — Coming soon"
-	description="Zaviren builds sovereign AI with RAG for your company: your data, under your control. Coming soon."
+	title="Zaviren — Private AI for your business, on your own documents"
+	description="Zaviren connects AI to your company's documents so anyone can get an instant answer, without your data ever leaving your control."
 	altHref="/"
 >
 	<section class="hero">
-		<span class="eyebrow">Coming soon</span>
+		<span class="eyebrow">AI for SMEs</span>
 		<h1>Sovereign AI, <span class="gradient">under your control</span></h1>
 		<p class="subtitle">
 			Zaviren builds AI that works on your documents, inside your perimeter,
 			without your information ever leaving to a third party's cloud.
 		</p>
-		<a class="cta" href="/en/guide">Download the free guide</a>
+		<div class="cta-row">
+			<a class="cta" href="/en/guide">Download the free guide</a>
+			<a class="cta cta-secondary" href="#is-this-for-you">Not sure you need this?</a>
+		</div>
 		<div class="badges">
 			<span class="badge">Sovereign</span>
 			<span class="badge">Verifiable</span>
 			<span class="badge">At your pace</span>
+			<span class="badge">GDPR-ready</span>
+		</div>
+	</section>
+
+	<section class="block" id="is-this-for-you">
+		<div class="block-head">
+			<span class="eyebrow">00 · Is this for you?</span>
+			<h2>You might already need it, <span class="gradient">even if you don't know it</span></h2>
+			<p>
+				You don't need to know what a RAG is or how an AI model works. If any of
+				this sounds familiar, you already have a real use case.
+			</p>
+		</div>
+		<div class="pain-grid">
+			<div class="card">
+				<span class="pain-icon">📄</span>
+				<div>
+					<h3>The answer is buried in a 40-page PDF</h3>
+					<p>And no one has time to open it every time someone asks.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="pain-icon">🧠</span>
+				<div>
+					<h3>The knowledge lives in two or three heads</h3>
+					<p>If those people are out sick — or leave — it leaves with them.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="pain-icon">⏳</span>
+				<div>
+					<h3>New hires take weeks to learn</h3>
+					<p>Where everything is and how things are done around here.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="pain-icon">🔁</span>
+				<div>
+					<h3>Support repeats the same answer every day</h3>
+					<p>Digging through the same manuals, for the same questions.</p>
+				</div>
+			</div>
+		</div>
+		<div class="chat-demo">
+			<div class="chat-bubble user">What's the return policy for client Acme?</div>
+			<div class="chat-bubble answer">
+				<p>
+					Acme gets 30 days for free returns, as long as the product is unopened
+					(clause 4.2 of the master agreement).
+				</p>
+				<span class="source-chip">📎 Acme_Contract_2025.pdf, p. 6</span>
+			</div>
+		</div>
+		<div class="cta-row">
+			<a class="cta" href="/en/contact">Tell us your case</a>
+			<a class="cta cta-secondary" href="/en/guide">I'd rather read first</a>
 		</div>
 	</section>
 
@@ -44,6 +103,7 @@ import Layout from "../../layouts/Layout.astro";
 				<p>Salary premium for professionals with AI skills.</p>
 			</div>
 		</div>
+		<p class="stat-source">Source: PwC, 2025</p>
 	</section>
 
 	<section class="block">
@@ -56,6 +116,11 @@ import Layout from "../../layouts/Layout.astro";
 					else's cloud — and also the riskiest. Every document you upload
 					can end up training a third party's model, exposed in a breach,
 					or simply out of your control.
+				</p>
+				<p>
+					Since your data never leaves your perimeter, there's no third-party
+					transfer to audit — it fits GDPR natively, instead of depending on
+					someone else's privacy policy.
 				</p>
 			</div>
 			<div class="illustration">
@@ -129,7 +194,45 @@ import Layout from "../../layouts/Layout.astro";
 
 	<section class="block">
 		<div class="block-head">
-			<span class="eyebrow">04 · Zaviren for your business</span>
+			<span class="eyebrow">04 · Getting started</span>
+			<h2>Here's how <span class="gradient">easy it is</span></h2>
+			<p>No massive project, no blind commitment — one concrete, measurable case, in weeks.</p>
+		</div>
+		<div class="cap-grid">
+			<div class="card">
+				<span class="cap-num">01</span>
+				<div>
+					<h3>Start with one case</h3>
+					<p>Pick a repetitive, measurable task: support, quotes, internal search.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">02</span>
+				<div>
+					<h3>Get your data in order</h3>
+					<p>Gather the documents the AI will need. Their quality drives the outcome.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">03</span>
+				<div>
+					<h3>Decide where the model lives</h3>
+					<p>We prioritize keeping your data under your control. Sovereignty by default.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">04</span>
+				<div>
+					<h3>Measure and expand</h3>
+					<p>We quantify the hours saved and carry what works to the next process.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">05 · Zaviren for your business</span>
 			<h2>What <span class="gradient">Zaviren</span> can do for you</h2>
 			<p>No need to reinvent your company. We start with one concrete use case and expand once it proves its value.</p>
 		</div>
@@ -137,45 +240,92 @@ import Layout from "../../layouts/Layout.astro";
 			<div class="card">
 				<span class="cap-num">01</span>
 				<div>
-					<h3>Assistants over your documents</h3>
-					<p>Answers with cited sources from your own information.</p>
+					<h3>Answers with cited sources</h3>
+					<p>Ask in plain language; the answer cites the exact document and page, never made up.</p>
 				</div>
 			</div>
 			<div class="card">
 				<span class="cap-num">02</span>
 				<div>
-					<h3>Automate repetitive tasks</h3>
-					<p>Support, quotes, internal search.</p>
+					<h3>Centralizes scattered knowledge</h3>
+					<p>Manuals, contracts, and policies that today live in loose folders, in one place to ask.</p>
 				</div>
 			</div>
 			<div class="card">
 				<span class="cap-num">03</span>
+				<div>
+					<h3>Onboarding without asking around</h3>
+					<p>A new hire finds the answer on their own, instead of interrupting a coworker.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">04</span>
+				<div>
+					<h3>Faster, more consistent support</h3>
+					<p>Answers grounded in your real product manuals, not what the model thinks it remembers.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">05</span>
 				<div>
 					<h3>Model inside your perimeter</h3>
 					<p>Data sovereignty by default, with no third-party dependence.</p>
 				</div>
 			</div>
 			<div class="card">
-				<span class="cap-num">04</span>
-				<div>
-					<h3>Measure and expand</h3>
-					<p>We quantify the hours saved and scale to the next process.</p>
-				</div>
-			</div>
-			<div class="card">
-				<span class="cap-num">05</span>
+				<span class="cap-num">06</span>
 				<div>
 					<h3>Zero-friction rollout</h3>
 					<p>Integrates with your current infrastructure — no data migration, no downtime.</p>
 				</div>
 			</div>
 			<div class="card">
-				<span class="cap-num">06</span>
+				<span class="cap-num">07</span>
+				<div>
+					<h3>Measure and expand</h3>
+					<p>We quantify the hours saved and scale to the next process.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">08</span>
 				<div>
 					<h3>Custom plugins</h3>
 					<p>We build connectors to link Zaviren with your other systems and tools.</p>
 				</div>
 			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">06 · Frequently asked</span>
+			<h2>Before you <span class="gradient">ask</span></h2>
+		</div>
+		<div class="faq-list">
+			<details class="faq-item">
+				<summary>Is this expensive to implement?</summary>
+				<p>You're already paying the real cost: every hour an employee spends searching for information by hand. We start with one bounded case and measure the hours saved, so you compare the savings against the investment, not the other way around.</p>
+			</details>
+			<details class="faq-item">
+				<summary>Do I need my own technical team?</summary>
+				<p>No. We handle implementation and maintenance; your team just uses it, like any other tool.</p>
+			</details>
+			<details class="faq-item">
+				<summary>How long until it's working?</summary>
+				<p>Depends on the case, but the first test with your own documents is usually up and running in weeks, not months.</p>
+			</details>
+			<details class="faq-item">
+				<summary>Do I need powerful, expensive servers?</summary>
+				<p>Depends on your document volume and number of concurrent users. A pilot with a few hundred documents and a handful of users runs on modest hardware, no GPU — we size the exact hardware for your case before starting.</p>
+			</details>
+			<details class="faq-item">
+				<summary>Is it GDPR compliant?</summary>
+				<p>Yes — since your data never leaves your perimeter, there's no third-party transfer to audit, so it fits natively instead of depending on another provider's privacy policy.</p>
+			</details>
+			<details class="faq-item">
+				<summary>What happens to my data if I stop working with you?</summary>
+				<p>It runs on your own infrastructure from day one — it's yours, and doesn't depend on you remaining a customer.</p>
+			</details>
 		</div>
 	</section>
 
@@ -189,3 +339,16 @@ import Layout from "../../layouts/Layout.astro";
 		</div>
 	</section>
 </Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: [
+		{ "@type": "Question", name: "Is this expensive to implement?", acceptedAnswer: { "@type": "Answer", text: "You're already paying the real cost: every hour an employee spends searching for information by hand. We start with one bounded case and measure the hours saved, so you compare the savings against the investment, not the other way around." } },
+		{ "@type": "Question", name: "Do I need my own technical team?", acceptedAnswer: { "@type": "Answer", text: "No. We handle implementation and maintenance; your team just uses it, like any other tool." } },
+		{ "@type": "Question", name: "How long until it's working?", acceptedAnswer: { "@type": "Answer", text: "Depends on the case, but the first test with your own documents is usually up and running in weeks, not months." } },
+		{ "@type": "Question", name: "Do I need powerful, expensive servers?", acceptedAnswer: { "@type": "Answer", text: "Depends on your document volume and number of concurrent users. A pilot with a few hundred documents and a handful of users runs on modest hardware, no GPU — we size the exact hardware for your case before starting." } },
+		{ "@type": "Question", name: "Is it GDPR compliant?", acceptedAnswer: { "@type": "Answer", text: "Yes — since your data never leaves your perimeter, there's no third-party transfer to audit, so it fits natively instead of depending on another provider's privacy policy." } },
+		{ "@type": "Question", name: "What happens to my data if I stop working with you?", acceptedAnswer: { "@type": "Answer", text: "It runs on your own infrastructure from day one — it's yours, and doesn't depend on you remaining a customer." } },
+	],
+})} />
