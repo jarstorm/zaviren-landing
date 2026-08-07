@@ -4,19 +4,20 @@ import Layout from "../../layouts/Layout.astro";
 
 <Layout
 	lang="en"
-	title="Contact — Zaviren"
-	description="Leave your details and we'll notify you as soon as Zaviren is ready."
-	altHref="/contact"
+	title="Free guide — Does your company need AI? — Zaviren"
+	description="Download Zaviren's free guide: how to know if your company needs AI and where to start."
+	altHref="/guide"
 >
 	<section class="contact">
-		<span class="eyebrow">Contact</span>
-		<h1>Let me know when it's ready</h1>
+		<span class="eyebrow">Free guide</span>
+		<h1>Does your company need AI?</h1>
 		<p class="subtitle">
-			Leave us your company name, your name and your email. We'll write to
-			you as soon as Zaviren is available.
+			Download our introductory guide: how to know if your company needs AI
+			and how to get started. Leave us your details and we'll email you the
+			download link.
 		</p>
 		<div class="form-card">
-			<form class="contact-form" id="contact-form">
+			<form class="contact-form" id="guide-form">
 				<input type="text" name="honeypot" class="honey" tabindex="-1" autocomplete="off" />
 
 				<div class="field">
@@ -43,7 +44,7 @@ import Layout from "../../layouts/Layout.astro";
 
 				<p class="form-error" id="form-error" hidden></p>
 
-				<button type="submit" class="cta" id="submit-btn">Send</button>
+				<button type="submit" class="cta" id="submit-btn">Download guide</button>
 			</form>
 		</div>
 		<a class="back-link" href="/en/">&larr; Back to home</a>
@@ -53,7 +54,7 @@ import Layout from "../../layouts/Layout.astro";
 <script>
 	const WORKER_URL = "https://zaviren-contact.zaviren.workers.dev";
 
-	const form = document.getElementById("contact-form") as HTMLFormElement;
+	const form = document.getElementById("guide-form") as HTMLFormElement;
 	const errorEl = document.getElementById("form-error") as HTMLParagraphElement;
 	const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
 
@@ -70,7 +71,7 @@ import Layout from "../../layouts/Layout.astro";
 			empresa: data.get("empresa"),
 			email: data.get("email"),
 			locale: "EN",
-			wantsGuide: false,
+			wantsGuide: true,
 			consent: data.get("consent") === "on",
 			honeypot: data.get("honeypot"),
 		};
@@ -83,7 +84,7 @@ import Layout from "../../layouts/Layout.astro";
 			});
 			const result = await res.json();
 			if (res.ok && result.ok) {
-				window.location.href = "/en/contact/thanks";
+				window.location.href = "/en/guide/thanks";
 				return;
 			}
 			throw new Error(result.error ?? "unknown_error");
@@ -91,7 +92,7 @@ import Layout from "../../layouts/Layout.astro";
 			errorEl.textContent = "We couldn't send the form. Please try again in a few minutes.";
 			errorEl.hidden = false;
 			submitBtn.disabled = false;
-			submitBtn.textContent = "Send";
+			submitBtn.textContent = "Download guide";
 		}
 	});
 </script>

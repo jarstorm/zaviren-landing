@@ -19,6 +19,20 @@ git push origin deploy
 cd - && git worktree remove /tmp/deploy-wt --force
 ```
 
+## SEO
+
+En cualquier cambio (páginas nuevas, renombradas o borradas, copy,
+estructura), mantener el SEO cuidado: `robots.txt` sigue permitiendo el
+rastreo (hoy `Allow: /` general, no requiere tocarlo por página nueva),
+`sitemap-index.xml` es generado por `@astrojs/sitemap` a partir de las
+rutas en build — no hace falta mantenerlo a mano, pero si una página se
+renombra o borra, confirmar que no quedan enlaces internos rotos a la
+URL vieja. Cada página nueva necesita `title`/`description` propios y
+no genéricos (props de `Layout.astro`), y `altHref` correcto apuntando a
+su contraparte en el otro idioma para el `hreflang`/canonical (ver
+`src/layouts/Layout.astro`). Si una URL existente cambia, valorar dejar
+un enlace o redirect desde la ruta vieja en vez de un 404 silencioso.
+
 ## Development
 
 When starting the dev server, use background mode:
@@ -35,9 +49,9 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 
 ## Dependencias externas (formulario de contacto)
 
-El sitio es 100% estático (sin adapter SSR) — el formulario de `/contacto` y
-`/en/contact` no puede llamar directo a Brevo desde el navegador (la API key
-no puede vivir en el cliente). Cadena completa:
+El sitio es 100% estático (sin adapter SSR) — los formularios de `/contact`,
+`/en/contact`, `/guide` y `/en/guide` no pueden llamar directo a Brevo desde
+el navegador (la API key no puede vivir en el cliente). Cadena completa:
 
 `form HTML propio → Cloudflare Worker (worker/) → API de contactos de Brevo`
 
@@ -45,12 +59,19 @@ no puede vivir en el cliente). Cadena completa:
   `deploy` — ver sección "Deploy" arriba. No interviene en el envío del
   formulario.
 - **Brevo**: una única lista de contactos (List ID `2`) recibe altas desde
-  ES y EN. El Worker hace 3 llamadas por envío:
+  ES y EN, desde dos pares de páginas (`/contact`+`/en/contact` y
+  `/guide`+`/en/guide` — ver "Split contacto/guía" abajo). El Worker hace
+  3 llamadas por envío:
   1. `POST /v3/contacts` — crea/actualiza el contacto con `FIRSTNAME`,
-     `LASTNAME` (atributos por defecto de Brevo) y `EMAIL_LANGUAGE`
+     `LASTNAME` (atributos por defecto de Brevo), `EMAIL_LANGUAGE`
      (`"ES"`/`"EN"`, tomado de la página de origen — custom, ya creado en
      Brevo — sirve para poder segmentar el envío de emails por idioma más
-     adelante).
+     adelante) y, solo si el envío viene de `/guide`/`/en/guide`,
+     `WANTS_GUIDE: true` (custom, **crear a mano en Brevo antes de
+     desplegar** — ver aviso de atributos custom abajo). Los envíos desde
+     `/contact`/`/en/contact` nunca mandan ese atributo, ni siquiera en
+     `false` — así se distingue "no quiere la guía" de "no se le
+     preguntó".
   2. Si el contacto ya existía, Brevo responde `204` sin cuerpo (no da el
      `id` numérico) — el Worker hace `GET /v3/contacts/{email}` para
      resolverlo.
@@ -87,9 +108,45 @@ no puede vivir en el cliente). Cadena completa:
     commitearla.
   - URL del Worker: subdominio gratis `*.workers.dev` (sin DNS propio). Esa
     URL está **hardcodeada** como `const WORKER_URL` al principio del
-    `<script>` en `src/pages/contacto.astro` y
-    `src/pages/en/contact.astro` — si el Worker se renombra o se
-    recrea, hay que actualizarla en esos dos sitios.
+    `<script>` en cuatro sitios — `src/pages/contact.astro`,
+    `src/pages/en/contact.astro`, `src/pages/guide.astro` y
+    `src/pages/en/guide.astro` — si el Worker se renombra o se recrea, hay
+    que actualizarla en los cuatro.
+
+### Split contacto/guía (2026-08-07) y envío del PDF por email
+
+Antes había un único formulario ("avísame cuando esté listo"). Ahora hay
+dos pares de páginas con intención distinta:
+
+- `/contact` (ES) / `/en/contact` (EN) — contacto directo, CTA final de
+  la home ("Solicita una llamada" / "Book a call").
+- `/guide` (ES) / `/en/guide` (EN) — lead magnet de bajo compromiso, CTA
+  principal de la home ("Descarga la guía gratuita" / "Download the free
+  guide"). Tras enviar, la página de gracias (`/guide/gracias`,
+  `/en/guide/thanks`) dice "revisa tu email" — **no hay descarga directa
+  en la página**, el PDF llega por email.
+
+`/contacto` y `/contacto/gracias` (URLs viejas, ya en producción) quedan
+como *stubs* de redirect (`window.location.replace(...)` + link visible
+por si JS falla) hacia `/contact`/`/contact/gracias` — para no perder
+tráfico/enlaces ya indexados.
+
+**El envío del email con el link de descarga NO está en este repo.** El
+Worker solo pone `WANTS_GUIDE: true` en el contacto de Brevo (ver arriba);
+el envío del email en sí es un **Automation Workflow de Brevo**,
+configurado a mano en el panel Brevo (Automations → trigger "contact
+attribute updated" → `WANTS_GUIDE = true` → email con el link a
+`https://zaviren.com/downloads/zaviren.pdf` / `zaviren-en.pdf`, según
+`EMAIL_LANGUAGE`). Esto es deliberado (decisión del usuario, 2026-08-07):
+reusa el mecanismo de atributos que ya existía en vez de que el Worker
+llame a la API transaccional de Brevo. Dos cosas viven fuera del repo, en
+el panel Brevo, y no las puede montar un agente con acceso solo al
+código:
+1. Crear el atributo custom `WANTS_GUIDE` (tipo booleano) en Contacts →
+   Settings → Contact attributes — si no existe, Brevo lo descarta en
+   silencio (mismo aviso que el resto de atributos custom, ver arriba).
+2. Montar el Automation Workflow que reacciona a ese atributo y manda el
+   email.
 
 ## Documentation
 

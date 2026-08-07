@@ -10,6 +10,7 @@ interface ContactPayload {
 	empresa?: string;
 	email?: string;
 	locale?: "ES" | "EN";
+	wantsGuide?: boolean;
 	consent?: boolean;
 	honeypot?: string;
 }
@@ -78,16 +79,23 @@ export default {
 			"api-key": env.BREVO_API_KEY,
 		};
 
+		const attributes: Record<string, string | boolean> = {
+			FIRSTNAME: nombre,
+			LASTNAME: apellidos,
+			EMAIL_LANGUAGE: locale,
+		};
+		// Only set on guide-page submissions, never on regular contact
+		// submissions — lets Brevo segment "wants the guide" vs not.
+		if (body.wantsGuide === true) {
+			attributes.WANTS_GUIDE = true;
+		}
+
 		const contactRes = await fetch("https://api.brevo.com/v3/contacts", {
 			method: "POST",
 			headers: brevoHeaders,
 			body: JSON.stringify({
 				email,
-				attributes: {
-					FIRSTNAME: nombre,
-					LASTNAME: apellidos,
-					EMAIL_LANGUAGE: locale,
-				},
+				attributes,
 				listIds: [Number(env.BREVO_LIST_ID)],
 				updateEnabled: true,
 			}),
