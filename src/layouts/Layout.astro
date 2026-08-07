@@ -68,6 +68,16 @@ const organizationSchema = {
 			}
 			gtag("js", new Date());
 			gtag("config", "G-EXXBQFZ869");
+
+			document.addEventListener("click", (event) => {
+				const cta = (event.target as HTMLElement).closest("a.cta");
+				if (!cta) return;
+				gtag("event", "cta_click", {
+					link_url: (cta as HTMLAnchorElement).getAttribute("href"),
+					link_text: cta.textContent?.trim(),
+					page_path: window.location.pathname,
+				});
+			});
 		</script>
 	</head>
 	<body>
@@ -82,7 +92,9 @@ const organizationSchema = {
 				</a>
 			</header>
 
-			<slot />
+			<main>
+				<slot />
+			</main>
 		</div>
 
 		<footer class="site-footer">
