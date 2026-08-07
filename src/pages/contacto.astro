@@ -10,18 +10,87 @@ import Layout from "../layouts/Layout.astro";
 >
 	<section class="contact">
 		<span class="eyebrow">Contacto</span>
-		<div class="brevo-embed">
-			<iframe
-				title="Formulario de contacto Zaviren"
-				width="640"
-				height="900"
-				src="https://8f5b0ece.sibforms.com/v2/serve/MUIFADKQkKB-P8zL3cyu-taPB62XANx1aWsWAE5JiNpuCYYDfRFM-6U4pztSYm9n6ozrjCLvoXkAtdoo0EOqY2b0lez8KnyZURhGZMM-df03LuaXsbngML6QsasC5olM82InU9HCT-Sxe7OUBgHgyZ91Oy-pLX0hA6vAdWiMESplg7EkdqHwVF28eGECYey4k5CXIsvR1KgXQP2osQ=="
-				frameborder="0"
-				scrolling="no"
-				allowfullscreen
-				style="display:block;margin-left:auto;margin-right:auto;max-width:100%;"
-			></iframe>
+		<h1>Avísame cuando esté listo</h1>
+		<p class="subtitle">
+			Déjanos el nombre de tu empresa, tu nombre y tu email. Te escribimos en
+			cuanto Zaviren esté disponible.
+		</p>
+		<div class="form-card">
+			<form class="contact-form" id="contact-form">
+				<input type="text" name="honeypot" class="honey" tabindex="-1" autocomplete="off" />
+
+				<div class="field">
+					<label for="nombre">Introduce tu Nombre<span class="required">*</span></label>
+					<input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
+				</div>
+				<div class="field">
+					<label for="apellidos">Introduce tus Apellidos<span class="required">*</span></label>
+					<input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required />
+				</div>
+				<div class="field">
+					<label for="empresa">Nombre de la empresa<span class="required">*</span></label>
+					<input type="text" id="empresa" name="empresa" placeholder="Empresa" required />
+				</div>
+				<div class="field">
+					<label for="email">Introduce tu email<span class="required">*</span></label>
+					<input type="email" id="email" name="email" placeholder="example@example.com" required />
+				</div>
+
+				<label class="consent">
+					<input type="checkbox" name="consent" required />
+					<span>Acepto recibir vuestras comunicaciones y la política de privacidad de datos.</span>
+				</label>
+
+				<p class="form-error" id="form-error" hidden></p>
+
+				<button type="submit" class="cta" id="submit-btn">Enviar</button>
+			</form>
 		</div>
 		<a class="back-link" href="/">&larr; Volver a la portada</a>
 	</section>
 </Layout>
+
+<script>
+	const WORKER_URL = "https://zaviren-contact.zaviren.workers.dev";
+
+	const form = document.getElementById("contact-form") as HTMLFormElement;
+	const errorEl = document.getElementById("form-error") as HTMLParagraphElement;
+	const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+
+	form.addEventListener("submit", async (event) => {
+		event.preventDefault();
+		errorEl.hidden = true;
+		submitBtn.disabled = true;
+		submitBtn.textContent = "Enviando...";
+
+		const data = new FormData(form);
+		const payload = {
+			nombre: data.get("nombre"),
+			apellidos: data.get("apellidos"),
+			empresa: data.get("empresa"),
+			email: data.get("email"),
+			locale: "ES",
+			consent: data.get("consent") === "on",
+			honeypot: data.get("honeypot"),
+		};
+
+		try {
+			const res = await fetch(`${WORKER_URL}/contact`, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(payload),
+			});
+			const result = await res.json();
+			if (res.ok && result.ok) {
+				window.location.href = "/contacto/gracias";
+				return;
+			}
+			throw new Error(result.error ?? "unknown_error");
+		} catch {
+			errorEl.textContent = "No hemos podido enviar el formulario. Inténtalo de nuevo en unos minutos.";
+			errorEl.hidden = false;
+			submitBtn.disabled = false;
+			submitBtn.textContent = "Enviar";
+		}
+	});
+</script>

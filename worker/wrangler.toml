@@ -1,0 +1,10 @@
+name = "zaviren-contact"
+main = "src/index.ts"
+compatibility_date = "2026-08-07"
+
+[vars]
+BREVO_LIST_ID = "2"
+ALLOWED_ORIGINS = "https://zaviren.com,http://localhost:4321"
+
+# Secret (not in this file): set with
+#   npx wrangler secret put BREVO_API_KEY

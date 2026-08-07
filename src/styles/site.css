@@ -429,21 +429,25 @@ form.contact-form {
 	margin-top: 0.5rem;
 }
 
-.brevo-embed {
+.form-card {
 	margin-top: 0.5rem;
 	border-radius: 16px;
-	overflow: hidden;
 	background: var(--card);
-}
-
-.brevo-embed iframe {
-	display: block;
-	background: #fff;
+	border: 1px solid var(--border);
+	padding: 2rem;
 }
 
 form.contact-form .cta {
 	align-self: center;
 	justify-content: center;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+form.contact-form .cta:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
 }
 
 .field {
@@ -459,8 +463,12 @@ form.contact-form .cta {
 	color: var(--text);
 }
 
+.field label .required {
+	color: #f87171;
+}
+
 .field input {
-	background: var(--card);
+	background: var(--bg);
 	border: 1px solid var(--border);
 	border-radius: 10px;
 	padding: 0.75rem 0.9rem;
@@ -472,6 +480,25 @@ form.contact-form .cta {
 .field input:focus {
 	outline: none;
 	border-color: var(--blue);
+}
+
+.consent {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.6rem;
+	font-size: 0.85rem;
+	color: var(--muted);
+	line-height: 1.4;
+}
+
+.consent input {
+	margin-top: 0.2rem;
+}
+
+.form-error {
+	color: #f87171;
+	font-size: 0.85rem;
+	margin: 0;
 }
 
 .honey {

@@ -1,6 +1,9 @@
 # generated types
 .astro/
 
+# cloudflare worker local dev state
+.wrangler/
+
 # dependencies
 node_modules/
 
