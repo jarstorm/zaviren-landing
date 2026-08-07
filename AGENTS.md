@@ -45,7 +45,7 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 
 ## Referencias externas
 
-- Documento "11 mejoras propuestas": `/Users/javi/workspace/rag-offline/docs/operations/11-mejoras-propuestas.md` (otro proyecto, rag-offline).
+- Documento "11 mejoras propuestas": `/Users/javi/workspace/rag-offline/docs/operations/11-mejoras-propuestas.md` (otro proyecto, rag-offline). **Tras terminar cualquier tarea, revisar si corresponde a un ítem pendiente (❌) de ámbito "Landing" en ese documento y, si es así, actualizarlo ahí mismo**: marcar "Implementado" (✅), mover la fila a la zona de implementados de la tabla resumen y añadir/editar su sección de detalle con qué se hizo — mismo estilo que el resto de entradas ya cerradas del documento.
 
 ## Dependencias externas (formulario de contacto)
 
