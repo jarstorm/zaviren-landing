@@ -44,6 +44,22 @@ const organizationSchema = {
 		<link rel="alternate" hreflang="en" href={enURL} />
 		<link rel="alternate" hreflang="x-default" href={esURL} />
 
+		<script define:vars={{ pageLang: lang }}>
+			(function () {
+				try {
+					if (localStorage.getItem("zaviren-lang")) return;
+					var wantsEs = (navigator.language || "").toLowerCase().startsWith("es");
+					localStorage.setItem("zaviren-lang", wantsEs ? "es" : "en");
+					if ((wantsEs && pageLang !== "es") || (!wantsEs && pageLang !== "en")) {
+						var alt = document.querySelector(
+							'link[rel="alternate"][hreflang="' + (wantsEs ? "es" : "en") + '"]',
+						);
+						if (alt) window.location.replace(alt.href);
+					}
+				} catch (e) {}
+			})();
+		</script>
+
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
