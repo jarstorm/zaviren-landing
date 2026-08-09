@@ -94,6 +94,7 @@ import Layout from "../layouts/Layout.astro";
 			});
 			const result = await res.json();
 			if (res.ok && result.ok) {
+				window.gtag?.("event", "generate_lead", { method: "guide_form", locale: "ES" });
 				window.location.href = "/guide/gracias";
 				return;
 			}
