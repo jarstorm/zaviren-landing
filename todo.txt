@@ -1,0 +1,1451 @@
+[CLAUDE] Le he pedido a claude que me analice qué se puede mejorar en la web:
+
+Página vacía en el fetch básico — probablemente es una SPA con contenido renderizado por JavaScript. Voy a revisar el código fuente y el DOM real con el navegador para dar un diagnóstico preciso.
+
+Used Claude in Chrome (12 actions), loaded tools
+Used Claude in Chrome (12 actions), loaded tools
+
+Sitemap sí existe. Reviso el sub-sitemap para ver cuántas URLs hay indexadas, y vuelvo a la home para revisar rendimiento, enlaces internos y otros detalles pendientes.
+
+Used Claude in Chrome (9 actions)
+Used Claude in Chrome (9 actions)
+
+He revisado el código y la configuración técnica de zaviren.com. La base técnica está bastante bien hecha — pero hay varios huecos claros para SEO.
+
+Lo que ya tiene bien:
+Carga muy rápido (~220ms, página de 5KB), un solo H1, jerarquía de encabezados correcta, meta description y og:tags/Twitter cards completos, canonical bien puesto, robots.txt correcto, sitemap válido, hreflang es/en/x-default bien implementado, y ya tiene datos estructurados (schema.org) de tipo Organization y FAQPage — esto es más de lo que la mayoría de webs nuevas hacen.
+
+Lo que le falta o se puede mejorar:
+
+Casi no hay páginas indexables. El sitemap solo tiene 12 URLs, y de ellas la mayoría son variantes de la misma página (inicio, contacto ES/EN, guía ES/EN, y sus páginas de "gracias"). No hay blog ni páginas de contenido. Esto es el problema más grave: sin contenido no hay forma de rankear para búsquedas long-tail, que es justo la vía de entrada natural para una web nueva sin autoridad.
+Es efectivamente una one-page site. Todo el contenido vive en "/" como secciones dentro de una sola página, sin <nav> semántico ni URLs propias por sección. Eso limita mucho cuántas keywords distintas puede capturar la web — Google necesita páginas separadas y bien enfocadas para posicionar por temas distintos.
+Título un poco largo: 66 caracteres ("Zaviren — IA privada para tu empresa, sobre tus propios documentos"). Google suele truncar sobre los 60-70, así que es límite; se podría recortar unos caracteres para asegurar que se vea completo en resultados.
+Las páginas "gracias/thanks" están indexables y en el sitemap (sin noindex, con canonical propio). Son páginas de agradecimiento post-formulario, contenido finísimo que no aporta valor de búsqueda — normalmente se marcan noindex y se sacan del sitemap para no diluir la calidad percibida del dominio.
+Prácticamente no hay imágenes (solo el favicon como logo). Esto es neutro para velocidad, pero significa cero oportunidades de posicionar en Google Imágenes y que el contenido "visual" (iconos con emoji) no aporta señales adicionales de contexto.
+Sin blog/recursos = sin forma orgánica de conseguir backlinks. Nadie enlaza a una landing de producto; sí enlazan a artículos, guías o datos útiles.
+
+Prioridad si tuviera que elegir 3 cosas:
+Crear un blog/sección de recursos con contenido específico del nicho (IA soberana, RAG on-premise, RGPD y datos, casos de uso por sector), convertir secciones clave en páginas propias con URL e indexables, y poner noindex en las páginas de "gracias".
+
+[CHATGPT] Me cuenta esto:
+Sí. Con lo que me cuentas, Zaviren tiene una propuesta SEO bastante buena, porque no está vendiendo simplemente “IA”, sino resolviendo un problema empresarial muy concreto:
+
+Usar IA con los documentos internos de la empresa sin sacar esos datos de su infraestructura.
+
+Eso permite construir una estrategia SEO alrededor de IA privada + RAG + on-premise + seguridad + documentos + casos de uso, en vez de intentar competir por términos genéricos como “inteligencia artificial”.
+
+He revisado también el panorama actual de búsquedas y competidores. Hay empresas que ya están posicionando alrededor de conceptos como “IA privada”, “RAG empresarial”, “on-premise” y “tus datos no salen de tu empresa”, por lo que Zaviren necesita ocupar ese territorio semántico cuanto antes.
+
+Plan SEO de Zaviren
+1. La estrategia que yo seguiría
+
+No intentaría posicionar Zaviren para:
+
+inteligencia artificial
+IA
+ChatGPT
+chatbot
+RAG
+
+Son términos demasiado amplios y, en muchos casos, con una intención de búsqueda que no corresponde al cliente que queréis.
+
+Construiría el posicionamiento alrededor de:
+
+Núcleo comercial
+IA privada para empresas
+IA privada empresarial
+IA local para empresas
+IA on-premise
+IA on-premises
+RAG empresarial
+RAG on-premise
+RAG local
+RAG privado
+inteligencia artificial local
+inteligencia artificial privada
+IA para documentos
+IA con documentos internos
+asistente IA privado
+asistente empresarial con IA
+chatbot privado para empresas
+IA instalada en servidor propio
+Núcleo de seguridad
+IA sin enviar datos a la nube
+IA sin enviar datos a terceros
+IA para empresas con datos sensibles
+IA privada RGPD
+IA segura para empresas
+inteligencia artificial y protección de datos
+IA on-premise seguridad
+IA local para datos confidenciales
+IA para documentación confidencial
+Núcleo técnico
+qué es RAG
+RAG vs fine tuning
+RAG local
+RAG on-premise
+cómo funciona un RAG
+RAG empresarial
+arquitectura RAG
+RAG con documentos
+LLM local para empresas
+LLM on-premise
+IA generativa on-premise
+self-hosted AI
+private AI
+Núcleo de problemas
+
+Este es especialmente interesante.
+
+La gente no siempre buscará:
+
+“RAG empresarial”
+
+Puede buscar:
+
+“cómo consultar miles de documentos con IA”
+
+“IA para buscar documentos de empresa”
+
+“cómo usar ChatGPT con documentos confidenciales”
+
+“alternativa a ChatGPT para empresas con datos sensibles”
+
+“IA que no envíe información a internet”
+
+Ahí hay oportunidades muy interesantes.
+
+2. El mayor cambio que haría en la web
+
+La web no debería parecer una empresa que dice:
+
+“Tenemos una tecnología RAG increíble.”
+
+Debe parecer una empresa que dice:
+
+“Tenemos una solución para que tu empresa pueda utilizar IA con su conocimiento interno sin sacar la información de sus servidores.”
+
+Es una diferencia enorme.
+
+El comprador no quiere RAG.
+
+Quiere:
+
+encontrar información rápidamente;
+consultar manuales;
+buscar contratos;
+preguntar por procedimientos;
+incorporar empleados;
+consultar normativa;
+reducir tiempo buscando documentos;
+evitar enviar información sensible a una IA pública.
+
+RAG es la tecnología que lo hace posible.
+
+3. Home: cambiaría radicalmente el mensaje
+
+La homepage debería atacar simultáneamente:
+
+qué es + para quién + beneficio + diferenciación.
+
+Una estructura aproximada:
+
+H1
+
+IA privada para empresas, instalada en tus propios servidores
+
+Subtítulo:
+
+Consulta documentos, manuales, procedimientos y conocimiento interno con IA. Zaviren funciona dentro de tu infraestructura para que tus datos permanezcan bajo tu control.
+
+Y debajo:
+
+[Solicitar una demo] [Ver cómo funciona]
+
+Después:
+
+“Tu empresa ya tiene el conocimiento. Zaviren te permite preguntarle.”
+
+PDF · Word · Excel · manuales · contratos · procedimientos · normativa · documentación técnica...
+
+4. Explicar inmediatamente el problema
+H2
+
+¿Por qué enviar documentos de tu empresa a una IA externa?
+
+Y explicar:
+
+información confidencial;
+propiedad intelectual;
+contratos;
+información de clientes;
+documentación técnica;
+procedimientos internos;
+datos personales;
+dependencia de servicios externos.
+
+Después:
+
+Con Zaviren, la IA se ejecuta dentro de tu infraestructura.
+
+Esto tiene mucho potencial SEO porque permite atacar búsquedas relacionadas con privacidad y seguridad.
+
+5. Crear páginas específicas
+
+Esto es probablemente una de las acciones con mayor impacto SEO.
+
+No metería todo en una sola homepage.
+
+Crearía una arquitectura:
+
+/
+├── ia-privada/
+├── ia-on-premise/
+├── rag-empresarial/
+├── rag-on-premise/
+├── ia-local/
+├── ia-para-documentos/
+├── asistente-ia-empresas/
+├── ia-segura-empresas/
+│
+├── sectores/
+│   ├── ia-para-despachos/
+│   ├── ia-para-ingenierias/
+│   ├── ia-para-industria/
+│   ├── ia-para-asesorias/
+│   ├── ia-para-constructoras/
+│   └── ia-para-empresas/
+│
+├── casos-de-uso/
+│   ├── consultar-documentos-con-ia/
+│   ├── buscar-en-documentos-con-ia/
+│   ├── ia-para-manuales/
+│   ├── ia-para-procedimientos/
+│   ├── ia-para-contratos/
+│   └── ia-para-normativa/
+│
+├── seguridad/
+│   ├── ia-sin-nube/
+│   ├── ia-y-rgpd/
+│   ├── ia-on-premise-seguridad/
+│   └── datos-privados-ia/
+│
+└── recursos/
+    ├── que-es-rag/
+    ├── que-es-rag-on-premise/
+    ├── rag-vs-fine-tuning/
+    ├── rag-vs-chatgpt/
+    ├── ia-local-vs-cloud/
+    └── ...
+
+No crearía todas estas páginas de golpe.
+
+Pero ésta debería ser la arquitectura objetivo.
+
+6. Página estrella: “IA privada para empresas”
+
+Esta debería ser una de las páginas más importantes del dominio.
+
+URL:
+
+/ia-privada/
+
+Title
+
+IA privada para empresas | Zaviren
+
+H1
+
+IA privada para empresas, bajo tu control
+
+Y explicar:
+
+qué es;
+cómo funciona;
+dónde se ejecuta;
+qué datos procesa;
+qué ventajas tiene;
+qué infraestructura necesita;
+para quién está indicada;
+qué diferencia hay frente a ChatGPT/Claude/Gemini;
+seguridad;
+implementación;
+preguntas frecuentes;
+CTA.
+
+La intención es capturar tanto búsquedas informativas como comerciales.
+
+7. Segunda página estrella: RAG empresarial
+
+/rag-empresarial/
+
+H1:
+
+RAG empresarial: IA que responde usando tus documentos
+
+Aquí explicaría visualmente:
+
+DOCUMENTOS
+     ↓
+INGESTA
+     ↓
+INDEXACIÓN
+     ↓
+BÚSQUEDA
+     ↓
+RAG
+     ↓
+RESPUESTA
+     ↓
+FUENTES
+
+Y muy importante:
+
+“La respuesta no sale de la nada”
+
+Mostrar:
+
+Respuesta: ...
+
+Fuente: Manual de calidad — capítulo 4 — página 27
+
+Esto transmite confianza y diferencia el producto de un chatbot genérico.
+
+La búsqueda de RAG empresarial está creciendo alrededor precisamente de esta idea de respuestas basadas en documentación interna.
+
+8. Página “RAG on-premise”
+
+Esta página puede ser potentísima.
+
+/rag-on-premise/
+
+H1:
+
+RAG on-premise: IA con tus documentos dentro de tu empresa
+
+Aquí atacamos directamente:
+
+RAG on-premise
+RAG on-premises
+RAG local
+RAG privado
+RAG empresarial
+IA on-premise
+
+Hay competidores internacionales que están construyendo páginas específicamente alrededor de este concepto, lo que demuestra que existe una intención comercial clara.
+
+9. Una página que considero imprescindible
+“IA privada vs ChatGPT”
+
+/ia-privada-vs-chatgpt/
+
+No hay que atacar a ChatGPT.
+
+Hay que explicar:
+
+	IA pública	Zaviren
+Infraestructura	Externa	Empresa
+Documentos	Según servicio/configuración	Locales
+Control	Limitado	Empresa
+Personalización	Variable	Sobre documentación propia
+RAG	Dependiente de plataforma	Integrado
+Despliegue	Cloud	On-premise
+Datos sensibles	Requiere evaluación	Diseñado para entorno privado
+
+Y terminar:
+
+¿Cuándo tiene sentido Zaviren?
+
+Esto captura una intención de búsqueda muy comercial.
+
+10. Otra página potentísima
+“Cómo usar IA con documentos confidenciales”
+
+/ia-documentos-confidenciales/
+
+H1:
+
+Cómo utilizar IA con documentos confidenciales sin subirlos a Internet
+
+Esto puede atraer personas que todavía no conocen RAG.
+
+Es importante entender esta diferencia:
+
+Usuario avanzado
+
+Busca:
+
+RAG on-premise
+
+Director de empresa
+
+Busca:
+
+IA para documentos confidenciales
+
+Responsable IT
+
+Busca:
+
+IA local para empresa
+
+Responsable de seguridad
+
+Busca:
+
+IA sin enviar datos a la nube
+
+Son cuatro compradores potenciales.
+
+La web debe hablarle a los cuatro.
+
+11. Crear páginas por sector
+
+Esto puede generar una cantidad considerable de tráfico cualificado.
+
+Por ejemplo:
+
+/ia-para-despachos/
+
+IA privada para despachos profesionales
+
+Casos:
+
+contratos;
+expedientes;
+jurisprudencia;
+normativa;
+procedimientos;
+documentación interna.
+/ia-para-ingenierias/
+proyectos;
+planos;
+especificaciones;
+normativas;
+manuales;
+documentación técnica.
+/ia-para-industria/
+manuales;
+mantenimiento;
+procedimientos;
+calidad;
+seguridad;
+documentación de máquinas.
+/ia-para-asesorias/
+normativa;
+procedimientos;
+documentación de clientes;
+consultas internas.
+
+Pero no crearía páginas genéricas intercambiando solamente el nombre del sector.
+
+Cada una debe tener:
+
+problemas reales;
+documentos reales;
+preguntas reales;
+casos de uso;
+ejemplos;
+lenguaje del sector.
+12. Crear un blog, pero no un “blog corporativo”
+
+Esto es fundamental.
+
+No quiero ver artículos como:
+
+“Zaviren participa en el evento X”
+
+Eso apenas aporta SEO.
+
+Quiero contenido que capture búsquedas.
+
+Cluster 1 — RAG
+¿Qué es RAG?
+¿Qué es un RAG empresarial?
+¿Qué es un RAG local?
+¿Qué es un RAG on-premise?
+Cómo funciona un RAG
+RAG vs fine tuning
+RAG vs chatbot
+RAG vs búsqueda tradicional
+Cómo crear un RAG empresarial
+Qué arquitectura necesita un RAG empresarial
+Cluster 2 — IA privada
+¿Qué es una IA privada?
+IA privada para empresas
+IA local vs IA en la nube
+IA on-premise: ventajas y desventajas
+Cómo implementar IA privada
+IA privada y protección de datos
+¿Se puede utilizar IA sin enviar datos a Internet?
+Alternativas privadas a ChatGPT para empresas
+Cluster 3 — documentos
+Cómo buscar información en miles de PDFs con IA
+Cómo consultar documentos empresariales con IA
+Cómo utilizar IA con documentos internos
+IA para manuales técnicos
+IA para contratos
+IA para procedimientos internos
+IA para documentación empresarial
+IA para normativa
+13. Un artículo que haría cuanto antes
+“¿Puede una empresa usar IA sin enviar sus datos a la nube?”
+
+Es una pregunta excelente para Zaviren.
+
+La respuesta:
+
+Sí. Existen arquitecturas de IA local y on-premise en las que los modelos, el sistema de recuperación y los documentos funcionan dentro de la infraestructura de la organización.
+
+Después:
+
+Cómo funciona
+
+Qué datos permanecen dentro
+
+Qué necesita la empresa
+
+Ventajas
+
+Limitaciones
+
+Cuándo utilizar cloud
+
+Cuándo utilizar on-premise
+
+Cómo lo resuelve Zaviren
+
+Eso es contenido comercial disfrazado de contenido educativo, que es exactamente lo que queremos.
+
+14. Otro artículo importantísimo
+“RAG vs fine-tuning: ¿qué necesita realmente una empresa?”
+
+Muchísima gente que empieza con IA se pregunta esto.
+
+Y Zaviren puede posicionarse como experto.
+
+Explicaría:
+
+RAG
+
+→ conecta el modelo con información externa.
+
+Fine-tuning
+
+→ modifica el comportamiento/conocimiento aprendido del modelo.
+
+Y la conclusión:
+
+Para consultar documentación empresarial que cambia con el tiempo, RAG suele ser una arquitectura mucho más apropiada que entrenar de nuevo un modelo cada vez que cambia un documento.
+
+15. Crear una sección “Seguridad”
+
+No la escondería en el footer.
+
+Crearía:
+
+/seguridad/
+
+Con páginas:
+
+Seguridad de Zaviren
+Arquitectura
+Datos
+Privacidad
+Despliegue
+Control de acceso
+Logs
+Auditoría
+Actualizaciones
+Backup
+Funcionamiento offline, si realmente lo soportáis.
+
+Ojo: aquí no hay que hacer afirmaciones que el producto no pueda demostrar.
+
+Por ejemplo, no escribiría:
+
+“100% seguro”
+
+Eso es marketing débil.
+
+Es mejor:
+
+“Zaviren puede desplegarse dentro de la infraestructura de la empresa, evitando que los documentos utilizados por el sistema tengan que enviarse a un proveedor externo.”
+
+Siempre que técnicamente sea cierto.
+
+16. Un punto SEO muy importante: EEAT
+
+Para un producto que toca:
+
+IA;
+datos empresariales;
+seguridad;
+documentos;
+privacidad;
+
+Google necesita señales de confianza.
+
+Yo incorporaría:
+
+Quién está detrás
+
+Personas reales.
+
+Experiencia
+años de experiencia;
+proyectos;
+especialización;
+tecnología.
+Página de empresa
+ubicación;
+datos corporativos;
+contacto;
+empresa responsable.
+Casos de éxito
+
+Muchísimo más importante que 30 posts.
+
+Ejemplo:
+
+“Cómo una empresa redujo de 25 minutos a 40 segundos el tiempo necesario para localizar procedimientos internos.”
+
+Si podéis demostrarlo.
+
+17. Casos de éxito = oro SEO
+
+Crearía:
+
+/casos/
+
+Y cada caso:
+
+Problema
+↓
+Documentación existente
+↓
+Situación anterior
+↓
+Implementación
+↓
+Cómo utiliza el equipo Zaviren
+↓
+Resultado
+↓
+ROI
+↓
+Conclusión
+
+Además, cada caso puede posicionar para:
+
+IA + sector
+
+RAG + sector
+
+IA + problema
+
+IA + documentos
+
+18. Crear una demo interactiva
+
+Esto puede ser más importante que diez artículos.
+
+Por ejemplo:
+
+“Prueba cómo funciona un RAG empresarial”
+
+Subir un documento de ejemplo, no información real del usuario.
+
+Y permitir:
+
+Pregunta a este documento.
+
+Después:
+
+Respuesta
+
+Fuentes utilizadas
+
+Página 12
+
+Página 27
+
+La persona entiende el producto en 30 segundos.
+
+19. La gran oportunidad: comparativas
+
+Crear páginas:
+
+Zaviren vs ChatGPT
+Zaviren vs Microsoft Copilot
+Zaviren vs RAG cloud
+RAG local vs RAG cloud
+IA on-premise vs IA cloud
+IA privada vs IA pública
+RAG vs búsqueda tradicional
+RAG vs fine-tuning
+
+No deben ser páginas agresivas.
+
+Deben ser comparativas honestas.
+
+Eso aumenta muchísimo la posibilidad de capturar usuarios que están en fase de evaluación.
+
+20. SEO técnico
+
+Aquí hay una advertencia importante.
+
+Antes te comenté que www.zaviren.com no estaba cargando correctamente desde mi acceso. Por tanto, yo pondría la disponibilidad/indexabilidad como prioridad 0 antes de invertir mucho en contenido.
+
+Hay que comprobar:
+
+Infraestructura
+HTTPS
+www / non-www
+HTTP → HTTPS
+redirects
+DNS
+servidor
+CDN
+tiempos de respuesta
+errores 5xx
+errores 4xx
+Google
+Google Search Console
+sitemap
+robots.txt
+cobertura
+páginas indexadas
+Core Web Vitals
+consultas
+CTR
+posiciones.
+HTML
+
+Cada URL indexable debería tener:
+
+<title>
+<meta name="description">
+<h1>
+<h2>
+canonical
+
+Y comprobar:
+
+duplicados;
+títulos demasiado largos;
+titles iguales;
+H1 duplicados;
+páginas sin H1;
+imágenes sin alt;
+enlaces rotos.
+21. Schema
+
+Implementaría, donde corresponda:
+
+Organization
+WebSite
+SoftwareApplication
+Product
+Service
+FAQPage cuando proceda
+Article
+BreadcrumbList
+
+Especialmente interesante:
+
+SoftwareApplication
+
+porque Zaviren no es simplemente una consultora: hay un producto/software.
+
+22. Arquitectura interna de enlaces
+
+No dejaría cada artículo aislado.
+
+Ejemplo:
+
+¿Qué es RAG?
+      ↓
+RAG empresarial
+      ↓
+RAG on-premise
+      ↓
+Zaviren
+
+Otro:
+
+IA con documentos confidenciales
+       ↓
+IA privada
+       ↓
+IA on-premise
+       ↓
+Zaviren
+
+Y otro:
+
+IA para ingeniería
+       ↓
+Caso de éxito ingeniería
+       ↓
+RAG empresarial
+       ↓
+Demo
+
+El enlazado interno debe llevar al usuario progresivamente:
+
+información → problema → solución → producto → contacto.
+
+23. No abusaría de la keyword “Zaviren”
+
+Ahora mismo probablemente hay un error habitual en empresas tecnológicas:
+
+“Zaviren es una plataforma de IA...”
+
+“Con Zaviren puedes...”
+
+“Zaviren ofrece...”
+
+Google necesita entender qué categoría ocupa Zaviren.
+
+Yo repetiría conceptos naturales:
+
+IA privada empresarial
+
+RAG on-premise
+
+inteligencia artificial local
+
+IA para documentos
+
+RAG empresarial
+
+Pero sin hacer keyword stuffing.
+
+24. SEO geográfico
+
+Si el mercado inicial es España, trabajaría:
+
+IA para empresas España
+IA privada España
+RAG empresarial España
+IA on-premise España
+IA local empresas España
+
+Y después ciudades si existe realmente actividad comercial allí.
+
+No crearía 50 páginas:
+
+IA Madrid
+
+IA Barcelona
+
+IA Sevilla
+
+si no existe una presencia real.
+
+Eso puede generar páginas débiles.
+
+25. Pero sí trabajaría idiomas
+
+Si Zaviren puede vender fuera de España, hay una oportunidad enorme.
+
+Especialmente:
+
+español
+
+inglés
+
+y potencialmente:
+
+francés
+
+La terminología inglesa es especialmente importante:
+
+private AI
+enterprise RAG
+on-premise RAG
+private RAG
+self-hosted AI
+local AI
+enterprise AI
+AI document search
+private LLM
+on-premise LLM.
+
+Pero no traduciría automáticamente el blog.
+
+Haría páginas específicamente adaptadas a cada mercado.
+
+26. Link building
+
+Aquí no compraría 500 backlinks baratos.
+
+Para Zaviren buscaría:
+
+Medios tecnológicos
+
+Artículos:
+
+“Por qué las empresas están llevando la IA de vuelta a sus servidores”
+
+Medios empresariales
+
+“IA privada: cómo utilizar inteligencia artificial con información confidencial”
+
+Medios de ciberseguridad
+
+“RAG on-premise y soberanía de los datos”
+
+Partners tecnológicos
+integradores;
+empresas IT;
+consultoras;
+fabricantes de servidores;
+empresas de ciberseguridad.
+Universidades / investigación
+
+Si tenéis colaboración real.
+
+Eventos
+IA;
+ciberseguridad;
+industria;
+transformación digital.
+
+Un solo enlace relevante de un medio tecnológico puede valer más que decenas de directorios.
+
+27. YouTube también forma parte de la estrategia
+
+Para Zaviren lo utilizaría muchísimo.
+
+Vídeos:
+
+“Qué es un RAG en 5 minutos”
+“RAG local vs ChatGPT”
+“Cómo una empresa puede consultar 10.000 documentos con IA”
+“Qué ocurre con tus datos cuando utilizas una IA cloud”
+“Cómo funciona un RAG on-premise”
+“Demo de Zaviren”
+“IA privada para empresas: demostración real”
+
+Y cada vídeo se convierte en:
+
+YouTube → artículo → página de producto → CTA.
+
+28. Reddit, LinkedIn y comunidades técnicas
+
+Hay interés real en RAG on-premise y en empresas que buscan implementarlo. Por ejemplo, recientemente aparecen consultas de usuarios que buscan precisamente sistemas RAG totalmente locales para consultar PDFs, bases de datos y documentación interna.
+
+Eso significa que existe una oportunidad para construir autoridad temática, no solamente tráfico de Google.
+
+Yo publicaría en LinkedIn:
+
+“5 cosas que una empresa debería preguntar antes de conectar sus documentos a una IA”
+
+Y llevaría a:
+
+/ia-privada/
+
+No:
+
+/blog/post-123
+
+29. Qué NO haría
+
+Esto es casi tan importante.
+
+❌ Comprar 1.000 backlinks.
+
+❌ Publicar 100 artículos generados automáticamente.
+
+❌ Escribir artículos genéricos sobre “qué es la IA”.
+
+❌ Intentar posicionar “inteligencia artificial”.
+
+❌ Crear páginas por ciudad sin negocio real.
+
+❌ Copiar el discurso de competidores.
+
+❌ Hablar exclusivamente de tecnología.
+
+❌ Llenar las páginas de “RAG, IA, IA, RAG”.
+
+❌ Crear contenido sin CTA.
+
+❌ Hacer una web preciosa pero sin explicar exactamente qué compra el cliente.
+
+30. El funnel SEO que construiría
+
+Este sería el recorrido:
+
+                    GOOGLE
+                       │
+        ┌──────────────┼──────────────┐
+        ↓              ↓              ↓
+    "qué es RAG"   "IA privada"   "IA documentos"
+        │              │              │
+        └──────────────┼──────────────┘
+                       ↓
+                 RAG empresarial
+                       ↓
+                  RAG on-premise
+                       ↓
+                 IA privada Zaviren
+                       ↓
+                     DEMO
+                       ↓
+                  LEAD COMERCIAL
+
+Y para el usuario más avanzado:
+
+"RAG on-premise"
+       ↓
+comparativa
+       ↓
+arquitectura
+       ↓
+seguridad
+       ↓
+Zaviren
+       ↓
+demo
+31. Plan de acción: primeros 30 días
+Semana 1 — Diagnóstico
+
+Prioridad absoluta.
+
+Día 1–2
+
+Configurar/verificar:
+
+Google Search Console
+Google Analytics
+sitemap
+robots
+indexación
+Core Web Vitals
+errores
+URLs indexadas.
+Día 3–4
+
+Auditoría:
+
+títulos;
+H1;
+descriptions;
+canonicals;
+arquitectura;
+enlaces internos;
+imágenes;
+schema.
+Día 5–7
+
+Keyword research.
+
+Crear una hoja con:
+
+Keyword	Volumen	Intención	Competencia	URL
+IA privada empresas	X	Comercial	X	/ia-privada
+RAG empresarial	X	Comercial	X	/rag-empresarial
+RAG on-premise	X	Comercial	X	/rag-on-premise
+IA documentos	X	Comercial	X	/ia-documentos
+
+Los volúmenes habría que sacarlos de Search Console + Keyword Planner/Ahrefs/Semrush u otra herramienta; no inventaría cifras.
+
+32. Días 8–15
+
+Crear/reformular:
+
+Página 1
+
+Home
+
+Página 2
+
+IA privada
+
+Página 3
+
+RAG empresarial
+
+Página 4
+
+RAG on-premise
+
+Página 5
+
+IA para documentos
+
+Página 6
+
+Seguridad
+
+Página 7
+
+Demo
+
+Estas son las páginas que yo priorizaría.
+
+33. Días 16–20
+
+Crear:
+
+Comparativas
+IA privada vs ChatGPT
+RAG vs fine-tuning
+RAG local vs RAG cloud
+Guías
+Qué es RAG
+Cómo funciona un RAG empresarial
+Cómo utilizar IA con documentos confidenciales
+34. Días 21–30
+
+Construir autoridad:
+
+LinkedIn;
+YouTube;
+2–5 artículos externos;
+partners;
+medios;
+casos de uso;
+primer caso de éxito.
+
+Y empezar a medir:
+
+impresiones → clics → posición → CTR → leads.
+
+35. Mes 2
+
+Aquí empezaría el verdadero crecimiento.
+
+8–12 contenidos
+
+No todos deben ser artículos.
+
+Por ejemplo:
+
+4 artículos informativos
+
+3 páginas de casos de uso
+
+2 páginas sectoriales
+
+2 comparativas
+
+1 caso de éxito
+
+Además:
+
+5–10 backlinks de calidad;
+4–8 vídeos;
+mejora de enlazado interno.
+36. Mes 3
+
+Aquí empezaría a buscar “long tail”.
+
+Ejemplos:
+
+IA para consultar manuales técnicos
+
+IA para documentación interna
+
+IA para empresas industriales
+
+RAG para documentos PDF
+
+IA local para empresas
+
+chatbot interno con documentos
+
+asistente IA para documentación
+
+IA privada para despachos
+
+RAG para documentación técnica
+
+Cada una puede convertirse en una landing si existe suficiente intención y contenido diferencial.
+
+37. Meses 4–6
+
+Objetivo:
+
+Construir autoridad temática.
+
+Que Google empiece a asociar Zaviren con:
+
+IA empresarial
+       ↓
+IA privada
+       ↓
+RAG
+       ↓
+RAG empresarial
+       ↓
+RAG on-premise
+       ↓
+documentos empresariales
+       ↓
+seguridad / privacidad
+
+Publicaría aproximadamente:
+
+4–8 piezas de calidad/mes
+
+más:
+
+1–2 casos de éxito/mes
+
+y actividad constante en:
+
+LinkedIn;
+YouTube;
+partners;
+PR;
+comunidades.
+38. KPI que utilizaría
+
+No utilizaría solamente:
+
+“Tenemos X visitas.”
+
+Mediría:
+
+SEO
+impresiones;
+clics;
+CTR;
+keywords Top 3;
+Top 10;
+Top 20;
+páginas indexadas;
+tráfico orgánico.
+Negocio
+leads orgánicos;
+demos;
+tasa de conversión;
+coste por lead SEO;
+oportunidades;
+ventas.
+
+Y especialmente:
+
+¿Qué keywords generan oportunidades comerciales?
+
+Porque quizá:
+
+"qué es RAG" → 2.000 visitas
+
+pero:
+
+"RAG on-premise empresa" → 70 visitas y 12 leads.
+
+El segundo es muchísimo más valioso.
+
+39. Mi prioridad SEO para Zaviren
+
+Si tuviera que asignar recursos, lo haría así:
+
+Prioridad	Acción	Impacto esperado
+🔴 P0	Accesibilidad/indexación técnica	Crítico
+🔴 P1	Nueva arquitectura SEO	Muy alto
+🔴 P1	Home orientada a intención comercial	Muy alto
+🔴 P1	IA privada	Muy alto
+🔴 P1	RAG empresarial	Muy alto
+🔴 P1	RAG on-premise	Muy alto
+🟠 P2	Casos de uso	Alto
+🟠 P2	Comparativas	Alto
+🟠 P2	Casos de éxito	Alto
+🟠 P2	Contenido informacional	Alto
+🟠 P2	Link building	Alto
+🟡 P3	SEO local	Medio
+🟡 P3	Vídeo/YouTube	Medio-alto
+🟡 P3	Internacionalización	Alto a largo plazo
+40. Y hay una oportunidad estratégica aún mayor
+
+Yo no vendería Zaviren únicamente como un RAG.
+
+Posicionaría la marca como:
+
+La IA privada de la empresa.
+
+Y RAG sería el primer producto/caso de uso.
+
+Porque mañana podéis añadir:
+
+búsqueda semántica;
+asistentes internos;
+análisis de documentos;
+extracción de información;
+agentes;
+automatización;
+consultas sobre bases de datos;
+generación de informes;
+IA multimodal.
+
+Entonces la arquitectura SEO puede crecer:
+
+                    ZAVIREN
+                       │
+             ┌─────────┴─────────┐
+             │                   │
+        IA PRIVADA          IA EMPRESARIAL
+             │                   │
+       ┌─────┴─────┐       ┌─────┴─────┐
+       │           │       │           │
+      RAG       Asistente  Docs      Agentes
+       │
+ ┌─────┼──────────┐
+ │     │          │
+PDF  Word      Excel
+ │
+ ├── Industria
+ ├── Ingeniería
+ ├── Legal
+ ├── Asesoría
+ └── ...
+
+Eso convierte la web en un activo SEO, no simplemente en una página corporativa.
+
+41. Una observación importante sobre la competencia
+
+El mercado ya está utilizando mensajes como “tus datos no salen de tu empresa”, “IA privada”, “RAG empresarial” y “on-premise”. Por ejemplo, IA en Local enfatiza explícitamente procesamiento local y documentos internos; Tecnea habla de RAG e IA on-premise; y Genee está construyendo una oferta específicamente alrededor de RAG on-premise.
+
+Eso es bueno y malo:
+
+Bueno: Google ya tiene un contexto semántico claro alrededor de estas soluciones.
+
+Malo: Zaviren no puede limitarse a decir exactamente lo mismo.
+
+La diferenciación debería ser:
+
+“Te instalamos una IA que conoce tu empresa, trabaja con tu documentación y permanece dentro de tu infraestructura.”
+
+Y después demostrarlo técnicamente.
+
+42. Si yo fuera responsable de Zaviren
+
+Mi roadmap sería:
+
+AHORA
+
+Solucionar indexación + arquitectura + propuesta de valor.
+
+↓
+
+30 días
+
+7 páginas comerciales + 6 contenidos estratégicos + Search Console bien configurado.
+
+↓
+
+60 días
+
+Casos de uso + sectores + comparativas + primeros backlinks.
+
+↓
+
+90 días
+
+Casos de éxito + autoridad temática + YouTube + PR.
+
+↓
+
+6 meses
+
+Dominio asociado semánticamente a IA privada / RAG empresarial / on-premise.
+
+↓
+
+12 meses
+
+Zaviren como referencia española en IA privada empresarial.
+
+Y haría una cosa más
+
+Para hacer esto de verdad sobre Zaviren y no como un plan genérico, el siguiente paso sería analizar el sitio actual URL por URL.
+
+En particular, quiero comprobar:
+
+qué páginas tiene ahora mismo Zaviren;
+cuáles están indexadas;
+qué títulos/H1 tiene;
+qué contenido se puede conservar;
+qué páginas faltan;
+qué keywords está atacando actualmente;
+qué competidores están ganando esas búsquedas;
+cómo está la arquitectura interna;
+qué backlinks tiene;
+y qué habría que cambiar exactamente en cada página.
+
+Con esa información se puede convertir el plan anterior en un documento de ejecución, con una tabla tipo:
+
+URL actual → problema → keyword objetivo → nuevo Title → nuevo H1 → estructura H2 → contenido a añadir → enlaces internos → CTA → prioridad → esfuerzo.
+
+Ese sería el documento que yo utilizaría para que un desarrollador/copywriter pueda empezar a implementar el SEO de Zaviren inmediatamente.
+
+
+[PERPLEXITY] esto me dice:
+He analizado zaviren.com a fondo. Aquí el resumen:
+
+Diagnóstico
+La web está construida sobre una base técnica sólida (Astro, HTTPS, schema, hreflang), pero tiene problemas críticos que probablemente impiden que Google la indexe:
+
+Problemas críticos (P0)
+Posible falta de indexación: site:zaviren.com no devuelve resultados. Hay que confirmarlo en Search Console.
+
+Interstitial anti-bot del CDN: La captura muestra "Checking your browser before accessing zaviren.com" — podría bloquear a Googlebot. Verificar con Inspección de URL en vivo.
+
+www no redirige a non-www: Sirve contenido duplicado sin 301 (el canonical ayuda, pero falta el redirect).
+
+/contacto/ usa redirección JS en vez de 301: Google puede indexarla como página independiente.
+
+Search Console por verificar: Es la herramienta clave para diagnosticar indexación.
+
+Problemas moderados (P1)
+Solo 6 páginas reales: Sin blog, sin casos de uso, sin comparativas — muy poco contenido para competir.
+
+Sin política de privacidad ni aviso legal: Obligatorio en España con formularios que recogen datos.
+
+Redirección automática de idioma en JS: Puede interferir con el rastreo de Google.
+
+Organization schema duplicado en todas las páginas (debería estar solo en home).
+
+hreflang inconsistente (trailing slash).
+
+Lo que está bien
+HTTPS, redirección HTTP→HTTPS, canonicals, hreflang, Open Graph, Twitter Cards, schema Organization + FAQPage, robots.txt, sitemap-index.xml, GA4, Astro (rápido y estático), alt texts, títulos y meta descriptions correctos.
+
+Plan resumido
+30 días: Search Console, verificar interstitial anti-bot, 301 de www y /contacto/, solicitar indexación
+
+60 días: Páginas legales, landing pages de casos de uso, corregir hreflang y schema, breadcrumbs
+
+90 días: Blog con 5-10 artículos, casos de éxito, ampliar FAQ, optimizar H1 con keywords reales, link building
+
+El H1 actual "IA soberana, bajo tu control" es elegante pero no captura lo que buscaría un cliente ("IA privada para empresas", "asistente IA documentos", "RAG empresarial").
+
+Tienes el informe completo en el archivo compartido con tablas detalladas y plan de acción priorizado.
+
+Para medir visitas reales necesitarías acceso a GA4 y Search Console. Si quieres que conecte Analytics o cualquier otra fuente de datos, dímelo.
+
+
+Auditoría SEO zaviren.com
+Auditoría SEO zaviren.com
+Document
+
+El análisis con navegador ha completado y confirma mi informe, con un par de hallazgos adicionales que vale laña mencionar:
+
+Hallazgos adicionales del análisis visual:
+
+Página 404 sin enlaces: La página de error 404 ("This Page Does Not Exist") no tiene ningún enlace de vuelta a la home ni navegación — es un callejón sin salida para usuarios y crawlers. Debería incluir al menos un link a la home.
+
+H3 duplicado: "Measure and expand" aparece repetido en dos secciones diferentes — redundancia semántica menor.
+
+Campos de formulario en español en la versión inglesa: Los name attributes de los formularios están en español (nombre, apellidos, empresa) incluso en /en/ — no afecta a la UI visible pero es una inconsistencia de backend.
+
+Producto en pre-lanzamiento: La página de contacto dice "Avísame cuando esté listo" — confirma que el sitio es de captación de leads pre-launch, no de venta directa. Esto refuerza la urgencia de crear más contenido indexable para generar visibilidad orgánica antes del lanzamiento.
+
+Rendimiento excelente confirmado: Carga completa en ~398ms con solo 5 requests de red. Astro hace un gran trabajo aquí.
+
+Todos estos detalles ya están alineados con el informe que te compartí. El punto del 404 sin enlaces sería otro a añadir a la lista de P1 (arquitectura).
