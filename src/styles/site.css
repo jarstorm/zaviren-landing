@@ -694,14 +694,6 @@ form.contact-form .cta:disabled {
 	margin: 0;
 }
 
-.honey {
-	position: absolute;
-	left: -9999px;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-}
-
 .back-link {
 	color: var(--muted);
 	font-size: 0.85rem;

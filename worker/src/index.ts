@@ -12,7 +12,6 @@ interface ContactPayload {
 	locale?: "ES" | "EN";
 	wantsGuide?: boolean;
 	consent?: boolean;
-	honeypot?: string;
 }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -53,11 +52,6 @@ export default {
 			body = await request.json();
 		} catch {
 			return json({ ok: false, error: "invalid_json" }, 400, headers);
-		}
-
-		// Honeypot: bots fill hidden fields. Pretend success, skip Brevo.
-		if (body.honeypot) {
-			return json({ ok: true }, 200, headers);
 		}
 
 		const nombre = (body.nombre ?? "").trim();

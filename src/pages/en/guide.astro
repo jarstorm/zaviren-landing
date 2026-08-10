@@ -28,8 +28,6 @@ import Layout from "../../layouts/Layout.astro";
 		</div>
 		<div class="form-card">
 			<form class="contact-form" id="guide-form">
-				<input type="text" name="honeypot" class="honey" tabindex="-1" autocomplete="off" />
-
 				<div class="field">
 					<label for="nombre">First name<span class="required">*</span></label>
 					<input type="text" id="nombre" name="nombre" placeholder="First name" required />
@@ -83,7 +81,6 @@ import Layout from "../../layouts/Layout.astro";
 			locale: "EN",
 			wantsGuide: true,
 			consent: data.get("consent") === "on",
-			honeypot: data.get("honeypot"),
 		};
 
 		try {
