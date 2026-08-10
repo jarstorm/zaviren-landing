@@ -1,7 +1,7 @@
 # SEO / contenido — roadmap y progreso
 
 Documento vivo. Origen: análisis cruzado de Claude, ChatGPT y Perplexity
-sobre zaviren.com (2026-08-10, ver `todo.txt` para el texto completo de
+sobre zaviren.com (2026-08-10, ver `docs/todo.txt` para el texto completo de
 los 3 informes). Cada ítem se marca ✅ al implementarse, con fecha y nota
 de qué se hizo — mismo estilo que el catálogo de
 `/Users/javi/workspace/rag-offline/docs/operations/11-mejoras-propuestas.md`.
