@@ -26,7 +26,7 @@ de qué se hizo — mismo estilo que el catálogo de
 | 14 | Páginas sectoriales (`/ia-para-despachos/`, etc.) | P3 | ✅ | Implementado 2026-08-11 como 5 posts de blog (ES+EN) — ver detalle abajo |
 | 15 | SEO local España | P3 | ❌ | |
 | 16 | YouTube / vídeo | P3 | ❌ | |
-| 17 | Link building activo | P3 | ⚠️ | Preparación cerrada 2026-08-11 (assets + copy por sitio + tiers verificados, ver `docs/link-building.md` y detalle abajo). **Nada enviado todavía** — los envíos requieren cuentas del usuario |
+| 17 | Link building activo | P3 | ⚠️ | En marcha. Preparación cerrada 2026-08-11 (assets + copy por sitio + tiers verificados) y **primer envío hecho: AlternativeTo**, pendiente de aprobación. Resto de sitios sin enviar. Estado vivo en `docs/link-building.md`; detalle abajo |
 | 18 | Internacionalización más allá de ES/EN | P3 | ❌ | |
 
 ## Detalle #9 — Página ancla `/ia-privada/` (2026-08-11)
@@ -472,3 +472,25 @@ Estado: **preparado, no enviado**. Todo el detalle vivo está en
 Lo que queda es enteramente del usuario: crear cuentas, verificar dominio
 y enviar. Un agente puede rellenar los formularios en una sesión de Chrome
 ya logueada, pero no crear cuentas ni postear como él.
+
+### Primer envío: AlternativeTo (2026-08-11)
+
+Enviado con el usuario logueado: agente rellena, usuario pulsa el botón.
+App id `83d9b2b4-7370-4b69-a4a5-c9174258a56f`, URL futura
+`https://alternativeto.net/software/zaviren/`. Sugeridas 3 alternativas
+(Microsoft 365 Copilot, AnythingLLM, Private GPT) — paso no opcional: el
+propio sitio avisa de que una app sin alternativas es casi invisible allí.
+
+Todo (app + alternativas) queda en **cola de aprobación manual**, meses en
+la vía gratuita; el sitio pide no compartir el link hasta que se apruebe.
+Hay opción de pagar $5 para revisión en 1-2 días laborables — decisión
+pendiente del usuario.
+
+### Estado por sitio y siguiente paso
+
+Retomar por `docs/link-building.md`, que tiene el copy ya redactado por
+sitio y las longitudes verificadas. Orden sugerido cuando se retome:
+G2 (perfil gratis, cubre también Capterra/GetApp/Software Advice desde la
+compra de ene-2026), LinkedIn Company Page, Crunchbase, SaaSHub, Google
+Business Profile. Product Hunt aparte, es un evento de un día y conviene
+prepararlo con fecha.
