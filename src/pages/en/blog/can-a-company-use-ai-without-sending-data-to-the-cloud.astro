@@ -1,0 +1,275 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import BackLink from "../../../components/BackLink.astro";
+
+const publishedDate = "2026-08-11";
+const title = "Can a company use AI without sending data to the cloud? — Zaviren";
+const description =
+	"Yes: with your own server and local RAG your team gets AI without a single document leaving your network. What it takes, how it works, and what to ask before you start.";
+
+const faq = [
+	{
+		q: "Is that the same as installing ChatGPT on your own server?",
+		a: "No — OpenAI doesn't sell ChatGPT as software you install on your infrastructure. What you install on your own server are open-source language models (Llama, Mistral, Qwen and similar), running entirely inside your network.",
+	},
+	{
+		q: "Does the model work as well as ChatGPT?",
+		a: "For answering questions about your own documents, yes — quality mostly depends on the search layer (RAG) over your content, not on the model having memorized it. For very broad general knowledge, ChatGPT still has more world knowledge behind it.",
+	},
+	{
+		q: "How long does it take to set up?",
+		a: "A scoped pilot with one concrete use case and a few hundred documents is usually running within weeks, not months.",
+	},
+	{
+		q: "Do I need an in-house AI team to maintain it?",
+		a: "Not to get started. Sizing, deployment and initial tuning are done with the provider; ongoing maintenance is comparable to any other internal application.",
+	},
+];
+---
+
+<Layout
+	lang="en"
+	title={title}
+	description={description}
+	altHref="/blog/puede-empresa-usar-ia-sin-nube"
+>
+	<article>
+		<section class="hero">
+			<span class="eyebrow">Blog</span>
+			<h1>Can a company use <span class="gradient">AI without sending data to the cloud</span>?</h1>
+			<p class="subtitle">
+				Yes. The point isn't giving up on AI — it's changing where it runs.
+				Instead of sending every question to a third party's server, the
+				model and the search over your documents live inside your own
+				infrastructure.
+			</p>
+			<div class="post-meta">
+				<span class="badge">Aug 11, 2026</span>
+				<span class="badge">5 min read</span>
+			</div>
+			<div class="cta-row">
+				<a class="cta" href="/en/contact">Tell us your case</a>
+				<a class="cta cta-secondary" href="/en/guide">Download the free guide</a>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="callout">
+				<span class="eyebrow">Quick answer</span>
+				<p>
+					<strong>Yes, it's possible.</strong> Tools like ChatGPT or Copilot
+					process every query on the provider's cloud, which is a problem the
+					moment that query includes contracts, customer data or strategic
+					information. The alternative isn't banning AI at work — it's
+					deploying a language model and a document search engine
+					(<a href="/en/rag-for-business">RAG</a>) inside your own network,
+					on a server your company controls. No question, no answer and no
+					document ever leaves it. We call this <a href="/en/private-ai">private AI</a>.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">01 · Context</span>
+				<h2>Why this question <span class="gradient">comes up now</span></h2>
+			</div>
+			<div class="prose">
+				<p>
+					Generative AI adoption at work moved faster than the legal and
+					security review that usually precedes a new tool in a company. The
+					common result: employees pasting contract snippets or customer data
+					into ChatGPT to save time, with nobody having evaluated what
+					happens to that data once it's sent. For legal, compliance, or
+					simply the business owner, the question stops being "do we use
+					AI?" and becomes "how do we use it without giving away what makes
+					us competitive?"
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="split">
+				<div class="copy">
+					<span class="eyebrow">02 · Architecture</span>
+					<h2>What <span class="gradient">"without sending data to the cloud"</span> actually means</h2>
+					<p>
+						It's not a marketing promise about encryption or confidentiality
+						contracts with a vendor — it's a difference in architecture. In
+						the usual setup (ChatGPT, Copilot, most enterprise assistants),
+						your question travels over the internet to a server you don't
+						control, gets processed there, and the answer comes back. In the
+						private AI setup, that server is yours: it sits in your office
+						or your datacenter, connected only to your internal network.
+					</p>
+					<p>
+						The language model runs locally, the search over your documents
+						runs locally, and the orchestration between both runs locally
+						too. There's no point in the process where content leaves to the
+						internet — and, as a bonus, the system keeps working even if the
+						office's internet connection goes down.
+					</p>
+				</div>
+				<div class="illustration">
+					<img src="/images/secure-server.svg" alt="Person protecting their own server with a shield" width="400" height="262" />
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">03 · Implementation</span>
+				<h2>What it takes <span class="gradient">to implement</span></h2>
+				<p>Three pieces, all inside your network.</p>
+			</div>
+			<div class="cap-grid">
+				<div class="card">
+					<span class="cap-num">01</span>
+					<div>
+						<h3>A dedicated server</h3>
+						<p>Sized to your document volume and concurrent users — a pilot with a few hundred documents runs on moderate hardware, without needing a high-end GPU.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">02</span>
+					<div>
+						<h3>Indexing your documents</h3>
+						<p>It connects to the shared drive, intranet or document manager you already use — nothing needs to move to get started.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">03</span>
+					<div>
+						<h3>An open-source model</h3>
+						<p>Not ChatGPT: models like Llama, Mistral or Qwen, among others, running on that server alongside the search engine.</p>
+					</div>
+				</div>
+			</div>
+			<div class="prose">
+				<p>
+					The full technical detail of how these pieces connect is in the <a href="/en/rag-for-business">enterprise RAG</a> guide.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">04 · Compliance</span>
+				<h2>GDPR <span class="gradient">and compliance</span></h2>
+			</div>
+			<div class="prose">
+				<p>
+					Since there's no data transfer to a third party, this model avoids
+					a good chunk of the compliance questions that do apply when using
+					an external provider: where data is stored, under what legal basis
+					it's processed, whether there's international transfer. It's not
+					that there's less to audit — it's that there's a smaller surface to
+					audit, because the data never leaves your perimeter.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">05 · FAQ</span>
+				<h2>Before you <span class="gradient">ask</span></h2>
+			</div>
+			<div class="faq-list">
+				{faq.map((item) => (
+					<details class="faq-item">
+						<summary>{item.q}</summary>
+						<p>{item.a}</p>
+					</details>
+				))}
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="final-cta">
+				<div>
+					<h2>Let's see it with your data</h2>
+					<p>A 30-minute call to see which case makes sense to start with in your company.</p>
+				</div>
+				<a class="cta" href="/en/contact">Book a call</a>
+			</div>
+		</section>
+
+		<BackLink lang="en" />
+	</article>
+</Layout>
+
+<style>
+	.post-meta {
+		display: flex;
+		justify-content: center;
+		gap: 0.6rem;
+		margin-top: 1.2rem;
+	}
+	.post-meta .badge {
+		font-size: 0.75rem;
+		color: var(--muted);
+	}
+	.callout {
+		max-width: 720px;
+		margin: 0 auto;
+		border: 1px solid var(--border);
+		border-left: 3px solid var(--blue);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.6rem 1.8rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.callout p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+	.prose {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.prose p {
+		margin: 0 0 1.1rem;
+		line-height: 1.7;
+	}
+	.prose p:last-child {
+		margin-bottom: 0;
+	}
+	.prose a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: var(--border);
+		text-underline-offset: 3px;
+	}
+	.prose a:hover {
+		text-decoration-color: currentColor;
+	}
+	.cap-grid + .prose {
+		margin-top: 1.8rem;
+		text-align: center;
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: "Can a company use AI without sending data to the cloud?",
+	description,
+	datePublished: publishedDate,
+	dateModified: publishedDate,
+	author: { "@type": "Organization", name: "Zaviren" },
+	publisher: { "@type": "Organization", name: "Zaviren" },
+	mainEntityOfPage: "https://zaviren.com/en/blog/can-a-company-use-ai-without-sending-data-to-the-cloud",
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faq.map((item) => ({
+		"@type": "Question",
+		name: item.q,
+		acceptedAnswer: { "@type": "Answer", text: item.a },
+	})),
+})} />

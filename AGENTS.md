@@ -1,5 +1,8 @@
 ## Deploy
 
+**No hacer `git push` (a `main` ni a `deploy`) salvo que el usuario lo pida
+explícitamente en ese momento** — commitear localmente está bien, pushear no.
+
 Antes de cada push, generar `dist/` con `npm run build` y añadirlo al commit.
 
 Hostinger sirve el sitio desde la rama `deploy` (orphan branch, sin

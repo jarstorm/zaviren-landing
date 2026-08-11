@@ -180,6 +180,7 @@ import Layout from "../../layouts/Layout.astro";
 		<div class="detail-links">
 			<a class="detail-btn detail-btn-blue" href="/en/private-ai">How private AI works, in detail →</a>
 			<a class="detail-btn detail-btn-purple" href="/en/rag-for-business">What enterprise RAG is, in detail →</a>
+			<a class="detail-btn detail-btn-outline" href="/en/blog/can-a-company-use-ai-without-sending-data-to-the-cloud">Can your company use AI without sending data to the cloud? →</a>
 		</div>
 	</section>
 
@@ -358,6 +359,15 @@ import Layout from "../../layouts/Layout.astro";
 	}
 	.detail-btn-purple {
 		background: var(--purple);
+	}
+	.detail-btn-outline {
+		background: transparent;
+		border: 1px solid var(--border);
+		color: var(--text);
+	}
+	.detail-btn-outline:hover {
+		filter: none;
+		border-color: var(--blue);
 	}
 </style>
 
