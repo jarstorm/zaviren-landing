@@ -21,9 +21,6 @@ import BackLink from "../../components/BackLink.astro";
 			<a class="cta" href="/en/contact">Tell us about your case</a>
 			<a class="cta cta-secondary" href="/en/guide">Download the free guide</a>
 		</div>
-		<div class="hero-illustration">
-			<img src="/images/file-searching.svg" alt="Person finding the exact document among many files" width="400" height="335" />
-		</div>
 	</section>
 
 	<section class="block">
@@ -161,10 +158,15 @@ import BackLink from "../../components/BackLink.astro";
 	</section>
 
 	<section class="block">
-		<div class="block-head">
-			<span class="eyebrow">05 · Comparison</span>
-			<h2>Enterprise RAG <span class="gradient">vs internal search</span></h2>
-			<p>Classic intranet or document-manager search indexes words. RAG understands questions.</p>
+		<div class="split split-img-first">
+			<div class="illustration">
+				<img src="/images/file-searching.svg" alt="Person finding the exact document among many files" width="400" height="335" />
+			</div>
+			<div class="copy">
+				<span class="eyebrow">05 · Comparison</span>
+				<h2>Enterprise RAG <span class="gradient">vs internal search</span></h2>
+				<p>Classic intranet or document-manager search indexes words. RAG understands questions.</p>
+			</div>
 		</div>
 		<div class="compare-grid">
 			<div class="compare-row compare-header">
@@ -238,6 +240,14 @@ import BackLink from "../../components/BackLink.astro";
 </Layout>
 
 <style>
+	.split-img-first {
+		grid-template-columns: 0.9fr 1.1fr;
+	}
+	@media (max-width: 720px) {
+		.split-img-first {
+			grid-template-columns: 1fr;
+		}
+	}
 	.compare-grid {
 		display: grid;
 		gap: 0.5rem;

@@ -21,9 +21,6 @@ import BackLink from "../components/BackLink.astro";
 			<a class="cta" href="/contact">Cuéntanos tu caso</a>
 			<a class="cta cta-secondary" href="/guide">Descarga la guía gratuita</a>
 		</div>
-		<div class="hero-illustration">
-			<img src="/images/file-searching.svg" alt="Persona encontrando el documento exacto entre varios ficheros" width="400" height="335" />
-		</div>
 	</section>
 
 	<section class="block">
@@ -162,10 +159,15 @@ import BackLink from "../components/BackLink.astro";
 	</section>
 
 	<section class="block">
-		<div class="block-head">
-			<span class="eyebrow">05 · Comparativa</span>
-			<h2>RAG empresarial <span class="gradient">vs buscador interno</span></h2>
-			<p>El buscador clásico de intranet o gestor documental indexa palabras. RAG entiende preguntas.</p>
+		<div class="split split-img-first">
+			<div class="illustration">
+				<img src="/images/file-searching.svg" alt="Persona encontrando el documento exacto entre varios ficheros" width="400" height="335" />
+			</div>
+			<div class="copy">
+				<span class="eyebrow">05 · Comparativa</span>
+				<h2>RAG empresarial <span class="gradient">vs buscador interno</span></h2>
+				<p>El buscador clásico de intranet o gestor documental indexa palabras. RAG entiende preguntas.</p>
+			</div>
 		</div>
 		<div class="compare-grid">
 			<div class="compare-row compare-header">
@@ -239,6 +241,14 @@ import BackLink from "../components/BackLink.astro";
 </Layout>
 
 <style>
+	.split-img-first {
+		grid-template-columns: 0.9fr 1.1fr;
+	}
+	@media (max-width: 720px) {
+		.split-img-first {
+			grid-template-columns: 1fr;
+		}
+	}
 	.compare-grid {
 		display: grid;
 		gap: 0.5rem;

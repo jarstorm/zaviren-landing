@@ -225,34 +225,6 @@ section.hero .badges {
 	margin-top: 0.5rem;
 }
 
-.hero-illustration {
-	position: relative;
-	max-width: 320px;
-	width: 100%;
-	margin: 0.5rem auto 0;
-	padding: 1.75rem;
-	border-radius: 28px;
-	background: linear-gradient(145deg, #ffffff14, #ffffff06);
-	border: 1px solid var(--border);
-}
-
-.hero-illustration::before {
-	content: "";
-	position: absolute;
-	inset: -25%;
-	z-index: -1;
-	background:
-		radial-gradient(closest-side, #3b82f640, transparent 70%),
-		radial-gradient(closest-side, #8b5cf633, transparent 70%);
-	filter: blur(32px);
-}
-
-.hero-illustration img {
-	display: block;
-	width: 100%;
-	height: auto;
-}
-
 /* Generic content section */
 section.block {
 	padding: 4rem 0;
@@ -348,11 +320,28 @@ section.block {
 }
 
 .illustration {
+	position: relative;
 	display: flex;
 	justify-content: center;
+	padding: 1.5rem;
+	border-radius: 24px;
+	background: linear-gradient(145deg, #ffffff14, #ffffff06);
+	border: 1px solid var(--border);
 }
 
-.illustration svg {
+.illustration::before {
+	content: "";
+	position: absolute;
+	inset: -20%;
+	z-index: -1;
+	background:
+		radial-gradient(closest-side, #3b82f640, transparent 70%),
+		radial-gradient(closest-side, #8b5cf633, transparent 70%);
+	filter: blur(28px);
+}
+
+.illustration svg,
+.illustration img {
 	width: 100%;
 	max-width: 300px;
 	height: auto;
@@ -492,7 +481,8 @@ section.block {
 	margin: 0;
 }
 
-.solution-card .illustration svg {
+.solution-card .illustration svg,
+.solution-card .illustration img {
 	max-width: 160px;
 }
 
