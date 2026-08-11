@@ -10,7 +10,7 @@ const description =
 const faq = [
 	{
 		q: "Can it find anything in scanned PDF minutes?",
-		a: "Yes, as long as the PDF has a text layer or OCR is applied during indexing. This is very common in property management: most of the history is scanned and currently unsearchable.",
+		a: "OCR is applied during indexing, so generally yes. The result depends on scan quality: a clean PDF reads well; a skewed, low-resolution one, or one covered in handwritten notes, may come out incomplete. This matters a lot in property management, where most of the history is scanned and currently unsearchable.",
 	},
 	{
 		q: "Why not just use a cloud tool?",
@@ -109,7 +109,7 @@ const faq = [
 					<span class="cap-num">01</span>
 					<div>
 						<h3>Searches inside the minutes, not the filename</h3>
-						<p>"What was agreed about installing the lift?" returns the resolution, the minutes and the date, even from a 2019 scan.</p>
+						<p>"What was agreed about installing the lift?" returns the passage from the minutes, cited — including a 2019 scan, because indexing runs OCR over it.</p>
 					</div>
 				</div>
 				<div class="card">
@@ -122,8 +122,8 @@ const faq = [
 				<div class="card">
 					<span class="cap-num">03</span>
 					<div>
-						<h3>Compares and locates clauses across contracts</h3>
-						<p>Which leases expire, which have a pending rent review or a specific clause — without opening them one at a time.</p>
+						<h3>Finds clauses without reading the whole contract</h3>
+						<p>Ask about the rent review, the deposit or the term of a specific lease and it returns the passage, citing the contract.</p>
 					</div>
 				</div>
 				<div class="card">
@@ -171,8 +171,11 @@ const faq = [
 					It does not keep the buildings' accounts or replace your management
 					software: it issues no invoices, raises no assessments and signs no
 					certificates. It gives no legal opinion on property law — that is the
-					manager's job. And it cannot find what was never written: if something
-					was agreed verbally, there is no document to retrieve it from.
+					manager's job. It cannot find what was never written: if something was
+					agreed verbally, there is no document to retrieve it from. And it
+					produces no exhaustive listings ("which leases expire this month"): it
+					answers over the documents it retrieves for each question, not by
+					sweeping the whole collection.
 				</p>
 			</div>
 		</section>

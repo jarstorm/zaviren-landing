@@ -10,7 +10,7 @@ const description =
 const faq = [
 	{
 		q: "¿Encuentra algo en actas escaneadas en PDF?",
-		a: "Sí, siempre que el PDF tenga texto o se le pase OCR en la indexación. Es un caso muy frecuente en fincas: la mayor parte del histórico está escaneado y hoy es inbuscable.",
+		a: "En la indexación se les pasa OCR, así que en general sí. El resultado depende de la calidad del escaneo: un PDF nítido se lee bien; uno torcido, con poca resolución o con anotaciones a mano puede quedar incompleto. Es un caso muy frecuente en fincas, donde la mayor parte del histórico está escaneado y hoy es inbuscable.",
 	},
 	{
 		q: "¿Por qué no usar una herramienta en la nube y ya?",
@@ -110,7 +110,7 @@ const faq = [
 					<span class="cap-num">01</span>
 					<div>
 						<h3>Busca dentro de las actas, no en el nombre del archivo</h3>
-						<p>"¿Qué se acordó sobre la instalación del ascensor?" devuelve el acuerdo, el acta y la fecha, aunque esté en un escaneo de 2019.</p>
+						<p>"¿Qué se acordó sobre la instalación del ascensor?" devuelve el pasaje del acta, citándola — también si es un escaneo de 2019, porque la indexación le pasa OCR.</p>
 					</div>
 				</div>
 				<div class="card">
@@ -123,8 +123,8 @@ const faq = [
 				<div class="card">
 					<span class="cap-num">03</span>
 					<div>
-						<h3>Compara y localiza cláusulas entre contratos</h3>
-						<p>Qué contratos vencen, cuáles tienen revisión de renta pendiente o una cláusula concreta, sin abrirlos uno a uno.</p>
+						<h3>Localiza cláusulas sin leerse el contrato entero</h3>
+						<p>Preguntas por la revisión de renta, la fianza o el plazo de un arrendamiento concreto y te devuelve el pasaje, citando el contrato.</p>
 					</div>
 				</div>
 				<div class="card">
@@ -173,9 +173,11 @@ const faq = [
 					No lleva la contabilidad de las comunidades ni sustituye a vuestro
 					software de gestión: no emite recibos, no gira derramas y no firma
 					certificados. No da criterio jurídico sobre la Ley de Propiedad
-					Horizontal — para eso está el administrador. Y no encuentra lo que
-					nunca se escribió: si un acuerdo se tomó de palabra, no hay documento
-					del que recuperarlo.
+					Horizontal — para eso está el administrador. No encuentra lo que nunca
+					se escribió: si un acuerdo se tomó de palabra, no hay documento del que
+					recuperarlo. Y no hace listados exhaustivos del archivo ("qué contratos
+					vencen este mes"): responde sobre los documentos que recupera en cada
+					consulta, no barriendo la colección entera.
 				</p>
 			</div>
 		</section>
