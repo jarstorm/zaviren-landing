@@ -1,0 +1,63 @@
+---
+interface Props {
+	lang: "es" | "en";
+}
+
+const { lang } = Astro.props;
+const gaId = "G-EXXBQFZ869";
+const cookiesHref = lang === "es" ? "/cookies" : "/en/cookies";
+---
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+	<p>
+		{
+			lang === "es"
+				? "Usamos cookies analíticas (Google Analytics) para entender el uso del sitio. Solo se activan si las aceptas. "
+				: "We use analytics cookies (Google Analytics) to understand site usage. They're only activated if you accept. "
+		}
+		<a href={cookiesHref}>{lang === "es" ? "Más información" : "Learn more"}</a>
+	</p>
+	<div class="cookie-actions">
+		<button type="button" id="cookie-reject" class="cta cta-secondary">
+			{lang === "es" ? "Rechazar" : "Reject"}
+		</button>
+		<button type="button" id="cookie-accept" class="cta">
+			{lang === "es" ? "Aceptar" : "Accept"}
+		</button>
+	</div>
+</div>
+
+<script define:vars={{ gaId }}>
+	const CONSENT_KEY = "zaviren_cookie_consent";
+	const banner = document.getElementById("cookie-banner");
+	const acceptBtn = document.getElementById("cookie-accept");
+	const rejectBtn = document.getElementById("cookie-reject");
+
+	function loadAnalytics() {
+		if (window.zavirenAnalyticsLoaded) return;
+		window.zavirenAnalyticsLoaded = true;
+		const script = document.createElement("script");
+		script.async = true;
+		script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+		document.head.appendChild(script);
+		window.gtag("config", gaId);
+	}
+
+	const consent = localStorage.getItem(CONSENT_KEY);
+	if (consent === "accepted") {
+		loadAnalytics();
+	} else if (consent !== "rejected") {
+		banner.hidden = false;
+	}
+
+	acceptBtn.addEventListener("click", () => {
+		localStorage.setItem(CONSENT_KEY, "accepted");
+		loadAnalytics();
+		banner.hidden = true;
+	});
+
+	rejectBtn.addEventListener("click", () => {
+		localStorage.setItem(CONSENT_KEY, "rejected");
+		banner.hidden = true;
+	});
+</script>

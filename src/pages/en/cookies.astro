@@ -1,0 +1,71 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BackLink from "../../components/BackLink.astro";
+import { legalEntity } from "../../data/legal";
+---
+
+<Layout
+	lang="en"
+	title="Cookie policy — Zaviren"
+	description="Which cookies zaviren.com uses, why, and how to manage your consent."
+	altHref="/cookies"
+>
+	<section class="legal">
+		<span class="eyebrow">Legal</span>
+		<h1>Cookie policy</h1>
+		<p class="updated">Last updated: 2026-08-11</p>
+		<p class="legal-note">
+			This is an informational translation. The Spanish version is the
+			legally binding one — see <a href="/cookies">Política de cookies</a>.
+		</p>
+
+		<h2>1. What cookies are</h2>
+		<p>
+			Cookies are small files stored in your browser when you visit a
+			website. They help remember information about your visit, such as
+			preferences or, for analytics cookies, how the site is being used.
+		</p>
+
+		<h2>2. Cookies we use</h2>
+		<p><strong>{legalEntity.domain}</strong> uses the following cookies:</p>
+		<ul>
+			<li>
+				<strong>Consent preference (necessary):</strong> we store your
+				choice to accept or reject analytics cookies in your browser's
+				local storage (technically not a cookie, but serves the same
+				purpose). No consent is required since it's strictly necessary
+				for the banner to work.
+			</li>
+			<li>
+				<strong>Google Analytics (analytics, optional):</strong> if you
+				accept analytics cookies, we use Google Analytics (Google Ireland
+				Ltd.) to measure aggregate site visits and usage. It sets cookies
+				such as <code>_ga</code>, <code>_ga_*</code> and <code>_gid</code>, lasting up to 2 years. More information in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.
+			</li>
+		</ul>
+		<p>We do not use advertising cookies or third-party cookies for commercial purposes.</p>
+
+		<h2>3. Legal basis</h2>
+		<p>
+			Analytics cookies are only activated if you consent through the
+			banner shown on your first visit. You can reject them without
+			affecting your ability to browse the site.
+		</p>
+
+		<h2>4. Managing your consent</h2>
+		<p>
+			You can change your decision at any time by clearing this site's
+			browsing data/local storage in your browser — the banner will
+			appear again on your next visit. You can also block or delete
+			cookies from your browser settings (Chrome, Firefox, Safari and
+			Edge usually offer this under "Privacy and security").
+		</p>
+
+		<h2>5. More information</h2>
+		<p>
+			For more detail on how we handle your data, see our <a href="/en/privacy">privacy policy</a>.
+		</p>
+
+		<BackLink lang="en" />
+	</section>
+</Layout>

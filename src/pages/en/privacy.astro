@@ -1,0 +1,98 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BackLink from "../../components/BackLink.astro";
+import { legalEntity } from "../../data/legal";
+---
+
+<Layout
+	lang="en"
+	title="Privacy policy — Zaviren"
+	description="How we handle your personal data on zaviren.com: purpose, legal basis, processors and your rights."
+	altHref="/privacidad"
+>
+	<section class="legal">
+		<span class="eyebrow">Legal</span>
+		<h1>Privacy policy</h1>
+		<p class="updated">Last updated: 2026-08-11</p>
+		<p class="legal-note">
+			This is an informational translation. The Spanish version is the
+			legally binding one — see <a href="/privacidad">Política de privacidad</a>.
+		</p>
+
+		<h2>1. Data controller</h2>
+		<p>
+			<strong>{legalEntity.companyName}</strong>, tax ID {legalEntity.taxId}, registered address {legalEntity.address}, is the
+			controller of the personal data we collect through this website.
+			For any data-protection question, contact us at <a href={`mailto:${legalEntity.dpoEmail}`}>{legalEntity.dpoEmail}</a>.
+		</p>
+
+		<h2>2. What we collect and why</h2>
+		<p>
+			Through the contact and guide-request forms we collect: first name,
+			last name, email and company. We use this data to:
+		</p>
+		<ul>
+			<li>Respond to your contact request or commercial inquiry.</li>
+			<li>Send you the downloadable guide, if requested through the corresponding form.</li>
+			<li>
+				Send you communications about our products and services, only if
+				you checked the consent box on the form.
+			</li>
+		</ul>
+
+		<h2>3. Legal basis</h2>
+		<p>
+			The legal basis for processing is your explicit consent, given by
+			checking the corresponding box and submitting the form (GDPR art.
+			6.1.a).
+		</p>
+
+		<h2>4. Processors and recipients</h2>
+		<p>
+			We do not share your data with third parties for purposes other
+			than those stated. To provide the service, we work with the
+			following processors:
+		</p>
+		<ul>
+			<li><strong>Brevo</strong> (Sendinblue SAS, France) — contact management and email sending.</li>
+			<li><strong>Cloudflare</strong> — processes the form submission (Cloudflare Workers) before forwarding it to Brevo.</li>
+			<li><strong>{legalEntity.hostingProvider}</strong> — website hosting.</li>
+		</ul>
+		<p>
+			If you consent to Google Analytics, Google (Google Ireland Ltd.)
+			also acts as a processor — see our <a href="/en/cookies">cookie policy</a> for details.
+		</p>
+
+		<h2>5. Retention period</h2>
+		<p>
+			We keep your data for as long as there is an active business
+			relationship or until you request its deletion. Otherwise, we
+			periodically review and remove data that is no longer needed.
+		</p>
+
+		<h2>6. Your rights</h2>
+		<p>
+			You can exercise your rights of access, rectification, erasure,
+			objection, restriction of processing and portability by writing to <a href={`mailto:${legalEntity.dpoEmail}`}>{legalEntity.dpoEmail}</a>.
+			If you believe we haven't handled your request properly, you can
+			file a complaint with the Spanish Data Protection Agency (AEPD), <a href="https://www.aepd.es" target="_blank" rel="noopener">aepd.es</a>.
+		</p>
+
+		<h2>7. Security</h2>
+		<p>
+			We apply reasonable technical and organizational measures to
+			protect your data against unauthorized access, loss or alteration.
+		</p>
+
+		<h2>8. Minors</h2>
+		<p>This website is not directed at minors.</p>
+
+		<h2>9. Changes to this policy</h2>
+		<p>
+			We may update this policy to reflect regulatory or website changes.
+			We recommend reviewing it periodically.
+		</p>
+
+		<BackLink lang="en" />
+	</section>
+</Layout>

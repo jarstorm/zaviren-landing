@@ -1,0 +1,89 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BackLink from "../components/BackLink.astro";
+import { legalEntity } from "../data/legal";
+---
+
+<Layout
+	lang="es"
+	title="Aviso legal — Zaviren"
+	description="Aviso legal de zaviren.com: identificación del titular, condiciones de uso y propiedad intelectual."
+	altHref="/en/legal-notice"
+>
+	<section class="legal">
+		<span class="eyebrow">Legal</span>
+		<h1>Aviso legal</h1>
+		<p class="updated">Última actualización: 2026-08-11</p>
+
+		<h2>1. Datos identificativos</h2>
+		<p>
+			En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de
+			Servicios de la Sociedad de la Información y de Comercio Electrónico
+			(LSSI-CE), se informa de los siguientes datos: el titular de este
+			sitio web ({legalEntity.domain}) es <strong>{legalEntity.companyName}</strong>,
+			con NIF/CIF <strong>{legalEntity.taxId}</strong> y domicilio en <strong>{legalEntity.address}</strong>.
+			{legalEntity.registryInfo}. Puedes contactar con nosotros en <a href={`mailto:${legalEntity.contactEmail}`}>{legalEntity.contactEmail}</a>.
+		</p>
+
+		<h2>2. Objeto</h2>
+		<p>
+			Este sitio web tiene como finalidad informar sobre los productos y
+			servicios de {legalEntity.companyName} y permitir el contacto comercial
+			de los usuarios interesados a través de los formularios habilitados
+			al efecto.
+		</p>
+
+		<h2>3. Condiciones de uso</h2>
+		<p>
+			El acceso y uso de este sitio web atribuye la condición de usuario e
+			implica la aceptación de las condiciones incluidas en este aviso
+			legal. El usuario se compromete a hacer un uso adecuado de los
+			contenidos y servicios ofrecidos, y a no emplearlos para incurrir en
+			actividades ilícitas, contrarias a la buena fe o al orden público.
+		</p>
+
+		<h2>4. Propiedad intelectual e industrial</h2>
+		<p>
+			Los contenidos de este sitio web (textos, diseño, marcas, logotipos y
+			demás elementos) son titularidad de {legalEntity.companyName} o de
+			terceros que han autorizado su uso, y están protegidos por la
+			normativa de propiedad intelectual e industrial. Queda prohibida su
+			reproducción, distribución o transformación sin autorización previa
+			del titular.
+		</p>
+
+		<h2>5. Enlaces a terceros</h2>
+		<p>
+			Este sitio puede contener enlaces a páginas web de terceros.{" "}
+			{legalEntity.companyName} no se responsabiliza del contenido ni de las
+			prácticas de privacidad de dichos sitios, ajenos a nuestro control.
+		</p>
+
+		<h2>6. Exclusión de responsabilidad</h2>
+		<p>
+			{legalEntity.companyName} no garantiza la disponibilidad y continuidad
+			del funcionamiento del sitio web, ni se hace responsable de los daños
+			que pudieran derivarse de la falta de disponibilidad o de fallos de
+			acceso, sin perjuicio de las medidas razonables que adopta para
+			evitarlos.
+		</p>
+
+		<h2>7. Legislación aplicable</h2>
+		<p>
+			Las presentes condiciones se rigen por la legislación española. Para
+			cualquier controversia derivada del acceso o uso de este sitio web,
+			las partes se someten a los juzgados y tribunales del domicilio del
+			titular, salvo que la normativa de protección de consumidores
+			establezca otro fuero.
+		</p>
+
+		<h2>8. Modificaciones</h2>
+		<p>
+			{legalEntity.companyName} se reserva el derecho a modificar este aviso
+			legal para adaptarlo a novedades legislativas o cambios en el sitio
+			web. Se recomienda revisar esta página periódicamente.
+		</p>
+
+		<BackLink lang="es" />
+	</section>
+</Layout>

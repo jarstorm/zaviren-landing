@@ -1,0 +1,11 @@
+---
+interface Props {
+	lang: "es" | "en";
+}
+
+const { lang } = Astro.props;
+const href = lang === "es" ? "/" : "/en/";
+const text = lang === "es" ? "Volver a la portada" : "Back to home";
+---
+
+<a class="back-link" href={href}>&larr; {text}</a>

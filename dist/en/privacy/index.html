@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v7.1.6"><meta name="description" content="How we handle your personal data on zaviren.com: purpose, legal basis, processors and your rights."><title>Privacy policy — Zaviren</title><link rel="canonical" href="https://zaviren.com/en/privacy/"><link rel="alternate" hreflang="es" href="https://zaviren.com/privacidad"><link rel="alternate" hreflang="en" href="https://zaviren.com/en/privacy/"><link rel="alternate" hreflang="x-default" href="https://zaviren.com/privacidad"><meta property="og:type" content="website"><meta property="og:title" content="Privacy policy — Zaviren"><meta property="og:description" content="How we handle your personal data on zaviren.com: purpose, legal basis, processors and your rights."><meta property="og:url" content="https://zaviren.com/en/privacy/"><meta property="og:image" content="https://zaviren.com/og-image.png"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="es_ES"><meta property="og:site_name" content="Zaviren"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Privacy policy — Zaviren"><meta name="twitter:description" content="How we handle your personal data on zaviren.com: purpose, legal basis, processors and your rights."><meta name="twitter:image" content="https://zaviren.com/og-image.png"><script type="module">window.dataLayer=window.dataLayer||[];function e(){dataLayer.push(arguments)}window.gtag=e,e(`js`,new Date),document.addEventListener(`click`,t=>{let n=t.target.closest(`a.cta`);n&&e(`event`,`cta_click`,{link_url:n.getAttribute(`href`),link_text:n.textContent?.trim(),page_path:window.location.pathname})});</script><link rel="stylesheet" href="/_astro/Layout.CF1xFNko.css"></head><body><div class="wrap"><header class="topbar"><a class="logo" href="/en/"><img class="logo-mark" src="/favicon.svg" alt="Zaviren" width="26" height="20"><span class="logo-word">ZAVIREN</span></a><a class="lang-link" href="/privacidad"><span class="flag">🇪🇸</span> ES</a></header><main><section class="legal"><span class="eyebrow">Legal</span><h1>Privacy policy</h1><p class="updated">Last updated: 2026-08-11</p><p class="legal-note">This is an informational translation. The Spanish version is the legally binding one — see <a href="/privacidad">Política de privacidad</a>.</p><h2>1. Data controller</h2><p><strong>[PENDIENTE: razón social — autónomo o sociedad, ej. &quot;Zaviren S.L.&quot;]</strong>, tax ID [PENDIENTE: NIF/CIF], registered address [PENDIENTE: domicilio completo], is the controller of the personal data we collect through this website. For any data-protection question, contact us at <a href="mailto:contact@zaviren.com">contact@zaviren.com</a>.</p><h2>2. What we collect and why</h2><p>Through the contact and guide-request forms we collect: first name, last name, email and company. We use this data to:</p><ul><li>Respond to your contact request or commercial inquiry.</li><li>Send you the downloadable guide, if requested through the corresponding form.</li><li>Send you communications about our products and services, only if you checked the consent box on the form.</li></ul><h2>3. Legal basis</h2><p>The legal basis for processing is your explicit consent, given by checking the corresponding box and submitting the form (GDPR art. 6.1.a).</p><h2>4. Processors and recipients</h2><p>We do not share your data with third parties for purposes other than those stated. To provide the service, we work with the following processors:</p><ul><li><strong>Brevo</strong> (Sendinblue SAS, France) — contact management and email sending.</li><li><strong>Cloudflare</strong> — processes the form submission (Cloudflare Workers) before forwarding it to Brevo.</li><li><strong>Hostinger</strong> — website hosting.</li></ul><p>If you consent to Google Analytics, Google (Google Ireland Ltd.) also acts as a processor — see our <a href="/en/cookies">cookie policy</a> for details.</p><h2>5. Retention period</h2><p>We keep your data for as long as there is an active business relationship or until you request its deletion. Otherwise, we periodically review and remove data that is no longer needed.</p><h2>6. Your rights</h2><p>You can exercise your rights of access, rectification, erasure, objection, restriction of processing and portability by writing to <a href="mailto:contact@zaviren.com">contact@zaviren.com</a>. If you believe we haven't handled your request properly, you can file a complaint with the Spanish Data Protection Agency (AEPD), <a href="https://www.aepd.es" target="_blank" rel="noopener">aepd.es</a>.</p><h2>7. Security</h2><p>We apply reasonable technical and organizational measures to protect your data against unauthorized access, loss or alteration.</p><h2>8. Minors</h2><p>This website is not directed at minors.</p><h2>9. Changes to this policy</h2><p>We may update this policy to reflect regulatory or website changes. We recommend reviewing it periodically.</p><a class="back-link" href="/en/">&larr; Back to home</a></section></main></div><footer class="site-footer"><span>© 2026 Zaviren · <a href="https://zaviren.com">zaviren.com</a> · <a href="mailto:contact@zaviren.com">contact@zaviren.com</a></span><span>Your data is never shared with third parties</span><span class="footer-legal"><a href="/en/legal-notice">Legal notice</a> · <a href="/en/privacy">Privacy</a> · <a href="/en/cookies">Cookies</a></span></footer><div class="cookie-banner" id="cookie-banner" hidden><p>We use analytics cookies (Google Analytics) to understand site usage. They&#39;re only activated if you accept. <a href="/en/cookies">Learn more</a></p><div class="cookie-actions"><button type="button" id="cookie-reject" class="cta cta-secondary">Reject</button><button type="button" id="cookie-accept" class="cta">Accept</button></div></div><script>(function(){const gaId = "G-EXXBQFZ869";
+
+	const CONSENT_KEY = "zaviren_cookie_consent";
+	const banner = document.getElementById("cookie-banner");
+	const acceptBtn = document.getElementById("cookie-accept");
+	const rejectBtn = document.getElementById("cookie-reject");
+
+	function loadAnalytics() {
+		if (window.zavirenAnalyticsLoaded) return;
+		window.zavirenAnalyticsLoaded = true;
+		const script = document.createElement("script");
+		script.async = true;
+		script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+		document.head.appendChild(script);
+		window.gtag("config", gaId);
+	}
+
+	const consent = localStorage.getItem(CONSENT_KEY);
+	if (consent === "accepted") {
+		loadAnalytics();
+	} else if (consent !== "rejected") {
+		banner.hidden = false;
+	}
+
+	acceptBtn.addEventListener("click", () => {
+		localStorage.setItem(CONSENT_KEY, "accepted");
+		loadAnalytics();
+		banner.hidden = true;
+	});
+
+	rejectBtn.addEventListener("click", () => {
+		localStorage.setItem(CONSENT_KEY, "rejected");
+		banner.hidden = true;
+	});
+})();</script></body></html>

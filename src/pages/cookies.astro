@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BackLink from "../components/BackLink.astro";
+import { legalEntity } from "../data/legal";
+---
+
+<Layout
+	lang="es"
+	title="Política de cookies — Zaviren"
+	description="Qué cookies usa zaviren.com, para qué y cómo puedes gestionar tu consentimiento."
+	altHref="/en/cookies"
+>
+	<section class="legal">
+		<span class="eyebrow">Legal</span>
+		<h1>Política de cookies</h1>
+		<p class="updated">Última actualización: 2026-08-11</p>
+
+		<h2>1. Qué son las cookies</h2>
+		<p>
+			Las cookies son pequeños archivos que se almacenan en tu navegador
+			al visitar un sitio web. Sirven para recordar información sobre tu
+			visita, como tus preferencias o, en el caso de las cookies
+			analíticas, para entender cómo se usa el sitio.
+		</p>
+
+		<h2>2. Cookies que usamos</h2>
+		<p>
+			<strong>{legalEntity.domain}</strong> usa las siguientes cookies:
+		</p>
+		<ul>
+			<li>
+				<strong>Preferencia de consentimiento (necesaria):</strong> guardamos tu elección de aceptar o rechazar cookies analíticas en
+				el almacenamiento local de tu navegador (no es técnicamente una
+				cookie, pero cumple la misma función). No requiere consentimiento
+				por ser estrictamente necesaria para el funcionamiento del banner.
+			</li>
+			<li>
+				<strong>Google Analytics (analítica, opcional):</strong> si aceptas
+				las cookies analíticas, usamos Google Analytics (Google Ireland
+				Ltd.) para medir visitas y uso del sitio de forma agregada.
+				Establece cookies como <code>_ga</code>, <code>_ga_*</code> y <code>_gid</code>, con una duración de hasta 2 años. Más
+				información en la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidad de Google</a>.
+			</li>
+		</ul>
+		<p>No usamos cookies de publicidad ni de terceros con fines comerciales.</p>
+
+		<h2>3. Base legal</h2>
+		<p>
+			Las cookies analíticas solo se activan si das tu consentimiento a
+			través del banner que aparece en tu primera visita. Puedes rechazarlas
+			sin que ello afecte a la navegación por el sitio.
+		</p>
+
+		<h2>4. Cómo gestionar tu consentimiento</h2>
+		<p>
+			Puedes cambiar tu decisión en cualquier momento borrando los datos de
+			navegación/almacenamiento local de este sitio en tu navegador — el
+			banner volverá a aparecer en tu siguiente visita. También puedes
+			bloquear o eliminar cookies desde la configuración de tu navegador
+			(Chrome, Firefox, Safari, Edge suelen tener esta opción en
+			"Privacidad y seguridad").
+		</p>
+
+		<h2>5. Más información</h2>
+		<p>
+			Para más detalle sobre cómo tratamos tus datos, consulta nuestra <a href="/privacidad">política de privacidad</a>.
+		</p>
+
+		<BackLink lang="es" />
+	</section>
+</Layout>

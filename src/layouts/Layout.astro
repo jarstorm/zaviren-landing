@@ -1,5 +1,6 @@
 ---
 import "../styles/site.css";
+import CookieBanner from "../components/CookieBanner.astro";
 
 interface Props {
 	lang: "es" | "en";
@@ -73,7 +74,6 @@ const softwareApplicationSchema = {
 		{isHome && <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />}
 		{isHome && <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />}
 
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-EXXBQFZ869"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -81,7 +81,6 @@ const softwareApplicationSchema = {
 			}
 			window.gtag = gtag;
 			gtag("js", new Date());
-			gtag("config", "G-EXXBQFZ869");
 
 			document.addEventListener("click", (event) => {
 				const cta = (event.target as HTMLElement).closest("a.cta");
@@ -114,6 +113,23 @@ const softwareApplicationSchema = {
 		<footer class="site-footer">
 			<span>© 2026 Zaviren · <a href="https://zaviren.com">zaviren.com</a> · <a href="mailto:contact@zaviren.com">contact@zaviren.com</a></span>
 			<span>{lang === "es" ? "Tus datos no se comparten con terceros" : "Your data is never shared with third parties"}</span>
+			<span class="footer-legal">
+				{
+					lang === "es" ? (
+						<>
+							<a href="/aviso-legal">Aviso legal</a> · <a href="/privacidad">Privacidad</a> ·{" "}
+							<a href="/cookies">Cookies</a>
+						</>
+					) : (
+						<>
+							<a href="/en/legal-notice">Legal notice</a> · <a href="/en/privacy">Privacy</a> ·{" "}
+							<a href="/en/cookies">Cookies</a>
+						</>
+					)
+				}
+			</span>
 		</footer>
+
+		<CookieBanner lang={lang} />
 	</body>
 </html>

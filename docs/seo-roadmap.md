@@ -17,7 +17,7 @@ de qué se hizo — mismo estilo que el catálogo de
 | 5 | Corregir `name` de campos del formulario EN (nombre→firstname, etc.) | P0 | ✅ | Implementado 2026-08-11 — `id`/`name` de inputs en `en/contact.astro` y `en/guide.astro` pasan a `firstname`/`lastname`/`company`; payload al Worker sigue con claves `nombre`/`apellidos`/`empresa` (esquema fijo, no tocado en `worker/src/index.ts`) |
 | 6 | H1/subtítulo home hacia intención comercial ("IA privada para empresas") | P1 | ✅ | Implementado 2026-08-11 — H1 ES: "IA privada para tu empresa" (antes "IA soberana, bajo tu control"); H1 EN: "Private AI for your business" (antes "Sovereign AI, under your control"). Subtítulo sin cambios |
 | 7 | `organizationSchema` solo en home (no en todas las páginas) + `SoftwareApplication` schema | P1 | ✅ | Implementado 2026-08-11 — `Layout.astro`: nuevo `isHome` (`pathname === "/" \|\| "/en/"`) gatea el `<script>` de `organizationSchema`, que antes se inyectaba en todas las páginas; añadido `softwareApplicationSchema` (`@type: SoftwareApplication`), también solo en home. Verificado en `dist/`: home tiene Organization+SoftwareApplication+FAQPage, `/contact/` ya no tiene ninguno |
-| 8 | Páginas legales (privacidad, aviso legal) | P1 | ❌ | Obligatorio con formularios que recogen datos (RGPD) |
+| 8 | Páginas legales (privacidad, aviso legal) | P1 | ⚠️ | Implementado 2026-08-11 con placeholders — ver nota abajo, falta rellenar datos reales |
 | 9 | Página ancla `/ia-privada/` | P1 | ❌ | Qué es / cómo funciona / vs ChatGPT / FAQ / CTA |
 | 10 | Página ancla `/rag-empresarial/` o `/rag-on-premise/` | P1 | ❌ | Segunda página comercial ancla |
 | 11 | Artículo "¿Puede una empresa usar IA sin enviar datos a la nube?" | P2 | ❌ | Plantilla para el resto de contenido |
@@ -28,6 +28,51 @@ de qué se hizo — mismo estilo que el catálogo de
 | 16 | YouTube / vídeo | P3 | ❌ | |
 | 17 | Link building activo | P3 | ❌ | |
 | 18 | Internacionalización más allá de ES/EN | P3 | ❌ | |
+
+## Detalle #8 — Páginas legales (2026-08-11)
+
+Sin abogado disponible: se optó por redactar boilerplate estándar
+(LSSI-CE/RGPD) en vez de un generador externo (AEPD Facilita RGPD /
+Iubenda), para poder mantener los datos de identidad en un único fichero
+versionado en vez de en un panel de terceros.
+
+- 6 páginas nuevas: `/aviso-legal` + `/en/legal-notice`, `/privacidad` +
+  `/en/privacy`, `/cookies` + `/en/cookies`. Las versiones EN llevan
+  nota "traducción informativa, prevalece la versión ES".
+- `src/data/legal.ts` — fuente única de datos de identidad
+  (`companyName`, `taxId`, `address`, `registryInfo`), importada por las
+  6 páginas. **Todos son placeholders `[PENDIENTE: ...]`** — razón
+  social, NIF/CIF, domicilio y datos de Registro Mercantil pendientes de
+  que el usuario los facilite. Hasta entonces las páginas están
+  publicadas pero legalmente incompletas (mejor que 404, pero no vale
+  como aviso legal real todavía). **Editar ese fichero y rebuild+deploy
+  en cuanto se tengan los datos.**
+- Cookie consent banner (`src/components/CookieBanner.astro`), hallazgo
+  no pedido originalmente: `Layout.astro` cargaba Google Analytics
+  (GA4) sin consentimiento previo, no conforme con RGPD/LSSI. Fix: el
+  script de GA ya no se carga en `<head>`; el stub `dataLayer`/`gtag`
+  siempre está presente (no fija cookies por sí solo), pero el `<script
+  src="gtag/js...">` y el `gtag('config', ...)` solo se inyectan si el
+  usuario acepta el banner (persistido en `localStorage`,
+  `zaviren_cookie_consent`). Rechazar o no decidir no fija ninguna
+  cookie de analítica.
+- Enlaces a las 3 páginas añadidos al footer de `Layout.astro`
+  (ES/EN-aware).
+- Bug encontrado al probar el banner en vivo: `.cookie-banner{display:flex}`
+  (regla de autor) pisaba el atributo `hidden` del HTML inicial — ambas son
+  reglas de autor con la misma especificidad, y CSS gana por orden de
+  cascada, así que el atributo `hidden` nunca tenía efecto real: el banner
+  quedaba siempre pintado como `flex` aunque el JS pusiera `hidden=true`
+  tras aceptar/rechazar. Fix: `site.css` — regla explícita
+  `.cookie-banner[hidden] { display: none; }` antes de la regla base.
+  Verificado con `getComputedStyle` antes/después del click (`flex` →
+  `none`).
+- De paso, componente `src/components/BackLink.astro` — unifica el enlace
+  "&larr; Volver a la portada"/"&larr; Back to home" que antes vivía
+  duplicado en 10 páginas y con estilo `.cta` (botón grande) en las 4
+  páginas de gracias/thanks; ahora las 14 usan el mismo componente y el
+  mismo estilo `.back-link` (enlace chico). `404.astro` queda fuera a
+  propósito — texto distinto ("Ir al inicio"), lógica bilingüe por JS.
 
 ## Extra (encontrado al implementar #4/#5, no estaba en la lista original)
 

@@ -1,0 +1,85 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BackLink from "../../components/BackLink.astro";
+import { legalEntity } from "../../data/legal";
+---
+
+<Layout
+	lang="en"
+	title="Legal notice — Zaviren"
+	description="Legal notice for zaviren.com: owner identification, terms of use and intellectual property."
+	altHref="/aviso-legal"
+>
+	<section class="legal">
+		<span class="eyebrow">Legal</span>
+		<h1>Legal notice</h1>
+		<p class="updated">Last updated: 2026-08-11</p>
+		<p class="legal-note">
+			This is an informational translation. The Spanish version is the
+			legally binding one — see <a href="/aviso-legal">Aviso legal</a>.
+		</p>
+
+		<h2>1. Identification</h2>
+		<p>
+			In compliance with Spanish law (Law 34/2002, LSSI-CE, art. 10), the
+			owner of this website ({legalEntity.domain}) is <strong>{legalEntity.companyName}</strong>,
+			tax ID <strong>{legalEntity.taxId}</strong>, registered address <strong>{legalEntity.address}</strong>.
+			{legalEntity.registryInfo}. Contact: <a href={`mailto:${legalEntity.contactEmail}`}>{legalEntity.contactEmail}</a>.
+		</p>
+
+		<h2>2. Purpose</h2>
+		<p>
+			This website informs visitors about {legalEntity.companyName}'s
+			products and services and lets interested users get in touch through
+			the contact forms provided.
+		</p>
+
+		<h2>3. Terms of use</h2>
+		<p>
+			Accessing and using this website makes you a user and implies
+			acceptance of the terms in this legal notice. Users agree to make
+			appropriate use of the content and services offered and not to use
+			them for unlawful purposes or in bad faith.
+		</p>
+
+		<h2>4. Intellectual property</h2>
+		<p>
+			The content of this website (text, design, trademarks, logos and
+			other elements) belongs to {legalEntity.companyName} or third
+			parties who have authorized its use, and is protected by
+			intellectual and industrial property law. Reproduction, distribution
+			or modification without prior authorization is prohibited.
+		</p>
+
+		<h2>5. Third-party links</h2>
+		<p>
+			This site may contain links to third-party websites. {legalEntity.companyName} is not responsible for the content or
+			privacy practices of those sites, which are outside our control.
+		</p>
+
+		<h2>6. Disclaimer</h2>
+		<p>
+			{legalEntity.companyName} does not guarantee the availability or
+			continuity of the website and is not liable for damages arising from
+			unavailability or access failures, without prejudice to the
+			reasonable measures it takes to prevent them.
+		</p>
+
+		<h2>7. Governing law</h2>
+		<p>
+			These terms are governed by Spanish law. Any dispute arising from
+			access to or use of this website will be subject to the courts of
+			the owner's registered address, unless consumer-protection rules
+			establish otherwise.
+		</p>
+
+		<h2>8. Changes</h2>
+		<p>
+			{legalEntity.companyName} may amend this legal notice to reflect
+			legislative changes or changes to the website. Please review this
+			page periodically.
+		</p>
+
+		<BackLink lang="en" />
+	</section>
+</Layout>
