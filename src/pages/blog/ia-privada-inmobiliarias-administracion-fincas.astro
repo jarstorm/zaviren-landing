@@ -1,0 +1,302 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BackLink from "../../components/BackLink.astro";
+
+const publishedDate = "2026-06-24";
+const title = "IA privada para inmobiliarias y administración de fincas — Zaviren";
+const description =
+	"Actas de junta que nadie encuentra, propietarios preguntando lo mismo cada semana y cientos de contratos de arrendamiento sin indexar. Cómo ayuda una IA que corre en vuestra oficina.";
+
+const faq = [
+	{
+		q: "¿Puede responder a los propietarios directamente?",
+		a: "Puede, pero lo habitual es empezar por dentro: que el equipo de la oficina pregunte y valide las respuestas unas semanas. Abrir un canal directo al propietario es un segundo paso, cuando ya se sabe qué contesta bien.",
+	},
+	{
+		q: "¿Encuentra algo en actas escaneadas en PDF?",
+		a: "Sí, siempre que el PDF tenga texto o se le pase OCR en la indexación. Es un caso muy frecuente en fincas: la mayor parte del histórico está escaneado y hoy es inbuscable.",
+	},
+	{
+		q: "¿Mezcla la información de unas comunidades con otras?",
+		a: "No debe, y no lo hace: los permisos se heredan de vuestra estructura de carpetas. Cada respuesta cita el documento y la comunidad de la que sale, así que se comprueba de un vistazo.",
+	},
+	{
+		q: "¿Por qué no usar una herramienta en la nube y ya?",
+		a: "Porque manejáis datos personales de comuneros e inquilinos, situaciones de morosidad, contratos e importes. En intermediación inmobiliaria además sois sujeto obligado de la Ley 10/2010 de prevención del blanqueo, con documentación de identificación de clientes que conviene no mover fuera de vuestro perímetro.",
+	},
+	{
+		q: "¿Sirve para redactar convocatorias y actas?",
+		a: "Sirve para preparar borradores a partir de vuestros modelos y de las actas anteriores de esa misma comunidad. La revisión y la firma del administrador siguen siendo suyas.",
+	},
+];
+---
+
+<Layout
+	lang="es"
+	title={title}
+	description={description}
+	altHref="/en/blog/private-ai-real-estate-property-management"
+>
+	<article>
+		<section class="hero">
+			<span class="eyebrow">Blog · Sector</span>
+			<h1>IA privada para <span class="gradient">inmobiliarias y fincas</span></h1>
+			<p class="subtitle">
+				Diez años de actas, contratos y derramas guardados en carpetas por año.
+				Todo lo que un propietario pregunta ya está ahí escrito — el problema
+				es encontrarlo antes de que cuelgue el teléfono.
+			</p>
+			<div class="post-meta">
+				<span class="badge">24 jun 2026</span>
+				<span class="badge">6 min de lectura</span>
+			</div>
+			<div class="cta-row">
+				<a class="cta" href="/contact">Cuéntanos tu caso</a>
+				<a class="cta cta-secondary" href="/guide">Descarga la guía gratuita</a>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="callout">
+				<span class="eyebrow">En una frase</span>
+				<p>
+					Administrar fincas o una cartera de inmuebles es, sobre todo, gestionar
+					documentos: actas, contratos, presupuestos, derramas, comunicaciones.
+					La IA privada indexa ese histórico y responde en lenguaje natural
+					citando el acta o el contrato concreto. Corre en un servidor de la
+					oficina, así que los datos de comuneros e inquilinos —incluida la
+					morosidad— no salen de vuestra red.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">01 · El día a día</span>
+				<h2>Los dolores <span class="gradient">reales</span></h2>
+				<p>Los mismos en una inmobiliaria y en un despacho de fincas.</p>
+			</div>
+			<div class="pain-grid">
+				<div class="card">
+					<span class="pain-icon">📜</span>
+					<div>
+						<h3>"¿Qué se aprobó sobre esto en la junta?"</h3>
+						<p>La respuesta está en un acta de hace cuatro años, escaneada en PDF y sin ninguna forma de buscar dentro.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">☎️</span>
+					<div>
+						<h3>El teléfono no para con lo mismo</h3>
+						<p>Cuotas, derramas, plazos, quién paga qué. Preguntas repetidas que consumen la mañana entera de la oficina.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">📄</span>
+					<div>
+						<h3>Cientos de contratos, cada uno con sus cláusulas</h3>
+						<p>Revisiones de renta, fianzas, prórrogas, obligaciones de conservación: comprobarlo exige abrir el contrato uno a uno.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🧑‍💼</span>
+					<div>
+						<h3>Cada comunidad tiene su historia</h3>
+						<p>El contexto de cada edificio lo tiene quien la lleva. Si esa persona falta, el resto de la oficina va a ciegas.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">02 · La solución</span>
+				<h2>Qué hace la IA <span class="gradient">con esos cuatro problemas</span></h2>
+			</div>
+			<div class="cap-grid">
+				<div class="card">
+					<span class="cap-num">01</span>
+					<div>
+						<h3>Busca dentro de las actas, no en el nombre del archivo</h3>
+						<p>"¿Qué se acordó sobre la instalación del ascensor?" devuelve el acuerdo, el acta y la fecha, aunque esté en un escaneo de 2019.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">02</span>
+					<div>
+						<h3>Contesta las consultas repetidas al momento</h3>
+						<p>La oficina responde con el documento delante en vez de prometer "te lo miro y te llamo".</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">03</span>
+					<div>
+						<h3>Compara y localiza cláusulas entre contratos</h3>
+						<p>Qué contratos vencen, cuáles tienen revisión de renta pendiente o una cláusula concreta, sin abrirlos uno a uno.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">04</span>
+					<div>
+						<h3>Reparte el contexto de cada comunidad</h3>
+						<p>Cualquiera del equipo puede ponerse al día del histórico de un edificio en minutos, con las fuentes citadas.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="split">
+				<div class="copy">
+					<span class="eyebrow">03 · Por qué privada</span>
+					<h2>Datos de terceros <span class="gradient">en cada carpeta</span></h2>
+					<p>
+						Un despacho de fincas custodia datos personales de cientos de
+						comuneros: cuotas, impagos, incidencias, comunicaciones. Y en
+						intermediación inmobiliaria sois además sujeto obligado de la Ley
+						10/2010 de prevención del blanqueo, con documentación de
+						identificación de clientes de por medio. Nada de eso encaja bien en
+						"lo pego en una web para que me lo resuma".
+					</p>
+					<p>
+						Con una <a href="/ia-privada">IA privada</a>, el modelo y el motor
+						de búsqueda corren en un servidor de la oficina. No hay proveedor
+						externo al que comunicar, ni transferencia que evaluar: los
+						documentos se quedan donde ya estaban.
+					</p>
+				</div>
+				<div class="illustration">
+					<img src="/images/file-searching.svg" alt="Búsqueda dentro del archivo de actas y contratos" width="400" height="262" />
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">04 · Límites</span>
+				<h2>Qué <span class="gradient">no</span> hace</h2>
+			</div>
+			<div class="prose">
+				<p>
+					No lleva la contabilidad de las comunidades ni sustituye a vuestro
+					software de gestión: no emite recibos, no gira derramas y no firma
+					certificados. No da criterio jurídico sobre la Ley de Propiedad
+					Horizontal — para eso está el administrador. Y no encuentra lo que
+					nunca se escribió: si un acuerdo se tomó de palabra, no hay documento
+					del que recuperarlo.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">05 · Preguntas frecuentes</span>
+				<h2>Antes de que <span class="gradient">preguntes</span></h2>
+			</div>
+			<div class="faq-list">
+				{faq.map((item) => (
+					<details class="faq-item">
+						<summary>{item.q}</summary>
+						<p>{item.a}</p>
+					</details>
+				))}
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="final-cta">
+				<div>
+					<h2>Empecemos por el histórico de actas</h2>
+					<p>Una llamada de 30 minutos para ver qué parte del archivo conviene indexar primero.</p>
+				</div>
+				<a class="cta" href="/contact">Solicita una llamada</a>
+			</div>
+		</section>
+
+		<div class="post-footer-links">
+			<BackLink lang="es" />
+			<a class="back-link" href="/rag-empresarial">Cómo funciona el RAG por dentro →</a>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.post-meta {
+		display: flex;
+		justify-content: center;
+		gap: 0.6rem;
+		margin-top: 1.2rem;
+	}
+	.post-meta .badge {
+		font-size: 0.75rem;
+		color: var(--muted);
+	}
+	.callout {
+		max-width: 720px;
+		margin: 0 auto;
+		border: 1px solid var(--border);
+		border-left: 3px solid var(--blue);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.6rem 1.8rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.callout p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+	.prose {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.prose p {
+		margin: 0 0 1.1rem;
+		line-height: 1.7;
+	}
+	.prose p:last-child {
+		margin-bottom: 0;
+	}
+	.prose a,
+	.copy a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: var(--border);
+		text-underline-offset: 3px;
+	}
+	.prose a:hover,
+	.copy a:hover {
+		text-decoration-color: currentColor;
+	}
+	.post-footer-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: "IA privada para inmobiliarias y administración de fincas",
+	description,
+	datePublished: publishedDate,
+	dateModified: publishedDate,
+	author: { "@type": "Organization", name: "Zaviren" },
+	publisher: { "@type": "Organization", name: "Zaviren" },
+	mainEntityOfPage: "https://zaviren.com/blog/ia-privada-inmobiliarias-administracion-fincas",
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faq.map((item) => ({
+		"@type": "Question",
+		name: item.q,
+		acceptedAnswer: { "@type": "Answer", text: item.a },
+	})),
+})} />

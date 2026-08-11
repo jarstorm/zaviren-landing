@@ -23,7 +23,7 @@ de qué se hizo — mismo estilo que el catálogo de
 | 11 | Artículo "¿Puede una empresa usar IA sin enviar datos a la nube?" | P2 | ✅ | Implementado 2026-08-11 — ver detalle abajo |
 | 12 | Comparativa "IA privada vs ChatGPT" | P2 | ✅ | Implementado 2026-08-11 — ver detalle abajo. Incluye índice de blog + entrada en el nav |
 | 13 | Primer caso de éxito (solo si hay datos reales demostrables) | P2 | ❌ | No inventar cifras |
-| 14 | Páginas sectoriales (`/ia-para-despachos/`, etc.) | P3 | ❌ | Solo si hay negocio real en el sector |
+| 14 | Páginas sectoriales (`/ia-para-despachos/`, etc.) | P3 | ✅ | Implementado 2026-08-11 como 5 posts de blog (ES+EN) — ver detalle abajo |
 | 15 | SEO local España | P3 | ❌ | |
 | 16 | YouTube / vídeo | P3 | ❌ | |
 | 17 | Link building activo | P3 | ❌ | |
@@ -192,8 +192,7 @@ versionado en vez de en un panel de terceros.
 Ninguno. P0 completo (#1-#5). P1 completo salvo #8 (placeholders legales
 pendientes de datos reales). P2: #11 y #12 implementados; queda #13 (primer
 caso de éxito), **bloqueado por falta de cliente real con datos
-demostrables** — no inventar cifras. Siguiente desbloqueable: los P3
-(#14-#18).
+demostrables** — no inventar cifras. P3: #14 implementado; quedan #15-#18.
 
 ## Detalle #10 — Página ancla `/rag-empresarial/` (2026-08-11)
 
@@ -374,3 +373,72 @@ sitio (grid a `1fr` bajo 720px) pero no se vieron renderizadas.
   `dateModified` del schema `BlogPosting` queda fijado a `2026-08-11`
   (fecha real de la última edición), así que ya no se deriva de
   `publishedDate` como antes.
+
+## Detalle #14 — Páginas sectoriales (2026-08-11)
+
+**Decisión de formato (pedido del usuario): posts de blog, no landings
+sueltas** tipo `/ia-para-despachos/`. Motivo: el índice de blog ya existe
+(#12), está en el nav, y así los 5 sectores heredan enlazado interno y
+calendario editorial sin inventar una sección nueva.
+
+**Decisión de alcance: ES + EN completos** (pedido del usuario tras
+comprobar que los 5 sectores existen fuera de España). Las versiones EN
+son adaptaciones, no traducciones literales — "gestoría" pasa a
+*accounting and tax firms* y "administración de fincas" a *property
+management*, que son las figuras equivalentes fuera; las citas de
+normativa española (Ley 10/2010 de blanqueo, LPH) se generalizan a
+"anti-money-laundering obligations" / "property law" en EN, y se mantiene
+el RGPD porque sí aplica igual.
+
+10 páginas nuevas, `hreflang` cruzado por pares vía `altHref`:
+
+| Sector | ES | EN | Fecha |
+|---|---|---|---|
+| Abogados | `/blog/ia-privada-despachos-abogados` | `/en/blog/private-ai-law-firms` | 13 may 2026 |
+| Gestoría / asesoría fiscal | `/blog/ia-privada-gestorias-asesorias` | `/en/blog/private-ai-accounting-firms` | 27 may 2026 |
+| Clínica médica/dental | `/blog/ia-privada-clinicas` | `/en/blog/private-ai-medical-dental-clinics` | 10 jun 2026 |
+| Inmobiliaria / fincas | `/blog/ia-privada-inmobiliarias-administracion-fincas` | `/en/blog/private-ai-real-estate-property-management` | 24 jun 2026 |
+| Ingeniería / arquitectura | `/blog/ia-privada-ingenieria-arquitectura` | `/en/blog/private-ai-engineering-architecture-firms` | 4 ago 2026 |
+
+Fechas retrodatadas y espaciadas entre mayo y agosto (pedido del usuario),
+intercaladas con #11 (15 jul) y #12 (11 ago) para que el calendario
+editorial no se lea como "todo publicado el mismo día". `dateModified` del
+schema `BlogPosting` = `datePublished` en los 10.
+
+**Estructura común** (pedido del usuario: "clara y concisa, los dolores de
+esos negocios y cómo la IA ayuda") — plantilla distinta a la de #11/#12,
+sin CSS global nuevo:
+
+1. Hero + `callout` "En una frase" (respuesta completa arriba, para
+   featured snippet/AEO).
+2. `01 · El día a día` — `pain-grid` de 4 dolores concretos del sector,
+   escritos en el idioma del cliente, no en el del proveedor.
+3. `02 · La solución` — `cap-grid` de 4 capacidades, **una por dolor y en
+   el mismo orden**, para que la correspondencia se lea sola.
+4. `03 · Por qué privada` — `split` + ilustración; el argumento concreto
+   del sector (deber de secreto, encargado de tratamiento, art. 9 RGPD,
+   blanqueo, NDAs), no el genérico.
+5. `04 · Límites` — qué **no** hace. Mismo criterio de credibilidad que
+   #12: sin esto, la página se lee como publicidad.
+6. FAQ (5 preguntas) + schema `FAQPage` y `BlogPosting`.
+7. CTA final + `post-footer-links`.
+
+**Cuidado al editar el copy — claims con riesgo real:**
+- **Clínicas**: la página dice explícitamente que **no diagnostica ni
+  sugiere tratamientos**. Un software con finalidad médica sería producto
+  sanitario y necesitaría marcado CE (Reglamento (UE) 2017/745). No
+  suavizar ese límite ni añadir casos de uso clínicos.
+- **Abogados / gestorías**: no se afirma que usar ChatGPT incumpla nada;
+  se dice que hay una transferencia a un tercero que hay que valorar
+  frente al deber de secreto y al art. 28 RGPD. Matizado a propósito.
+- **Ingeniería**: el argumento es contractual (NDA / propiedad intelectual
+  del cliente), no solo de RGPD — es el que más convierte en ese sector.
+
+Enlazado interno: cada post enlaza a `/ia-privada` o `/rag-empresarial` y
+lleva un "leer más" cruzado a otro post en el pie. No se añadieron pills
+nuevos en la home ("03 · Cómo lo resolvemos" ya tiene 4 y no escalaba);
+la entrada a los 5 posts es el índice `/blog`, que ya está en el nav.
+
+`src/data/posts.ts` actualizado con las 10 entradas (tag `Sector` / `Industry`),
+ordenadas por fecha descendente. Build verificado: 37 páginas, sitemap con
+las 10 URLs nuevas, sin enlaces internos rotos.

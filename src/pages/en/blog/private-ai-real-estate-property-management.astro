@@ -1,0 +1,299 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import BackLink from "../../../components/BackLink.astro";
+
+const publishedDate = "2026-06-24";
+const title = "Private AI for real estate and property management — Zaviren";
+const description =
+	"Meeting minutes nobody can find, owners asking the same thing every week, and hundreds of unindexed lease agreements. How AI running in your own office helps.";
+
+const faq = [
+	{
+		q: "Can it answer owners and tenants directly?",
+		a: "It can, but the usual path is to start internally: let the office team ask and validate answers for a few weeks. A direct channel to owners is a second step, once you know what it answers well.",
+	},
+	{
+		q: "Can it find anything in scanned PDF minutes?",
+		a: "Yes, as long as the PDF has a text layer or OCR is applied during indexing. This is very common in property management: most of the history is scanned and currently unsearchable.",
+	},
+	{
+		q: "Does it mix information between buildings?",
+		a: "It shouldn't and it doesn't: permissions are inherited from your folder structure. Every answer cites the document and the building it came from, so it's verifiable at a glance.",
+	},
+	{
+		q: "Why not just use a cloud tool?",
+		a: "Because you hold personal data on owners and tenants, arrears situations, contracts and amounts. Real estate agency work also falls under anti-money-laundering obligations, with client identification documents that are best kept inside your own perimeter.",
+	},
+	{
+		q: "Can it draft notices and minutes?",
+		a: "It can prepare drafts from your own templates and from previous minutes for that same building. Review and signature stay with the manager.",
+	},
+];
+---
+
+<Layout
+	lang="en"
+	title={title}
+	description={description}
+	altHref="/blog/ia-privada-inmobiliarias-administracion-fincas"
+>
+	<article>
+		<section class="hero">
+			<span class="eyebrow">Blog · Industry</span>
+			<h1>Private AI for <span class="gradient">real estate and property management</span></h1>
+			<p class="subtitle">
+				Ten years of minutes, contracts and special assessments filed in
+				folders by year. Everything an owner asks is already written down —
+				the problem is finding it before they hang up.
+			</p>
+			<div class="post-meta">
+				<span class="badge">24 Jun 2026</span>
+				<span class="badge">6 min read</span>
+			</div>
+			<div class="cta-row">
+				<a class="cta" href="/en/contact">Tell us about your case</a>
+				<a class="cta cta-secondary" href="/en/guide">Download the free guide</a>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="callout">
+				<span class="eyebrow">In one sentence</span>
+				<p>
+					Managing buildings or a property portfolio is, above all, managing
+					documents: minutes, leases, quotes, assessments, notices. Private AI
+					indexes that history and answers in plain language, citing the specific
+					minutes or contract. It runs on a server in the office, so owner and
+					tenant data — arrears included — never leaves your network.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">01 · Day to day</span>
+				<h2>The <span class="gradient">real pains</span></h2>
+				<p>The same ones in an agency and in a property management office.</p>
+			</div>
+			<div class="pain-grid">
+				<div class="card">
+					<span class="pain-icon">📜</span>
+					<div>
+						<h3>"What was agreed about this at the meeting?"</h3>
+						<p>The answer is in minutes from four years ago, scanned into a PDF with no way to search inside it.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">☎️</span>
+					<div>
+						<h3>The phone never stops with the same questions</h3>
+						<p>Fees, assessments, deadlines, who pays for what. Repeat questions that eat the office's entire morning.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">📄</span>
+					<div>
+						<h3>Hundreds of contracts, each with its own clauses</h3>
+						<p>Rent reviews, deposits, renewals, maintenance obligations: checking any of it means opening contracts one by one.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🧑‍💼</span>
+					<div>
+						<h3>Every building has its own history</h3>
+						<p>The context lives with whoever manages it. If that person is away, the rest of the office works blind.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">02 · The fix</span>
+				<h2>What AI does <span class="gradient">about those four</span></h2>
+			</div>
+			<div class="cap-grid">
+				<div class="card">
+					<span class="cap-num">01</span>
+					<div>
+						<h3>Searches inside the minutes, not the filename</h3>
+						<p>"What was agreed about installing the lift?" returns the resolution, the minutes and the date, even from a 2019 scan.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">02</span>
+					<div>
+						<h3>Answers repeat questions on the spot</h3>
+						<p>The office answers with the document in front of them instead of promising "I'll check and call you back".</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">03</span>
+					<div>
+						<h3>Compares and locates clauses across contracts</h3>
+						<p>Which leases expire, which have a pending rent review or a specific clause — without opening them one at a time.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">04</span>
+					<div>
+						<h3>Spreads the context of each building</h3>
+						<p>Anyone on the team can get up to speed on a building's history in minutes, with sources cited.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="split">
+				<div class="copy">
+					<span class="eyebrow">03 · Why private</span>
+					<h2>Third-party data <span class="gradient">in every folder</span></h2>
+					<p>
+						A property management office holds personal data on hundreds of
+						owners: fees, missed payments, incidents, correspondence. Agency
+						work adds anti-money-laundering obligations, with client
+						identification documents in the mix. None of that sits comfortably
+						with "I'll paste it into a website to get a summary".
+					</p>
+					<p>
+						With <a href="/en/private-ai">private AI</a>, the model and the
+						search engine run on a server in the office. There is no outside
+						provider to disclose and no transfer to assess: the documents stay
+						where they already were.
+					</p>
+				</div>
+				<div class="illustration">
+					<img src="/images/file-searching.svg" alt="Searching inside the archive of minutes and contracts" width="400" height="262" />
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">04 · Limits</span>
+				<h2>What it does <span class="gradient">not</span> do</h2>
+			</div>
+			<div class="prose">
+				<p>
+					It does not keep the buildings' accounts or replace your management
+					software: it issues no invoices, raises no assessments and signs no
+					certificates. It gives no legal opinion on property law — that is the
+					manager's job. And it cannot find what was never written: if something
+					was agreed verbally, there is no document to retrieve it from.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">05 · FAQ</span>
+				<h2>Before you <span class="gradient">ask</span></h2>
+			</div>
+			<div class="faq-list">
+				{faq.map((item) => (
+					<details class="faq-item">
+						<summary>{item.q}</summary>
+						<p>{item.a}</p>
+					</details>
+				))}
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="final-cta">
+				<div>
+					<h2>Let's start with the minutes archive</h2>
+					<p>A 30-minute call to see which part of the archive is worth indexing first.</p>
+				</div>
+				<a class="cta" href="/en/contact">Book a call</a>
+			</div>
+		</section>
+
+		<div class="post-footer-links">
+			<BackLink lang="en" />
+			<a class="back-link" href="/en/rag-for-business">How RAG works under the hood →</a>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.post-meta {
+		display: flex;
+		justify-content: center;
+		gap: 0.6rem;
+		margin-top: 1.2rem;
+	}
+	.post-meta .badge {
+		font-size: 0.75rem;
+		color: var(--muted);
+	}
+	.callout {
+		max-width: 720px;
+		margin: 0 auto;
+		border: 1px solid var(--border);
+		border-left: 3px solid var(--blue);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.6rem 1.8rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.callout p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+	.prose {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.prose p {
+		margin: 0 0 1.1rem;
+		line-height: 1.7;
+	}
+	.prose p:last-child {
+		margin-bottom: 0;
+	}
+	.prose a,
+	.copy a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: var(--border);
+		text-underline-offset: 3px;
+	}
+	.prose a:hover,
+	.copy a:hover {
+		text-decoration-color: currentColor;
+	}
+	.post-footer-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: "Private AI for real estate and property management",
+	description,
+	datePublished: publishedDate,
+	dateModified: publishedDate,
+	author: { "@type": "Organization", name: "Zaviren" },
+	publisher: { "@type": "Organization", name: "Zaviren" },
+	mainEntityOfPage: "https://zaviren.com/en/blog/private-ai-real-estate-property-management",
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faq.map((item) => ({
+		"@type": "Question",
+		name: item.q,
+		acceptedAnswer: { "@type": "Answer", text: item.a },
+	})),
+})} />

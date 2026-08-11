@@ -1,0 +1,304 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BackLink from "../../components/BackLink.astro";
+
+const publishedDate = "2026-05-27";
+const title = "IA privada para gestorías y asesorías fiscales — Zaviren";
+const description =
+	"Consultas repetidas de clientes, criterios internos que solo conocen dos personas y campañas que colapsan el despacho. Cómo una IA que corre en tu servidor descarga ese trabajo sin sacar datos fiscales de la oficina.";
+
+const faq = [
+	{
+		q: "¿Puede responder directamente a mis clientes?",
+		a: "Puede, pero recomendamos empezar por dentro: que el equipo pregunte y valide las respuestas durante unas semanas. Abrirlo al cliente final es un segundo paso, cuando ya sabéis qué contesta bien y qué no.",
+	},
+	{
+		q: "¿Está al día de la última reforma fiscal?",
+		a: "Solo de lo que le indexéis. Un modelo genérico tiene conocimiento congelado y desactualizado; por eso la respuesta se construye sobre vuestras circulares y notas internas, que sí actualizáis. Si una circular es de 2024, la IA lo dice y cita la fecha.",
+	},
+	{
+		q: "¿Se conecta con A3, Sage o el software que usamos?",
+		a: "Para el fondo documental, sí: se indexa lo que hay en la carpeta compartida o el gestor documental. La integración directa contra el ERP fiscal se valora caso a caso y no hace falta para arrancar.",
+	},
+	{
+		q: "¿Qué pasa con los datos personales de los empleados de mis clientes?",
+		a: "Ese es justo el motivo del planteamiento privado: en las nóminas que tramitáis sois encargados del tratamiento de datos de terceros. Con el servidor en vuestra oficina, esos datos no se transfieren a ningún proveedor de IA — no hay subencargado que documentar ni transferencia internacional que evaluar.",
+	},
+	{
+		q: "¿Cuánto se tarda en tener algo funcionando?",
+		a: "Un piloto con un área acotada (por ejemplo, solo laboral) y unos cientos de documentos suele estar operativo en semanas.",
+	},
+];
+---
+
+<Layout
+	lang="es"
+	title={title}
+	description={description}
+	altHref="/en/blog/private-ai-accounting-firms"
+>
+	<article>
+		<section class="hero">
+			<span class="eyebrow">Blog · Sector</span>
+			<h1>IA privada para <span class="gradient">gestorías y asesorías</span></h1>
+			<p class="subtitle">
+				El 80 % de lo que pregunta un cliente ya está contestado en una
+				circular o en un expediente del año pasado. Una IA que corre en
+				vuestro servidor lo encuentra y lo redacta, sin que un solo modelo
+				145 salga de la oficina.
+			</p>
+			<div class="post-meta">
+				<span class="badge">27 may 2026</span>
+				<span class="badge">6 min de lectura</span>
+			</div>
+			<div class="cta-row">
+				<a class="cta" href="/contact">Cuéntanos tu caso</a>
+				<a class="cta cta-secondary" href="/guide">Descarga la guía gratuita</a>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="callout">
+				<span class="eyebrow">En una frase</span>
+				<p>
+					Una gestoría vive de responder rápido a muchas preguntas parecidas
+					con documentación de terceros muy sensible. La IA privada indexa
+					vuestras circulares, expedientes y criterios internos, y responde
+					citando la fuente — descargando al equipo de las consultas
+					repetidas. Y como corre en un servidor vuestro, las nóminas, los
+					modelos de la AEAT y los datos de los empleados de vuestros clientes
+					nunca se transfieren a un proveedor externo.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">01 · El día a día</span>
+				<h2>Los dolores <span class="gradient">reales</span></h2>
+				<p>Todos se agravan en campaña.</p>
+			</div>
+			<div class="pain-grid">
+				<div class="card">
+					<span class="pain-icon">📞</span>
+					<div>
+						<h3>La misma consulta, cuarenta veces</h3>
+						<p>"¿Qué documentación necesito para dar de alta a un autónomo?" — ya está contestada por escrito, pero se responde a mano cada vez.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🧾</span>
+					<div>
+						<h3>El criterio vive en dos cabezas</h3>
+						<p>Cómo tratáis un caso concreto lo saben los socios. Si están ocupados o de vacaciones, el expediente se para.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">📆</span>
+					<div>
+						<h3>Campaña = todo el mundo bloqueado</h3>
+						<p>Renta, cierre, presentación trimestral: el trabajo que se puede automatizar es justo el que más se multiplica en esas semanas.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🗄️</span>
+					<div>
+						<h3>Archivo enorme, búsqueda por nombre de fichero</h3>
+						<p>Miles de expedientes de clientes en carpetas por año, y la única forma de encontrar algo es acordarse de dónde estaba.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">02 · La solución</span>
+				<h2>Qué hace la IA <span class="gradient">con esos cuatro problemas</span></h2>
+			</div>
+			<div class="cap-grid">
+				<div class="card">
+					<span class="cap-num">01</span>
+					<div>
+						<h3>Contesta las consultas frecuentes con vuestras palabras</h3>
+						<p>La respuesta sale de vuestras circulares y notas internas, no de un texto genérico de internet, y cita el documento del que viene.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">02</span>
+					<div>
+						<h3>Pone el criterio interno al alcance de todo el equipo</h3>
+						<p>Lo que hasta ahora había que preguntar a un socio pasa a estar consultable, con el precedente concreto delante.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">03</span>
+					<div>
+						<h3>Prepara borradores en campaña</h3>
+						<p>Requerimientos, respuestas tipo y checklists de documentación se redactan a partir de casos anteriores vuestros, para revisar en vez de escribir de cero.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">04</span>
+					<div>
+						<h3>Busca en el archivo por contenido</h3>
+						<p>"Clientes a los que aplicamos este régimen el año pasado" devuelve los expedientes, aunque nadie los etiquetara así.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="split">
+				<div class="copy">
+					<span class="eyebrow">03 · Por qué privada</span>
+					<h2>Los datos <span class="gradient">no son vuestros</span></h2>
+					<p>
+						Una gestoría no maneja solo sus propios datos: maneja nóminas,
+						declaraciones y datos personales de los empleados de sus clientes.
+						Ahí actuáis como encargados del tratamiento, y meter esa
+						documentación en una herramienta en la nube convierte al proveedor
+						de IA en un subencargado más que documentar, comunicar y evaluar.
+					</p>
+					<p>
+						Con una <a href="/ia-privada">IA privada</a> esa cadena
+						desaparece: el modelo corre en un servidor de vuestra oficina y
+						ningún documento sale de la red. Menos superficie que auditar, y
+						una respuesta sencilla cuando un cliente pregunta dónde acaban sus
+						datos.
+					</p>
+				</div>
+				<div class="illustration">
+					<img src="/images/file-searching.svg" alt="Búsqueda dentro del archivo documental de la gestoría" width="400" height="262" />
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">04 · Límites</span>
+				<h2>Qué <span class="gradient">no</span> hace</h2>
+			</div>
+			<div class="prose">
+				<p>
+					No presenta modelos ni sustituye al software fiscal: no calcula
+					liquidaciones ni firma nada ante la AEAT. No emite criterio propio —
+					recupera y redacta a partir de lo que vosotros habéis escrito, y la
+					revisión del asesor sigue siendo obligatoria. Y no está al día de una
+					reforma que no le hayáis indexado: la actualidad normativa la seguís
+					marcando vosotros con vuestras circulares.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">05 · Preguntas frecuentes</span>
+				<h2>Antes de que <span class="gradient">preguntes</span></h2>
+			</div>
+			<div class="faq-list">
+				{faq.map((item) => (
+					<details class="faq-item">
+						<summary>{item.q}</summary>
+						<p>{item.a}</p>
+					</details>
+				))}
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="final-cta">
+				<div>
+					<h2>Empecemos por un área</h2>
+					<p>Una llamada de 30 minutos para elegir con qué parte del despacho conviene arrancar.</p>
+				</div>
+				<a class="cta" href="/contact">Solicita una llamada</a>
+			</div>
+		</section>
+
+		<div class="post-footer-links">
+			<BackLink lang="es" />
+			<a class="back-link" href="/blog/puede-empresa-usar-ia-sin-nube">Leer más: IA sin enviar datos a la nube →</a>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.post-meta {
+		display: flex;
+		justify-content: center;
+		gap: 0.6rem;
+		margin-top: 1.2rem;
+	}
+	.post-meta .badge {
+		font-size: 0.75rem;
+		color: var(--muted);
+	}
+	.callout {
+		max-width: 720px;
+		margin: 0 auto;
+		border: 1px solid var(--border);
+		border-left: 3px solid var(--blue);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.6rem 1.8rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.callout p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+	.prose {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.prose p {
+		margin: 0 0 1.1rem;
+		line-height: 1.7;
+	}
+	.prose p:last-child {
+		margin-bottom: 0;
+	}
+	.prose a,
+	.copy a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: var(--border);
+		text-underline-offset: 3px;
+	}
+	.prose a:hover,
+	.copy a:hover {
+		text-decoration-color: currentColor;
+	}
+	.post-footer-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: "IA privada para gestorías y asesorías fiscales",
+	description,
+	datePublished: publishedDate,
+	dateModified: publishedDate,
+	author: { "@type": "Organization", name: "Zaviren" },
+	publisher: { "@type": "Organization", name: "Zaviren" },
+	mainEntityOfPage: "https://zaviren.com/blog/ia-privada-gestorias-asesorias",
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faq.map((item) => ({
+		"@type": "Question",
+		name: item.q,
+		acceptedAnswer: { "@type": "Answer", text: item.a },
+	})),
+})} />

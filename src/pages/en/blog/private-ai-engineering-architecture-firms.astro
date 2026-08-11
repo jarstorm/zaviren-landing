@@ -1,0 +1,301 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import BackLink from "../../../components/BackLink.astro";
+
+const publishedDate = "2026-08-04";
+const title = "Private AI for engineering and architecture firms — Zaviren";
+const description =
+	"Technical reports rewritten from scratch, tenders against the clock, and client NDAs that forbid moving the documentation. How AI running inside the practice helps.";
+
+const faq = [
+	{
+		q: "Can it run calculations or produce drawings?",
+		a: "No. It does not replace your calculation software, CAD or BIM. It is a documentation tool: it finds, compares and drafts from projects, reports and standards you have already written.",
+	},
+	{
+		q: "What about the NDAs we sign with clients?",
+		a: "That is the main reason this sector asks. Many contracts forbid passing project documentation to third parties without authorisation — and uploading it to a cloud AI is, literally, disclosure to a third party. With the server in the practice there is no disclosure to justify.",
+	},
+	{
+		q: "Does it read drawings and technical PDFs?",
+		a: "It reads the text: reports, tender documents, annexes, site records and the text layers of a PDF. It does not interpret the geometry of a drawing — that is what your technical tools are for.",
+	},
+	{
+		q: "Is it useful for preparing tender submissions?",
+		a: "It is one of the clearest returns: it retrieves the equivalent sections from your own previous submissions and prepares a draft the team reviews, instead of starting from a blank page each time.",
+	},
+	{
+		q: "Do we have to reorganise the project archive first?",
+		a: "No. It indexes the folder structure exactly as it is — the mess is precisely the problem it solves.",
+	},
+];
+---
+
+<Layout
+	lang="en"
+	title={title}
+	description={description}
+	altHref="/blog/ia-privada-ingenieria-arquitectura"
+>
+	<article>
+		<section class="hero">
+			<span class="eyebrow">Blog · Industry</span>
+			<h1>Private AI for <span class="gradient">engineering and architecture</span></h1>
+			<p class="subtitle">
+				Twenty years of projects, reports and tender documents on the
+				practice's server. Every new bid closely resembles an old one — but
+				finding it costs more than rewriting it.
+			</p>
+			<div class="post-meta">
+				<span class="badge">4 Aug 2026</span>
+				<span class="badge">6 min read</span>
+			</div>
+			<div class="cta-row">
+				<a class="cta" href="/en/contact">Tell us about your case</a>
+				<a class="cta cta-secondary" href="/en/guide">Download the free guide</a>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="callout">
+				<span class="eyebrow">In one sentence</span>
+				<p>
+					A technical consultancy's real asset is its project history, and it is
+					almost never searchable. Private AI indexes reports, tender documents,
+					annexes and site records, and answers citing the specific project and
+					section. It runs on a server in the practice, so documentation covered
+					by an NDA or by the client's intellectual property is never disclosed
+					to an outside provider.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">01 · Day to day</span>
+				<h2>The <span class="gradient">real pains</span></h2>
+				<p>The ones that show up exactly when there's a deadline.</p>
+			</div>
+			<div class="pain-grid">
+				<div class="card">
+					<span class="pain-icon">📐</span>
+					<div>
+						<h3>Rewriting what is already written</h3>
+						<p>The report for a similar project exists, but finding it in the archive costs more than drafting the section again.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">⏱️</span>
+					<div>
+						<h3>Tenders against the clock</h3>
+						<p>Hundreds of pages of requirements and a week to respond. Pinning down which ones apply burns half a day of a senior engineer.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🧠</span>
+					<div>
+						<h3>The technical criteria are unwritten</h3>
+						<p>How the practice resolves a recurring detail is known by three people, and they always have to be interrupted.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🤐</span>
+					<div>
+						<h3>NDAs that block the obvious tool</h3>
+						<p>The team would use cloud AI, but client contracts forbid passing project documentation to third parties.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">02 · The fix</span>
+				<h2>What AI does <span class="gradient">about those four</span></h2>
+			</div>
+			<div class="cap-grid">
+				<div class="card">
+					<span class="cap-num">01</span>
+					<div>
+						<h3>Reuses your own history</h3>
+						<p>"Building services reports for industrial buildings using this solution" returns the actual projects and the exact section.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">02</span>
+					<div>
+						<h3>Turns a tender document into answers</h3>
+						<p>Ask about eligibility requirements, deadlines or scoring criteria and get the answer with the paragraph quoted.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">03</span>
+					<div>
+						<h3>Makes the practice's criteria searchable</h3>
+						<p>Construction details, internal notes and documented decisions stop living only in the seniors' heads.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">04</span>
+					<div>
+						<h3>Fits the NDAs you already signed</h3>
+						<p>With nothing leaving the practice, there is no third-party disclosure to authorise and no confidentiality clause at risk.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="split">
+				<div class="copy">
+					<span class="eyebrow">03 · Why private</span>
+					<h2>The project <span class="gradient">isn't yours to disclose</span></h2>
+					<p>
+						In engineering and architecture the problem isn't only data
+						protection: it's contractual. Much of a project's documentation is
+						covered by confidentiality agreements and by the client's
+						intellectual property. Uploading it to a cloud tool is disclosure to
+						a third party, enterprise plan or not.
+					</p>
+					<p>
+						There, <a href="/en/private-ai">private AI</a> isn't a preference —
+						it's the only thing that fits: the model runs on a server in the
+						practice, nothing reaches the internet, and you can answer in
+						writing when a client asks where their documentation ends up.
+					</p>
+				</div>
+				<div class="illustration">
+					<img src="/images/chat-with-ai.svg" alt="Asking questions in plain language over the project archive" width="400" height="262" />
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">04 · Limits</span>
+				<h2>What it does <span class="gradient">not</span> do</h2>
+			</div>
+			<div class="prose">
+				<p>
+					It does not calculate, model or draw: it replaces neither calculation
+					software nor CAD or BIM, and it does not interpret the geometry of a
+					drawing. It signs nothing and takes on no technical responsibility —
+					review by a qualified engineer or architect remains mandatory. And it
+					knows no standard you never indexed: it works over your own archive,
+					not over an external body of regulations.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">05 · FAQ</span>
+				<h2>Before you <span class="gradient">ask</span></h2>
+			</div>
+			<div class="faq-list">
+				{faq.map((item) => (
+					<details class="faq-item">
+						<summary>{item.q}</summary>
+						<p>{item.a}</p>
+					</details>
+				))}
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="final-cta">
+				<div>
+					<h2>Let's start with the next tender</h2>
+					<p>A 30-minute call to see which part of the project archive is worth indexing first.</p>
+				</div>
+				<a class="cta" href="/en/contact">Book a call</a>
+			</div>
+		</section>
+
+		<div class="post-footer-links">
+			<BackLink lang="en" />
+			<a class="back-link" href="/en/blog/private-ai-vs-chatgpt">Read more: Private AI vs ChatGPT →</a>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.post-meta {
+		display: flex;
+		justify-content: center;
+		gap: 0.6rem;
+		margin-top: 1.2rem;
+	}
+	.post-meta .badge {
+		font-size: 0.75rem;
+		color: var(--muted);
+	}
+	.callout {
+		max-width: 720px;
+		margin: 0 auto;
+		border: 1px solid var(--border);
+		border-left: 3px solid var(--blue);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.6rem 1.8rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.callout p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+	.prose {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.prose p {
+		margin: 0 0 1.1rem;
+		line-height: 1.7;
+	}
+	.prose p:last-child {
+		margin-bottom: 0;
+	}
+	.prose a,
+	.copy a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: var(--border);
+		text-underline-offset: 3px;
+	}
+	.prose a:hover,
+	.copy a:hover {
+		text-decoration-color: currentColor;
+	}
+	.post-footer-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: "Private AI for engineering and architecture firms",
+	description,
+	datePublished: publishedDate,
+	dateModified: publishedDate,
+	author: { "@type": "Organization", name: "Zaviren" },
+	publisher: { "@type": "Organization", name: "Zaviren" },
+	mainEntityOfPage: "https://zaviren.com/en/blog/private-ai-engineering-architecture-firms",
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faq.map((item) => ({
+		"@type": "Question",
+		name: item.q,
+		acceptedAnswer: { "@type": "Answer", text: item.a },
+	})),
+})} />

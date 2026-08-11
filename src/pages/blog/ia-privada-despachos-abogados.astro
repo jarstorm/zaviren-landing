@@ -1,0 +1,304 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BackLink from "../../components/BackLink.astro";
+
+const publishedDate = "2026-05-13";
+const title = "IA privada para despachos de abogados — Zaviren";
+const description =
+	"Los cuatro dolores reales de un despacho (buscar en el fondo documental, rehacer escritos, consultas repetidas, incorporar gente nueva) y cómo una IA que no sale de tu red los resuelve sin tocar el deber de secreto.";
+
+const faq = [
+	{
+		q: "¿Puedo usar ChatGPT con documentación de clientes?",
+		a: "Con un plan empresarial hay contrato y garantías, pero el documento sale igual del perímetro del despacho hacia un tercero. Eso obliga a valorar el deber de secreto profesional y a firmar un contrato de encargo de tratamiento (art. 28 RGPD). Con una IA privada esa transferencia no existe, porque el documento nunca sale del servidor del despacho.",
+	},
+	{
+		q: "¿Sustituye a Aranzadi, vLex o cualquier base de datos de jurisprudencia?",
+		a: "No. Esas bases contienen legislación y jurisprudencia publicada; esta IA responde sobre el fondo documental propio del despacho — vuestros escritos, dictámenes, contratos y precedentes internos. Son complementarias.",
+	},
+	{
+		q: "¿Cómo sé que la respuesta no se la ha inventado?",
+		a: "Cada respuesta cita el documento y el pasaje del que sale, con enlace al original. Si no encuentra respaldo en vuestro fondo documental, lo dice en vez de rellenar el hueco.",
+	},
+	{
+		q: "¿Hace falta migrar los expedientes a otro sitio?",
+		a: "No. Se indexa la carpeta compartida, el gestor documental o el software de expedientes que ya usáis, en el estado en el que está.",
+	},
+	{
+		q: "¿Puede ver todo el mundo todos los expedientes?",
+		a: "No: los permisos de lectura se heredan de los que ya tenéis. Si un pasante no tiene acceso a una carpeta, la IA tampoco le devuelve nada de ahí.",
+	},
+];
+---
+
+<Layout
+	lang="es"
+	title={title}
+	description={description}
+	altHref="/en/blog/private-ai-law-firms"
+>
+	<article>
+		<section class="hero">
+			<span class="eyebrow">Blog · Sector</span>
+			<h1>IA privada para <span class="gradient">despachos de abogados</span></h1>
+			<p class="subtitle">
+				El conocimiento de un despacho está en sus escritos, sus dictámenes y
+				sus precedentes — y encontrarlo cuesta horas facturables. Una IA que
+				corre dentro del despacho lo busca por ti sin que un solo expediente
+				salga de la red.
+			</p>
+			<div class="post-meta">
+				<span class="badge">13 may 2026</span>
+				<span class="badge">6 min de lectura</span>
+			</div>
+			<div class="cta-row">
+				<a class="cta" href="/contact">Cuéntanos tu caso</a>
+				<a class="cta cta-secondary" href="/guide">Descarga la guía gratuita</a>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="callout">
+				<span class="eyebrow">En una frase</span>
+				<p>
+					Un despacho acumula miles de documentos que ya resuelven el problema
+					que tiene delante hoy — pero nadie recuerda en qué expediente están.
+					La IA privada indexa ese fondo documental y responde en lenguaje
+					natural citando el escrito concreto. Y como el modelo corre en un
+					servidor del despacho, la documentación de cliente no viaja a la nube
+					de nadie: el deber de secreto no entra en conflicto con la
+					herramienta.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">01 · El día a día</span>
+				<h2>Los dolores <span class="gradient">reales</span></h2>
+				<p>Ninguno es de tecnología. Todos cuestan horas.</p>
+			</div>
+			<div class="pain-grid">
+				<div class="card">
+					<span class="pain-icon">🗂️</span>
+					<div>
+						<h3>"Esto ya lo hicimos, pero no sé en qué asunto"</h3>
+						<p>Un escrito casi idéntico está en el archivo desde hace tres años. Encontrarlo cuesta más que volver a redactarlo desde cero.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">📑</span>
+					<div>
+						<h3>Contratos de 60 páginas que hay que revisar hoy</h3>
+						<p>Localizar la cláusula de resolución, la de confidencialidad o el plazo concreto exige leerlo entero, otra vez.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🔁</span>
+					<div>
+						<h3>La misma consulta interna, cada semana</h3>
+						<p>"¿Qué criterio seguimos en este tipo de asunto?" — la respuesta está en la cabeza de dos socios, no en un sitio consultable.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">👥</span>
+					<div>
+						<h3>Cada incorporación arranca de cero</h3>
+						<p>Un abogado nuevo tarda meses en saber cómo trabaja el despacho, porque eso no está escrito en ningún manual.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">02 · La solución</span>
+				<h2>Qué hace la IA <span class="gradient">con esos cuatro problemas</span></h2>
+			</div>
+			<div class="cap-grid">
+				<div class="card">
+					<span class="cap-num">01</span>
+					<div>
+						<h3>Busca por lo que dice, no por el nombre del archivo</h3>
+						<p>"Escritos de oposición a ejecución hipotecaria de los últimos tres años" devuelve los expedientes concretos, aunque ninguno se llame así.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">02</span>
+					<div>
+						<h3>Responde sobre un contrato largo</h3>
+						<p>Preguntas por una cláusula y te da la respuesta con el párrafo exacto citado, en vez de un resumen que hay que verificar entero.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">03</span>
+					<div>
+						<h3>Convierte el criterio del despacho en algo consultable</h3>
+						<p>Los precedentes internos, las circulares y los dictámenes previos pasan a responder solos, sin interrumpir a un socio.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">04</span>
+					<div>
+						<h3>Acorta la incorporación de gente nueva</h3>
+						<p>El que entra pregunta al sistema cómo se hizo antes y recibe el documento real del despacho, no una explicación genérica.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="split">
+				<div class="copy">
+					<span class="eyebrow">03 · Por qué privada</span>
+					<h2>El expediente <span class="gradient">no puede salir del despacho</span></h2>
+					<p>
+						Esta es la diferencia que importa en un despacho, y no es de
+						precio: en una herramienta en la nube, cada consulta con
+						documentación de cliente viaja a un servidor de un tercero. Aunque
+						haya plan empresarial y contrato de encargo de tratamiento
+						(art. 28 RGPD), sigue habiendo una transferencia que valorar frente
+						al deber de secreto profesional.
+					</p>
+					<p>
+						En una <a href="/ia-privada">IA privada</a> esa transferencia
+						simplemente no ocurre: el modelo y el motor de búsqueda corren en un
+						servidor del despacho, conectado solo a la red interna. Nada sale, y
+						el sistema sigue funcionando aunque caiga la conexión.
+					</p>
+				</div>
+				<div class="illustration">
+					<img src="/images/secure-server.svg" alt="Servidor propio protegido dentro del despacho" width="400" height="262" />
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">04 · Límites</span>
+				<h2>Qué <span class="gradient">no</span> hace</h2>
+			</div>
+			<div class="prose">
+				<p>
+					No emite criterio jurídico ni firma nada: es una herramienta de
+					búsqueda y redacción asistida sobre vuestros documentos, y la revisión
+					del abogado sigue siendo obligatoria. No sustituye a una base de datos
+					de legislación y jurisprudencia — responde sobre el fondo documental
+					del despacho, no sobre el BOE. Y no adivina lo que no está indexado:
+					si un criterio nunca se escribió, la IA no lo puede recuperar.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">05 · Preguntas frecuentes</span>
+				<h2>Antes de que <span class="gradient">preguntes</span></h2>
+			</div>
+			<div class="faq-list">
+				{faq.map((item) => (
+					<details class="faq-item">
+						<summary>{item.q}</summary>
+						<p>{item.a}</p>
+					</details>
+				))}
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="final-cta">
+				<div>
+					<h2>Veámoslo con vuestro archivo</h2>
+					<p>Una llamada de 30 minutos para ver qué expedientes tiene sentido indexar primero.</p>
+				</div>
+				<a class="cta" href="/contact">Solicita una llamada</a>
+			</div>
+		</section>
+
+		<div class="post-footer-links">
+			<BackLink lang="es" />
+			<a class="back-link" href="/rag-empresarial">Cómo funciona el RAG por dentro →</a>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.post-meta {
+		display: flex;
+		justify-content: center;
+		gap: 0.6rem;
+		margin-top: 1.2rem;
+	}
+	.post-meta .badge {
+		font-size: 0.75rem;
+		color: var(--muted);
+	}
+	.callout {
+		max-width: 720px;
+		margin: 0 auto;
+		border: 1px solid var(--border);
+		border-left: 3px solid var(--blue);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.6rem 1.8rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.callout p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+	.prose {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.prose p {
+		margin: 0 0 1.1rem;
+		line-height: 1.7;
+	}
+	.prose p:last-child {
+		margin-bottom: 0;
+	}
+	.prose a,
+	.copy a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: var(--border);
+		text-underline-offset: 3px;
+	}
+	.prose a:hover,
+	.copy a:hover {
+		text-decoration-color: currentColor;
+	}
+	.post-footer-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: "IA privada para despachos de abogados",
+	description,
+	datePublished: publishedDate,
+	dateModified: publishedDate,
+	author: { "@type": "Organization", name: "Zaviren" },
+	publisher: { "@type": "Organization", name: "Zaviren" },
+	mainEntityOfPage: "https://zaviren.com/blog/ia-privada-despachos-abogados",
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faq.map((item) => ({
+		"@type": "Question",
+		name: item.q,
+		acceptedAnswer: { "@type": "Answer", text: item.a },
+	})),
+})} />

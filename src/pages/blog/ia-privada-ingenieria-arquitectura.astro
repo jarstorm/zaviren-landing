@@ -1,0 +1,301 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BackLink from "../../components/BackLink.astro";
+
+const publishedDate = "2026-08-04";
+const title = "IA privada para consultoras de ingeniería y arquitectura — Zaviren";
+const description =
+	"Memorias técnicas que se reescriben desde cero, licitaciones contrarreloj y NDAs de cliente que prohíben mover la documentación. Cómo ayuda una IA que corre dentro del estudio.";
+
+const faq = [
+	{
+		q: "¿Puede calcular estructuras o generar planos?",
+		a: "No. No sustituye a vuestro software de cálculo, CAD ni BIM. Es una herramienta documental: encuentra, compara y redacta a partir de proyectos, memorias y normativa que ya tenéis escritos.",
+	},
+	{
+		q: "¿Qué pasa con los NDAs que firmamos con clientes?",
+		a: "Es la razón principal por la que este sector pregunta. Muchos contratos prohíben ceder la documentación del proyecto a terceros sin autorización — y subirla a una IA en la nube es, literalmente, una cesión a un tercero. Con el servidor en el estudio no hay cesión que justificar.",
+	},
+	{
+		q: "¿Lee planos y PDFs técnicos?",
+		a: "Lee el texto: memorias, pliegos, anejos, informes, actas de obra y las partes textuales de un PDF. La geometría de un plano no la interpreta; para eso están vuestras herramientas técnicas.",
+	},
+	{
+		q: "¿Sirve para preparar ofertas de licitación?",
+		a: "Es uno de los casos con retorno más claro: recupera los apartados equivalentes de ofertas anteriores vuestras y prepara un borrador que el equipo revisa, en vez de empezar en blanco cada vez.",
+	},
+	{
+		q: "¿Hay que reorganizar el archivo de proyectos antes?",
+		a: "No. Se indexa la estructura de carpetas tal y como está — el desorden es precisamente el problema que resuelve.",
+	},
+];
+---
+
+<Layout
+	lang="es"
+	title={title}
+	description={description}
+	altHref="/en/blog/private-ai-engineering-architecture-firms"
+>
+	<article>
+		<section class="hero">
+			<span class="eyebrow">Blog · Sector</span>
+			<h1>IA privada para <span class="gradient">ingeniería y arquitectura</span></h1>
+			<p class="subtitle">
+				Veinte años de proyectos, memorias y pliegos en el servidor del
+				estudio. Cada oferta nueva se parece muchísimo a una anterior — pero
+				encontrarla cuesta más que reescribirla.
+			</p>
+			<div class="post-meta">
+				<span class="badge">4 ago 2026</span>
+				<span class="badge">6 min de lectura</span>
+			</div>
+			<div class="cta-row">
+				<a class="cta" href="/contact">Cuéntanos tu caso</a>
+				<a class="cta cta-secondary" href="/guide">Descarga la guía gratuita</a>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="callout">
+				<span class="eyebrow">En una frase</span>
+				<p>
+					El activo de una consultora técnica es su histórico de proyectos, y
+					casi nunca es consultable. La IA privada indexa memorias, pliegos,
+					anejos e informes, y responde citando el proyecto y el apartado
+					concretos. Corre en un servidor del estudio, así que la documentación
+					sujeta a NDA o a propiedad intelectual del cliente no se cede a ningún
+					proveedor externo.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">01 · El día a día</span>
+				<h2>Los dolores <span class="gradient">reales</span></h2>
+				<p>Los que aparecen justo cuando hay plazo.</p>
+			</div>
+			<div class="pain-grid">
+				<div class="card">
+					<span class="pain-icon">📐</span>
+					<div>
+						<h3>Reescribir lo que ya está escrito</h3>
+						<p>La memoria de un proyecto parecido existe, pero encontrarla en el archivo cuesta más que redactar el apartado otra vez.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">⏱️</span>
+					<div>
+						<h3>Licitaciones contrarreloj</h3>
+						<p>Pliegos de cientos de páginas y una semana para responder. Localizar los requisitos que aplican consume media jornada de un técnico sénior.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🧠</span>
+					<div>
+						<h3>El criterio técnico no está escrito</h3>
+						<p>Cómo resuelve el estudio un detalle recurrente lo saben tres personas, y siempre hay que interrumpirlas.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🤐</span>
+					<div>
+						<h3>NDAs que bloquean la herramienta obvia</h3>
+						<p>El equipo usaría IA en la nube, pero los contratos de cliente prohíben ceder la documentación del proyecto a terceros.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">02 · La solución</span>
+				<h2>Qué hace la IA <span class="gradient">con esos cuatro problemas</span></h2>
+			</div>
+			<div class="cap-grid">
+				<div class="card">
+					<span class="cap-num">01</span>
+					<div>
+						<h3>Reutiliza vuestro propio histórico</h3>
+						<p>"Memorias de instalaciones en edificio industrial con este tipo de solución" devuelve los proyectos concretos y el apartado exacto.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">02</span>
+					<div>
+						<h3>Convierte un pliego en respuestas</h3>
+						<p>Preguntas por los requisitos de solvencia, plazos o criterios de valoración y recibes la respuesta con el párrafo del pliego citado.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">03</span>
+					<div>
+						<h3>Hace consultable el criterio del estudio</h3>
+						<p>Los detalles constructivos, notas internas y decisiones documentadas dejan de vivir solo en la cabeza de los sénior.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">04</span>
+					<div>
+						<h3>Encaja con los NDAs firmados</h3>
+						<p>Al no salir nada del estudio, no hay cesión a un tercero que autorizar ni cláusula de confidencialidad en riesgo.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="split">
+				<div class="copy">
+					<span class="eyebrow">03 · Por qué privada</span>
+					<h2>El proyecto <span class="gradient">no es vuestro para cederlo</span></h2>
+					<p>
+						En ingeniería y arquitectura el problema no es solo de protección de
+						datos: es contractual. Buena parte de la documentación de un
+						proyecto está sujeta a acuerdos de confidencialidad y a derechos de
+						propiedad intelectual del cliente. Subirla a una herramienta en la
+						nube es una cesión a un tercero, con plan empresarial o sin él.
+					</p>
+					<p>
+						Ahí una <a href="/ia-privada">IA privada</a> no es una preferencia,
+						es lo único que encaja: el modelo corre en un servidor del estudio,
+						nada sale a internet y podéis responder por escrito a un cliente que
+						pregunte dónde acaba su documentación.
+					</p>
+				</div>
+				<div class="illustration">
+					<img src="/images/chat-with-ai.svg" alt="Consulta en lenguaje natural sobre el archivo de proyectos" width="400" height="262" />
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">04 · Límites</span>
+				<h2>Qué <span class="gradient">no</span> hace</h2>
+			</div>
+			<div class="prose">
+				<p>
+					No calcula, no modela y no dibuja: no sustituye al software de cálculo,
+					CAD o BIM, y no interpreta la geometría de un plano. No firma ni asume
+					responsabilidad técnica — la revisión del técnico competente sigue
+					siendo obligatoria. Y no conoce normativa que no le hayáis indexado:
+					trabaja sobre vuestro fondo documental, no sobre un compendio
+					normativo externo.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">05 · Preguntas frecuentes</span>
+				<h2>Antes de que <span class="gradient">preguntes</span></h2>
+			</div>
+			<div class="faq-list">
+				{faq.map((item) => (
+					<details class="faq-item">
+						<summary>{item.q}</summary>
+						<p>{item.a}</p>
+					</details>
+				))}
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="final-cta">
+				<div>
+					<h2>Empecemos por la próxima licitación</h2>
+					<p>Una llamada de 30 minutos para ver qué parte del archivo de proyectos conviene indexar primero.</p>
+				</div>
+				<a class="cta" href="/contact">Solicita una llamada</a>
+			</div>
+		</section>
+
+		<div class="post-footer-links">
+			<BackLink lang="es" />
+			<a class="back-link" href="/blog/ia-privada-vs-chatgpt">Leer más: IA privada vs ChatGPT →</a>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.post-meta {
+		display: flex;
+		justify-content: center;
+		gap: 0.6rem;
+		margin-top: 1.2rem;
+	}
+	.post-meta .badge {
+		font-size: 0.75rem;
+		color: var(--muted);
+	}
+	.callout {
+		max-width: 720px;
+		margin: 0 auto;
+		border: 1px solid var(--border);
+		border-left: 3px solid var(--blue);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.6rem 1.8rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.callout p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+	.prose {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.prose p {
+		margin: 0 0 1.1rem;
+		line-height: 1.7;
+	}
+	.prose p:last-child {
+		margin-bottom: 0;
+	}
+	.prose a,
+	.copy a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: var(--border);
+		text-underline-offset: 3px;
+	}
+	.prose a:hover,
+	.copy a:hover {
+		text-decoration-color: currentColor;
+	}
+	.post-footer-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: "IA privada para consultoras de ingeniería y arquitectura",
+	description,
+	datePublished: publishedDate,
+	dateModified: publishedDate,
+	author: { "@type": "Organization", name: "Zaviren" },
+	publisher: { "@type": "Organization", name: "Zaviren" },
+	mainEntityOfPage: "https://zaviren.com/blog/ia-privada-ingenieria-arquitectura",
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faq.map((item) => ({
+		"@type": "Question",
+		name: item.q,
+		acceptedAnswer: { "@type": "Answer", text: item.a },
+	})),
+})} />

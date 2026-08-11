@@ -1,0 +1,303 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BackLink from "../../components/BackLink.astro";
+
+const publishedDate = "2026-06-10";
+const title = "IA privada para clínicas médicas y dentales — Zaviren";
+const description =
+	"Protocolos que nadie encuentra, recepción saturada de preguntas repetidas y personal nuevo cada temporada. Cómo ayuda una IA que corre dentro de la clínica, sin sacar ni un dato de salud a la nube.";
+
+const faq = [
+	{
+		q: "¿La IA diagnostica o sugiere tratamientos?",
+		a: "No, y es deliberado. Un software con finalidad médica sería un producto sanitario y necesitaría marcado CE bajo el Reglamento (UE) 2017/745. Esto es una herramienta documental y administrativa: encuentra y redacta a partir de vuestros protocolos y documentos. El criterio clínico es del profesional, siempre.",
+	},
+	{
+		q: "¿Toca la historia clínica de los pacientes?",
+		a: "Solo si lo decidís, y no hace falta para empezar. La mayoría de las clínicas arrancan indexando protocolos, consentimientos, circulares internas y documentación de proveedores — cero datos de salud identificables. Ampliar el alcance es una decisión posterior.",
+	},
+	{
+		q: "¿Por qué no vale una herramienta en la nube?",
+		a: "Porque los datos de salud son categoría especial (art. 9 RGPD): el listón de justificación, seguridad y evaluación es más alto que para un dato normal. Con el servidor dentro de la clínica no hay transferencia a un tercero que documentar ni transferencia internacional que evaluar.",
+	},
+	{
+		q: "¿Se integra con el software de gestión de la clínica?",
+		a: "Para el fondo documental no hace falta: se indexa la carpeta o el gestor documental que ya usáis. Integrarlo con el software de citas o de historia clínica se valora caso a caso.",
+	},
+	{
+		q: "¿Puede usarlo el personal de recepción?",
+		a: "Sí, y suele ser el primer caso de uso con retorno claro: preguntas sobre preparación de pruebas, coberturas, documentación previa o política de cancelaciones se responden en segundos y con la versión vigente del protocolo.",
+	},
+];
+---
+
+<Layout
+	lang="es"
+	title={title}
+	description={description}
+	altHref="/en/blog/private-ai-medical-dental-clinics"
+>
+	<article>
+		<section class="hero">
+			<span class="eyebrow">Blog · Sector</span>
+			<h1>IA privada para <span class="gradient">clínicas médicas y dentales</span></h1>
+			<p class="subtitle">
+				Los protocolos existen, están actualizados y nadie los encuentra a
+				tiempo. Una IA que corre dentro de la clínica los pone a un mensaje de
+				distancia — sin que un solo dato de salud salga de vuestra red.
+			</p>
+			<div class="post-meta">
+				<span class="badge">10 jun 2026</span>
+				<span class="badge">6 min de lectura</span>
+			</div>
+			<div class="cta-row">
+				<a class="cta" href="/contact">Cuéntanos tu caso</a>
+				<a class="cta cta-secondary" href="/guide">Descarga la guía gratuita</a>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="callout">
+				<span class="eyebrow">En una frase</span>
+				<p>
+					En una clínica, la información crítica está escrita —protocolos,
+					consentimientos, circulares, instrucciones de material— pero repartida
+					en carpetas, correos y versiones antiguas. La IA privada la indexa y
+					responde citando el documento vigente. Corre en un servidor de la
+					clínica, así que los datos de salud, que son <strong>categoría
+					especial</strong> bajo el art. 9 del RGPD, no se transfieren a ningún
+					proveedor externo.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">01 · El día a día</span>
+				<h2>Los dolores <span class="gradient">reales</span></h2>
+				<p>Recepción y gabinete, no informática.</p>
+			</div>
+			<div class="pain-grid">
+				<div class="card">
+					<span class="pain-icon">📋</span>
+					<div>
+						<h3>El protocolo está, pero ¿cuál es el vigente?</h3>
+						<p>Tres versiones del mismo documento en tres carpetas distintas, y la que se aplica es la que alguien recuerda.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">☎️</span>
+					<div>
+						<h3>Recepción contesta lo mismo todo el día</h3>
+						<p>Preparación de una prueba, qué cubre el seguro, qué traer a la primera visita: mismas preguntas, respuesta manual cada vez.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🔄</span>
+					<div>
+						<h3>Rotación alta de personal</h3>
+						<p>Cada incorporación repite las mismas dudas durante semanas, y siempre a la persona más ocupada del turno.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🔐</span>
+					<div>
+						<h3>El equipo ya usa IA por su cuenta</h3>
+						<p>Alguien pega un informe en una web para resumirlo. Sin herramienta interna, esto pasa igual — pero fuera de vuestro control.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">02 · La solución</span>
+				<h2>Qué hace la IA <span class="gradient">con esos cuatro problemas</span></h2>
+			</div>
+			<div class="cap-grid">
+				<div class="card">
+					<span class="cap-num">01</span>
+					<div>
+						<h3>Una única respuesta, siempre la vigente</h3>
+						<p>Responde desde el protocolo actual y cita el documento y la fecha, así que se ve de un vistazo si algo está caducado.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">02</span>
+					<div>
+						<h3>Descarga a recepción</h3>
+						<p>Las preguntas administrativas repetidas se contestan en segundos, con la información de vuestros propios documentos.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">03</span>
+					<div>
+						<h3>Acompaña a la gente nueva</h3>
+						<p>El personal recién incorporado consulta al sistema en vez de interrumpir, y recibe el procedimiento real de la clínica.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">04</span>
+					<div>
+						<h3>Da una alternativa interna al ChatGPT en el móvil</h3>
+						<p>Cuando existe una herramienta propia que funciona, deja de haber motivo para pegar información de pacientes en una web ajena.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="split">
+				<div class="copy">
+					<span class="eyebrow">03 · Por qué privada</span>
+					<h2>Los datos de salud <span class="gradient">juegan en otra liga</span></h2>
+					<p>
+						El RGPD trata los datos de salud como categoría especial (art. 9):
+						el listón de base jurídica, medidas de seguridad y evaluación de
+						impacto es más alto que para cualquier otro dato. Cada herramienta
+						externa a la que llegue información de pacientes es un encargado
+						más que contratar, documentar y auditar.
+					</p>
+					<p>
+						Con una <a href="/ia-privada">IA privada</a> ese problema no se
+						gestiona: se evita. El modelo y la búsqueda corren en un servidor de
+						la clínica, sin salida a internet para el contenido, y el sistema
+						sigue operativo aunque se caiga la conexión — que en una consulta
+						con agenda llena no es un detalle menor.
+					</p>
+				</div>
+				<div class="illustration">
+					<img src="/images/secure-server.svg" alt="Servidor propio protegido dentro de la clínica" width="400" height="262" />
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">04 · Límites</span>
+				<h2>Qué <span class="gradient">no</span> hace</h2>
+			</div>
+			<div class="prose">
+				<p>
+					No diagnostica, no interpreta pruebas y no sugiere tratamientos: eso
+					sería finalidad médica y convertiría al software en producto sanitario
+					sujeto a marcado CE. Tampoco sustituye a vuestro programa de gestión ni
+					a la historia clínica. Es una herramienta documental y administrativa:
+					encuentra, resume y redacta a partir de lo que ya está escrito en la
+					clínica, siempre bajo revisión de un profesional.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">05 · Preguntas frecuentes</span>
+				<h2>Antes de que <span class="gradient">preguntes</span></h2>
+			</div>
+			<div class="faq-list">
+				{faq.map((item) => (
+					<details class="faq-item">
+						<summary>{item.q}</summary>
+						<p>{item.a}</p>
+					</details>
+				))}
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="final-cta">
+				<div>
+					<h2>Empecemos sin datos de pacientes</h2>
+					<p>Una llamada de 30 minutos para definir un piloto solo con protocolos y documentación interna.</p>
+				</div>
+				<a class="cta" href="/contact">Solicita una llamada</a>
+			</div>
+		</section>
+
+		<div class="post-footer-links">
+			<BackLink lang="es" />
+			<a class="back-link" href="/ia-privada">Qué es exactamente la IA privada →</a>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.post-meta {
+		display: flex;
+		justify-content: center;
+		gap: 0.6rem;
+		margin-top: 1.2rem;
+	}
+	.post-meta .badge {
+		font-size: 0.75rem;
+		color: var(--muted);
+	}
+	.callout {
+		max-width: 720px;
+		margin: 0 auto;
+		border: 1px solid var(--border);
+		border-left: 3px solid var(--blue);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.6rem 1.8rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.callout p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+	.prose {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.prose p {
+		margin: 0 0 1.1rem;
+		line-height: 1.7;
+	}
+	.prose p:last-child {
+		margin-bottom: 0;
+	}
+	.prose a,
+	.copy a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: var(--border);
+		text-underline-offset: 3px;
+	}
+	.prose a:hover,
+	.copy a:hover {
+		text-decoration-color: currentColor;
+	}
+	.post-footer-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: "IA privada para clínicas médicas y dentales",
+	description,
+	datePublished: publishedDate,
+	dateModified: publishedDate,
+	author: { "@type": "Organization", name: "Zaviren" },
+	publisher: { "@type": "Organization", name: "Zaviren" },
+	mainEntityOfPage: "https://zaviren.com/blog/ia-privada-clinicas",
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faq.map((item) => ({
+		"@type": "Question",
+		name: item.q,
+		acceptedAnswer: { "@type": "Answer", text: item.a },
+	})),
+})} />

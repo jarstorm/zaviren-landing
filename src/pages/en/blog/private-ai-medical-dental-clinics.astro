@@ -1,0 +1,302 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import BackLink from "../../../components/BackLink.astro";
+
+const publishedDate = "2026-06-10";
+const title = "Private AI for medical and dental clinics — Zaviren";
+const description =
+	"Protocols nobody can find, a front desk drowning in repeat questions, and constant staff turnover. How AI running inside the clinic helps, without a single health record going to the cloud.";
+
+const faq = [
+	{
+		q: "Does the AI diagnose or suggest treatment?",
+		a: "No, deliberately. Software with a medical purpose would be a medical device and would need CE marking under Regulation (EU) 2017/745. This is a documentation and administrative tool: it finds and drafts from your own protocols and documents. Clinical judgement always stays with the professional.",
+	},
+	{
+		q: "Does it touch patient records?",
+		a: "Only if you decide so, and it isn't needed to start. Most clinics begin by indexing protocols, consent forms, internal memos and supplier documentation — zero identifiable health data. Widening the scope is a later decision.",
+	},
+	{
+		q: "Why isn't a cloud tool good enough?",
+		a: "Because health data is a special category under GDPR art. 9: the bar for justification, security and impact assessment is higher than for ordinary data. With the server inside the clinic there is no third-party transfer to document and no international transfer to assess.",
+	},
+	{
+		q: "Does it integrate with our practice management software?",
+		a: "For the document side it doesn't need to: it indexes the folder or document system you already use. Integration with scheduling or records software is assessed case by case.",
+	},
+	{
+		q: "Can front-desk staff use it?",
+		a: "Yes, and it is usually the first use case with a clear return: questions about test preparation, coverage, paperwork to bring or cancellation policy get answered in seconds, from the current version of the protocol.",
+	},
+];
+---
+
+<Layout
+	lang="en"
+	title={title}
+	description={description}
+	altHref="/blog/ia-privada-clinicas"
+>
+	<article>
+		<section class="hero">
+			<span class="eyebrow">Blog · Industry</span>
+			<h1>Private AI for <span class="gradient">medical and dental clinics</span></h1>
+			<p class="subtitle">
+				The protocols exist, they are up to date, and nobody finds them in
+				time. AI running inside the clinic puts them one message away — with
+				no health data leaving your network.
+			</p>
+			<div class="post-meta">
+				<span class="badge">10 Jun 2026</span>
+				<span class="badge">6 min read</span>
+			</div>
+			<div class="cta-row">
+				<a class="cta" href="/en/contact">Tell us about your case</a>
+				<a class="cta cta-secondary" href="/en/guide">Download the free guide</a>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="callout">
+				<span class="eyebrow">In one sentence</span>
+				<p>
+					In a clinic the critical information is written down — protocols,
+					consent forms, memos, equipment instructions — but scattered across
+					folders, email and old versions. Private AI indexes it and answers
+					citing the current document. It runs on a server in the clinic, so
+					health data, a <strong>special category</strong> under GDPR art. 9, is
+					never transferred to an outside provider.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">01 · Day to day</span>
+				<h2>The <span class="gradient">real pains</span></h2>
+				<p>Front desk and treatment room, not IT.</p>
+			</div>
+			<div class="pain-grid">
+				<div class="card">
+					<span class="pain-icon">📋</span>
+					<div>
+						<h3>The protocol exists — but which version applies?</h3>
+						<p>Three copies of the same document in three folders, and the one in force is whichever someone remembers.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">☎️</span>
+					<div>
+						<h3>Reception answers the same thing all day</h3>
+						<p>How to prepare for a test, what insurance covers, what to bring to a first visit: same questions, manual answer every time.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🔄</span>
+					<div>
+						<h3>High staff turnover</h3>
+						<p>Every new hire repeats the same questions for weeks, always to the busiest person on shift.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🔐</span>
+					<div>
+						<h3>The team already uses AI on its own</h3>
+						<p>Someone pastes a report into a website to summarise it. Without an internal tool this happens anyway — just outside your control.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">02 · The fix</span>
+				<h2>What AI does <span class="gradient">about those four</span></h2>
+			</div>
+			<div class="cap-grid">
+				<div class="card">
+					<span class="cap-num">01</span>
+					<div>
+						<h3>One answer, always the current one</h3>
+						<p>It answers from the protocol in force and cites the document and date, so anything stale is obvious at a glance.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">02</span>
+					<div>
+						<h3>Takes load off reception</h3>
+						<p>Repeat administrative questions get answered in seconds, from your own documents.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">03</span>
+					<div>
+						<h3>Supports new staff</h3>
+						<p>New joiners ask the system instead of interrupting, and get the clinic's actual procedure.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">04</span>
+					<div>
+						<h3>Gives an internal alternative to ChatGPT on a phone</h3>
+						<p>Once there is a tool of your own that works, there is no reason left to paste patient information into someone else's website.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="split">
+				<div class="copy">
+					<span class="eyebrow">03 · Why private</span>
+					<h2>Health data <span class="gradient">plays in another league</span></h2>
+					<p>
+						GDPR treats health data as a special category (art. 9): the bar for
+						legal basis, security measures and impact assessment is higher than
+						for any other data. Every external tool that patient information
+						reaches is one more processor to contract, document and audit.
+					</p>
+					<p>
+						With <a href="/en/private-ai">private AI</a> that problem isn't
+						managed — it's avoided. The model and the search run on a server in
+						the clinic, with no route to the internet for the content, and the
+						system stays up even if the connection drops, which on a fully
+						booked day is not a minor detail.
+					</p>
+				</div>
+				<div class="illustration">
+					<img src="/images/secure-server.svg" alt="A protected server inside the clinic" width="400" height="262" />
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">04 · Limits</span>
+				<h2>What it does <span class="gradient">not</span> do</h2>
+			</div>
+			<div class="prose">
+				<p>
+					It does not diagnose, does not interpret test results and does not
+					suggest treatment: that would be a medical purpose and would turn the
+					software into a medical device subject to CE marking. It does not
+					replace your practice management software or the patient record
+					either. It is a documentation and administrative tool: it finds,
+					summarises and drafts from what is already written in the clinic,
+					always under a professional's review.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">05 · FAQ</span>
+				<h2>Before you <span class="gradient">ask</span></h2>
+			</div>
+			<div class="faq-list">
+				{faq.map((item) => (
+					<details class="faq-item">
+						<summary>{item.q}</summary>
+						<p>{item.a}</p>
+					</details>
+				))}
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="final-cta">
+				<div>
+					<h2>Let's start without patient data</h2>
+					<p>A 30-minute call to scope a pilot using protocols and internal documentation only.</p>
+				</div>
+				<a class="cta" href="/en/contact">Book a call</a>
+			</div>
+		</section>
+
+		<div class="post-footer-links">
+			<BackLink lang="en" />
+			<a class="back-link" href="/en/private-ai">What private AI actually is →</a>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.post-meta {
+		display: flex;
+		justify-content: center;
+		gap: 0.6rem;
+		margin-top: 1.2rem;
+	}
+	.post-meta .badge {
+		font-size: 0.75rem;
+		color: var(--muted);
+	}
+	.callout {
+		max-width: 720px;
+		margin: 0 auto;
+		border: 1px solid var(--border);
+		border-left: 3px solid var(--blue);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.6rem 1.8rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.callout p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+	.prose {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.prose p {
+		margin: 0 0 1.1rem;
+		line-height: 1.7;
+	}
+	.prose p:last-child {
+		margin-bottom: 0;
+	}
+	.prose a,
+	.copy a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: var(--border);
+		text-underline-offset: 3px;
+	}
+	.prose a:hover,
+	.copy a:hover {
+		text-decoration-color: currentColor;
+	}
+	.post-footer-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: "Private AI for medical and dental clinics",
+	description,
+	datePublished: publishedDate,
+	dateModified: publishedDate,
+	author: { "@type": "Organization", name: "Zaviren" },
+	publisher: { "@type": "Organization", name: "Zaviren" },
+	mainEntityOfPage: "https://zaviren.com/en/blog/private-ai-medical-dental-clinics",
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faq.map((item) => ({
+		"@type": "Question",
+		name: item.q,
+		acceptedAnswer: { "@type": "Answer", text: item.a },
+	})),
+})} />

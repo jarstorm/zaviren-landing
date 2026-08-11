@@ -1,0 +1,301 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import BackLink from "../../../components/BackLink.astro";
+
+const publishedDate = "2026-05-27";
+const title = "Private AI for accounting and tax firms — Zaviren";
+const description =
+	"Repeated client questions, internal know-how that only two people hold, and filing seasons that block the whole practice. How AI running on your own server takes that load off without payroll data leaving the office.";
+
+const faq = [
+	{
+		q: "Can it answer clients directly?",
+		a: "It can, but start internally: let the team ask and validate answers for a few weeks. Opening it to end clients is a second step, once you know what it answers well and what it doesn't.",
+	},
+	{
+		q: "Is it up to date with the latest tax reform?",
+		a: "Only with what you index. A generic model has frozen, outdated knowledge — which is why answers are built on your own memos and internal notes, the ones you actually keep current. If a memo is from 2024, the AI says so and cites the date.",
+	},
+	{
+		q: "Does it connect to our practice management software?",
+		a: "For the document side it doesn't need to: it indexes what is in the shared drive or document management system. Direct integration with the accounting or tax platform is assessed case by case and isn't needed to start.",
+	},
+	{
+		q: "What about the personal data of our clients' employees?",
+		a: "That is exactly why the private approach fits. On payroll work you are a processor handling third parties' data. With the server in your office, that data is never transferred to an AI provider — no sub-processor to document, no international transfer to assess.",
+	},
+	{
+		q: "How long until something is running?",
+		a: "A pilot scoped to one area (payroll only, for instance) with a few hundred documents is typically live in weeks.",
+	},
+];
+---
+
+<Layout
+	lang="en"
+	title={title}
+	description={description}
+	altHref="/blog/ia-privada-gestorias-asesorias"
+>
+	<article>
+		<section class="hero">
+			<span class="eyebrow">Blog · Industry</span>
+			<h1>Private AI for <span class="gradient">accounting and tax firms</span></h1>
+			<p class="subtitle">
+				Most of what a client asks is already answered in a memo or in last
+				year's file. AI running on your own server finds it and drafts the
+				reply — without a single payroll record leaving the office.
+			</p>
+			<div class="post-meta">
+				<span class="badge">27 May 2026</span>
+				<span class="badge">6 min read</span>
+			</div>
+			<div class="cta-row">
+				<a class="cta" href="/en/contact">Tell us about your case</a>
+				<a class="cta cta-secondary" href="/en/guide">Download the free guide</a>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="callout">
+				<span class="eyebrow">In one sentence</span>
+				<p>
+					An accounting practice lives on answering many similar questions
+					quickly, using highly sensitive third-party documentation. Private AI
+					indexes your memos, files and internal criteria and answers with the
+					source cited — taking the repeated questions off the team. And because
+					it runs on your own server, payroll, filings and your clients'
+					employees' data are never transferred to an outside provider.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">01 · Day to day</span>
+				<h2>The <span class="gradient">real pains</span></h2>
+				<p>All of them get worse in filing season.</p>
+			</div>
+			<div class="pain-grid">
+				<div class="card">
+					<span class="pain-icon">📞</span>
+					<div>
+						<h3>The same question, forty times</h3>
+						<p>"What do I need to register a new contractor?" — already answered in writing, still answered by hand every single time.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🧾</span>
+					<div>
+						<h3>The know-how lives in two heads</h3>
+						<p>How you handle a specific case is something the partners know. If they're busy or away, the file stalls.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">📆</span>
+					<div>
+						<h3>Season means everyone is blocked</h3>
+						<p>Year-end, quarterly filings, tax returns: the work that could be automated is exactly what multiplies in those weeks.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="pain-icon">🗄️</span>
+					<div>
+						<h3>A huge archive searchable only by filename</h3>
+						<p>Thousands of client files in folders by year, and the only way to find something is remembering where it was.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">02 · The fix</span>
+				<h2>What AI does <span class="gradient">about those four</span></h2>
+			</div>
+			<div class="cap-grid">
+				<div class="card">
+					<span class="cap-num">01</span>
+					<div>
+						<h3>Answers frequent questions in your own words</h3>
+						<p>The answer comes from your memos and internal notes, not from generic web text, and cites the document behind it.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">02</span>
+					<div>
+						<h3>Puts internal criteria within reach of the whole team</h3>
+						<p>What used to require asking a partner becomes searchable, with the actual precedent in front of you.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">03</span>
+					<div>
+						<h3>Drafts during peak season</h3>
+						<p>Responses to notices, standard replies and document checklists get drafted from your own prior cases — review instead of writing from scratch.</p>
+					</div>
+				</div>
+				<div class="card">
+					<span class="cap-num">04</span>
+					<div>
+						<h3>Searches the archive by content</h3>
+						<p>"Clients we applied this treatment to last year" returns the files, even if nobody ever tagged them that way.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="split">
+				<div class="copy">
+					<span class="eyebrow">03 · Why private</span>
+					<h2>The data <span class="gradient">isn't yours</span></h2>
+					<p>
+						An accounting practice doesn't only handle its own data: it handles
+						payroll, filings and personal data belonging to its clients'
+						employees. There you act as a processor, and putting that
+						documentation into a cloud tool turns the AI provider into one more
+						sub-processor to document, disclose and assess.
+					</p>
+					<p>
+						With <a href="/en/private-ai">private AI</a> that chain disappears:
+						the model runs on a server in your office and no document leaves the
+						network. Less surface to audit, and a simple answer when a client
+						asks where their data ends up.
+					</p>
+				</div>
+				<div class="illustration">
+					<img src="/images/file-searching.svg" alt="Searching inside the firm's document archive" width="400" height="262" />
+				</div>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">04 · Limits</span>
+				<h2>What it does <span class="gradient">not</span> do</h2>
+			</div>
+			<div class="prose">
+				<p>
+					It does not file returns or replace your tax software: it computes no
+					liabilities and signs nothing with the tax authority. It gives no
+					opinion of its own — it retrieves and drafts from what you wrote, and
+					the adviser's review remains mandatory. And it is not aware of a reform
+					you never indexed: keeping the rules current is still your job, through
+					your own memos.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">05 · FAQ</span>
+				<h2>Before you <span class="gradient">ask</span></h2>
+			</div>
+			<div class="faq-list">
+				{faq.map((item) => (
+					<details class="faq-item">
+						<summary>{item.q}</summary>
+						<p>{item.a}</p>
+					</details>
+				))}
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="final-cta">
+				<div>
+					<h2>Let's start with one area</h2>
+					<p>A 30-minute call to pick which part of the practice to begin with.</p>
+				</div>
+				<a class="cta" href="/en/contact">Book a call</a>
+			</div>
+		</section>
+
+		<div class="post-footer-links">
+			<BackLink lang="en" />
+			<a class="back-link" href="/en/blog/can-a-company-use-ai-without-sending-data-to-the-cloud">Read more: AI without sending data to the cloud →</a>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.post-meta {
+		display: flex;
+		justify-content: center;
+		gap: 0.6rem;
+		margin-top: 1.2rem;
+	}
+	.post-meta .badge {
+		font-size: 0.75rem;
+		color: var(--muted);
+	}
+	.callout {
+		max-width: 720px;
+		margin: 0 auto;
+		border: 1px solid var(--border);
+		border-left: 3px solid var(--blue);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.6rem 1.8rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.callout p {
+		margin: 0;
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+	.prose {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.prose p {
+		margin: 0 0 1.1rem;
+		line-height: 1.7;
+	}
+	.prose p:last-child {
+		margin-bottom: 0;
+	}
+	.prose a,
+	.copy a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: var(--border);
+		text-underline-offset: 3px;
+	}
+	.prose a:hover,
+	.copy a:hover {
+		text-decoration-color: currentColor;
+	}
+	.post-footer-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: "Private AI for accounting and tax firms",
+	description,
+	datePublished: publishedDate,
+	dateModified: publishedDate,
+	author: { "@type": "Organization", name: "Zaviren" },
+	publisher: { "@type": "Organization", name: "Zaviren" },
+	mainEntityOfPage: "https://zaviren.com/en/blog/private-ai-accounting-firms",
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faq.map((item) => ({
+		"@type": "Question",
+		name: item.q,
+		acceptedAnswer: { "@type": "Answer", text: item.a },
+	})),
+})} />
