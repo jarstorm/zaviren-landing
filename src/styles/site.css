@@ -18,6 +18,9 @@ html {
 
 body {
 	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 	background:
 		radial-gradient(60% 40% at 80% 0%, #2c2a5a4d 0%, transparent 60%),
 		radial-gradient(50% 35% at 10% 15%, #1e3a8a4d 0%, transparent 60%),
@@ -28,8 +31,22 @@ body {
 
 .wrap {
 	max-width: 1040px;
+	width: 100%;
 	margin: 0 auto;
 	padding: 0 1.5rem;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+main:has(> section.thanks) {
+	justify-content: center;
 }
 
 header.topbar {
@@ -712,7 +729,7 @@ section.thanks {
 	text-align: center;
 	gap: 1rem;
 	max-width: 480px;
-	margin: 5rem auto;
+	margin: 0 auto;
 }
 
 section.thanks h1 {

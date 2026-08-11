@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+	lang="es"
+	title="Página no encontrada — Zaviren"
+	description="La página que buscas no existe o se ha movido."
+	altHref="/en/"
+>
+	<section class="thanks">
+		<span class="eyebrow" id="err-eyebrow">Error 404</span>
+		<h1 id="err-title">Página no encontrada</h1>
+		<p id="err-text">La página que buscas no existe o se ha movido.</p>
+		<a class="cta" href="/" id="err-home">Ir al inicio</a>
+	</section>
+</Layout>
+
+<script>
+	(function () {
+		var stored: string | null = null;
+		try {
+			stored = localStorage.getItem("zaviren-lang");
+		} catch (e) {}
+		var wantsEn = stored ? stored === "en" : !(navigator.language || "").toLowerCase().startsWith("es");
+		if (!wantsEn) return;
+
+		document.getElementById("err-eyebrow")!.textContent = "Error 404";
+		document.getElementById("err-title")!.textContent = "Page not found";
+		document.getElementById("err-text")!.textContent =
+			"The page you're looking for doesn't exist or has moved.";
+		var home = document.getElementById("err-home") as HTMLAnchorElement;
+		home.textContent = "Go to homepage";
+		home.href = "/en/";
+	})();
+</script>

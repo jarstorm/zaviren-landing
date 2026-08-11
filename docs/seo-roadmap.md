@@ -13,8 +13,8 @@ de qué se hizo — mismo estilo que el catálogo de
 | 1 | Verificar indexación real en Search Console | P0 | ❌ | Requiere acceso del usuario — no verificable desde código |
 | 2 | Confirmar/descartar interstitial anti-bot bloqueando Googlebot | P0 | ❌ | Requiere Search Console → Inspección de URL en vivo |
 | 3 | Confirmar redirect www→non-www | P0 | ❌ | Nivel DNS/Hostinger, fuera del repo |
-| 4 | Página 404 custom con enlace a home | P0 | ❌ | `src/pages/404.astro` no existe |
-| 5 | Corregir `name` de campos del formulario EN (nombre→firstname, etc.) | P0 | ❌ | Cuidado: alinear con `worker/src/index.ts` antes de tocar |
+| 4 | Página 404 custom con enlace a home | P0 | ✅ | Implementado 2026-08-11 — `src/pages/404.astro`, bilingüe (ES+EN), enlaces a ambas home |
+| 5 | Corregir `name` de campos del formulario EN (nombre→firstname, etc.) | P0 | ✅ | Implementado 2026-08-11 — `id`/`name` de inputs en `en/contact.astro` y `en/guide.astro` pasan a `firstname`/`lastname`/`company`; payload al Worker sigue con claves `nombre`/`apellidos`/`empresa` (esquema fijo, no tocado en `worker/src/index.ts`) |
 | 6 | H1/subtítulo home hacia intención comercial ("IA privada para empresas") | P1 | ❌ | Actual: "IA soberana, bajo tu control" |
 | 7 | `organizationSchema` solo en home (no en todas las páginas) + `SoftwareApplication` schema | P1 | ❌ | Hoy se inyecta en cada página vía `Layout.astro` |
 | 8 | Páginas legales (privacidad, aviso legal) | P1 | ❌ | Obligatorio con formularios que recogen datos (RGPD) |
@@ -28,6 +28,21 @@ de qué se hizo — mismo estilo que el catálogo de
 | 16 | YouTube / vídeo | P3 | ❌ | |
 | 17 | Link building activo | P3 | ❌ | |
 | 18 | Internacionalización más allá de ES/EN | P3 | ❌ | |
+
+## Extra (encontrado al implementar #4/#5, no estaba en la lista original)
+
+- Bug redirect auto-idioma: `Layout.astro` calculaba el destino con
+  `new URL(altHref, Astro.site)` (siempre dominio de producción) en vez de
+  relativo al origin actual — en local, el redirect de idioma sacaba de
+  `localhost` y llevaba a `zaviren.com`. Corregido 2026-08-11: el redirect
+  ahora resuelve contra `window.location.origin`; los `<link
+  rel="alternate">` (SEO, deben ser absolutos) no se tocaron.
+- Páginas cortas (`.thanks`: 404, gracias, contact/guide thanks) no
+  llenaban el alto de la ventana, dejaban hueco vacío antes del footer.
+  Corregido 2026-08-11 en `site.css` — `body`/`.wrap`/`main` a flex
+  columna con `min-height: 100vh`, `.thanks` centrado verticalmente vía
+  `main:has(> section.thanks)`. Afecta a todas las páginas con esa
+  sección por igual.
 
 ## Descartado (ya resuelto o no aplica)
 
