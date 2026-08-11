@@ -12,7 +12,7 @@ de qué se hizo — mismo estilo que el catálogo de
 |---|--------|:---:|:---:|------|
 | 1 | Verificar indexación real en Search Console | P0 | ✅ | Verificado 2026-08-11 — `https://zaviren.com/` está indexada, con clics registrados |
 | 2 | Confirmar/descartar interstitial anti-bot bloqueando Googlebot | P0 | ✅ | Verificado 2026-08-11 — sin bloqueo. Encontrado bug distinto en el proceso: ver nota abajo |
-| 3 | Confirmar redirect www→non-www | P0 | ⏳ | SSL de `www` reemitido por soporte Hostinger 2026-08-11, propagando (1-2h). Redirect 301 pendiente hasta confirmar propagación — ver nota abajo |
+| 3 | Confirmar redirect www→non-www | P0 | ⏳ | SSL propagado 2026-08-11 (SAN ya incluye `www.zaviren.com`, verificado). `www` sirve 200 directo — falta pedir a soporte Hostinger el redirect 301 www→non-www, fuera del repo |
 | 4 | Página 404 custom con enlace a home | P0 | ✅ | Implementado 2026-08-11 — `src/pages/404.astro`, bilingüe (ES+EN), enlaces a ambas home |
 | 5 | Corregir `name` de campos del formulario EN (nombre→firstname, etc.) | P0 | ✅ | Implementado 2026-08-11 — `id`/`name` de inputs en `en/contact.astro` y `en/guide.astro` pasan a `firstname`/`lastname`/`company`; payload al Worker sigue con claves `nombre`/`apellidos`/`empresa` (esquema fijo, no tocado en `worker/src/index.ts`) |
 | 6 | H1/subtítulo home hacia intención comercial ("IA privada para empresas") | P1 | ✅ | Implementado 2026-08-11 — H1 ES: "IA privada para tu empresa" (antes "IA soberana, bajo tu control"); H1 EN: "Private AI for your business" (antes "Sovereign AI, under your control"). Subtítulo sin cambios |
@@ -66,8 +66,7 @@ privada, en detalle →" hacia la página ancla — el roadmap original no lo
 pedía explícitamente pero es lo que le da valor SEO a la página ancla
 (recibir enlaces internos desde la home).
 
-**Pendiente:** desplegar a `deploy` (ver "Deploy" en `CLAUDE.md`) — hecho
-en local/build, falta el push.
+**Desplegado** a `deploy` 2026-08-11 (`ca7d5b3`).
 
 ## Detalle #8 — Páginas legales (2026-08-11)
 
