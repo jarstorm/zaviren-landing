@@ -26,7 +26,7 @@ de qué se hizo — mismo estilo que el catálogo de
 | 14 | Páginas sectoriales (`/ia-para-despachos/`, etc.) | P3 | ✅ | Implementado 2026-08-11 como 5 posts de blog (ES+EN) — ver detalle abajo |
 | 15 | SEO local España | P3 | ❌ | |
 | 16 | YouTube / vídeo | P3 | ❌ | |
-| 17 | Link building activo | P3 | ❌ | |
+| 17 | Link building activo | P3 | ⚠️ | Preparación cerrada 2026-08-11 (assets + copy por sitio + tiers verificados, ver `docs/link-building.md` y detalle abajo). **Nada enviado todavía** — los envíos requieren cuentas del usuario |
 | 18 | Internacionalización más allá de ES/EN | P3 | ❌ | |
 
 ## Detalle #9 — Página ancla `/ia-privada/` (2026-08-11)
@@ -442,3 +442,33 @@ la entrada a los 5 posts es el índice `/blog`, que ya está en el nav.
 `src/data/posts.ts` actualizado con las 10 entradas (tag `Sector` / `Industry`),
 ordenadas por fecha descendente. Build verificado: 37 páginas, sitemap con
 las 10 URLs nuevas, sin enlaces internos rotos.
+
+## Detalle #17 — Link building: preparación (2026-08-11)
+
+Estado: **preparado, no enviado**. Todo el detalle vivo está en
+`docs/link-building.md`; aquí solo el resumen de qué se cerró.
+
+1. **Assets** (eran los dos TODO que bloqueaban cualquier envío):
+   - Logo cuadrado 512 y 1024, transparente y sobre `#0a0b0f`. No existía:
+     solo había `public/favicon.svg` (viewBox 611x456, no cuadrado) y
+     `public/logo-email.png` (728x144, apaisado). Generados rasterizando el
+     SVG con Chrome headless (no hay rsvg/ImageMagick en la máquina).
+   - Screenshot 1280x800 ES y EN del `.chat-demo` (pregunta + respuesta +
+     chip de fuente) con la marca arriba.
+   - Ambos en `docs/assets/link-building/`, con los HTML fuente al lado
+     para regenerarlos. **No en `public/`**: son para formularios de
+     terceros, no hace falta servirlos ni que Google los rastree.
+2. **Copy por sitio** con longitudes verificadas contra el límite real de
+   cada formulario (Product Hunt, AlternativeTo, SaaSHub, G2/Capterra,
+   Crunchbase, LinkedIn, X, Indie Hackers, Reddit). Añadido un bloque de
+   "límites de claim" que recoge lo que no se puede afirmar hoy
+   (compartimentación por usuario, integraciones, borradores, cifras) —
+   mismos recortes que se hicieron en los posts sectoriales.
+3. **Tiers verificados**: There's An AI For That ($347) y Futurepedia
+   ($197-497) descartados por ser submissions de pago. G2 compró Capterra
+   + GetApp + Software Advice en enero de 2026, así que un alta cubre las
+   tres. Añadido Google Business Profile (gratis, solapa con #15).
+
+Lo que queda es enteramente del usuario: crear cuentas, verificar dominio
+y enviar. Un agente puede rellenar los formularios en una sesión de Chrome
+ya logueada, pero no crear cuentas ni postear como él.
