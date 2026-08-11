@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v7.1.6"><meta name="description" content="Which cookies zaviren.com uses, why, and how to manage your consent."><title>Cookie policy — Zaviren</title><link rel="canonical" href="https://zaviren.com/en/cookies/"><link rel="alternate" hreflang="es" href="https://zaviren.com/cookies"><link rel="alternate" hreflang="en" href="https://zaviren.com/en/cookies/"><link rel="alternate" hreflang="x-default" href="https://zaviren.com/cookies"><meta property="og:type" content="website"><meta property="og:title" content="Cookie policy — Zaviren"><meta property="og:description" content="Which cookies zaviren.com uses, why, and how to manage your consent."><meta property="og:url" content="https://zaviren.com/en/cookies/"><meta property="og:image" content="https://zaviren.com/og-image.png"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="es_ES"><meta property="og:site_name" content="Zaviren"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Cookie policy — Zaviren"><meta name="twitter:description" content="Which cookies zaviren.com uses, why, and how to manage your consent."><meta name="twitter:image" content="https://zaviren.com/og-image.png"><script type="module">window.dataLayer=window.dataLayer||[];function e(){dataLayer.push(arguments)}window.gtag=e,e(`js`,new Date),document.addEventListener(`click`,t=>{let n=t.target.closest(`a.cta`);n&&e(`event`,`cta_click`,{link_url:n.getAttribute(`href`),link_text:n.textContent?.trim(),page_path:window.location.pathname})});</script><link rel="stylesheet" href="/_astro/Layout.CF1xFNko.css"></head><body><div class="wrap"><header class="topbar"><a class="logo" href="/en/"><img class="logo-mark" src="/favicon.svg" alt="Zaviren" width="26" height="20"><span class="logo-word">ZAVIREN</span></a><a class="lang-link" href="/cookies"><span class="flag">🇪🇸</span> ES</a></header><main><section class="legal"><span class="eyebrow">Legal</span><h1>Cookie policy</h1><p class="updated">Last updated: 2026-08-11</p><p class="legal-note">This is an informational translation. The Spanish version is the legally binding one — see <a href="/cookies">Política de cookies</a>.</p><h2>1. What cookies are</h2><p>Cookies are small files stored in your browser when you visit a website. They help remember information about your visit, such as preferences or, for analytics cookies, how the site is being used.</p><h2>2. Cookies we use</h2><p><strong>zaviren.com</strong> uses the following cookies:</p><ul><li><strong>Consent preference (necessary):</strong> we store your choice to accept or reject analytics cookies in your browser's local storage (technically not a cookie, but serves the same purpose). No consent is required since it's strictly necessary for the banner to work.</li><li><strong>Google Analytics (analytics, optional):</strong> if you accept analytics cookies, we use Google Analytics (Google Ireland Ltd.) to measure aggregate site visits and usage. It sets cookies such as <code>_ga</code>, <code>_ga_*</code> and <code>_gid</code>, lasting up to 2 years. More information in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</li></ul><p>We do not use advertising cookies or third-party cookies for commercial purposes.</p><h2>3. Legal basis</h2><p>Analytics cookies are only activated if you consent through the banner shown on your first visit. You can reject them without affecting your ability to browse the site.</p><h2>4. Managing your consent</h2><p>You can change your decision at any time by clearing this site's browsing data/local storage in your browser — the banner will appear again on your next visit. You can also block or delete cookies from your browser settings (Chrome, Firefox, Safari and Edge usually offer this under "Privacy and security").</p><h2>5. More information</h2><p>For more detail on how we handle your data, see our <a href="/en/privacy">privacy policy</a>.</p><a class="back-link" href="/en/">&larr; Back to home</a></section></main></div><footer class="site-footer"><span>© 2026 Zaviren · <a href="https://zaviren.com">zaviren.com</a> · <a href="mailto:contact@zaviren.com">contact@zaviren.com</a></span><span>Your data is never shared with third parties</span><span class="footer-legal"><a href="/en/legal-notice">Legal notice</a> · <a href="/en/privacy">Privacy</a> · <a href="/en/cookies">Cookies</a></span></footer><div class="cookie-banner" id="cookie-banner" hidden><p>We use analytics cookies (Google Analytics) to understand site usage. They&#39;re only activated if you accept. <a href="/en/cookies">Learn more</a></p><div class="cookie-actions"><button type="button" id="cookie-reject" class="cta cta-secondary">Reject</button><button type="button" id="cookie-accept" class="cta">Accept</button></div></div><script>(function(){const gaId = "G-EXXBQFZ869";
+
+	const CONSENT_KEY = "zaviren_cookie_consent";
+	const banner = document.getElementById("cookie-banner");
+	const acceptBtn = document.getElementById("cookie-accept");
+	const rejectBtn = document.getElementById("cookie-reject");
+
+	function loadAnalytics() {
+		if (window.zavirenAnalyticsLoaded) return;
+		window.zavirenAnalyticsLoaded = true;
+		const script = document.createElement("script");
+		script.async = true;
+		script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+		document.head.appendChild(script);
+		window.gtag("config", gaId);
+	}
+
+	const consent = localStorage.getItem(CONSENT_KEY);
+	if (consent === "accepted") {
+		loadAnalytics();
+	} else if (consent !== "rejected") {
+		banner.hidden = false;
+	}
+
+	acceptBtn.addEventListener("click", () => {
+		localStorage.setItem(CONSENT_KEY, "accepted");
+		loadAnalytics();
+		banner.hidden = true;
+	});
+
+	rejectBtn.addEventListener("click", () => {
+		localStorage.setItem(CONSENT_KEY, "rejected");
+		banner.hidden = true;
+	});
+})();</script></body></html>
