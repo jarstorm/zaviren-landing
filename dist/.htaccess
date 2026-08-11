@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^contacto/gracias/?$ /contact/gracias [R=301,L]
+RewriteRule ^contacto/?$ /contact [R=301,L]
