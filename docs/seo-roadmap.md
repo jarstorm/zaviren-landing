@@ -15,8 +15,8 @@ de qué se hizo — mismo estilo que el catálogo de
 | 3 | Confirmar redirect www→non-www | P0 | ⏳ | SSL de `www` reemitido por soporte Hostinger 2026-08-11, propagando (1-2h). Redirect 301 pendiente hasta confirmar propagación — ver nota abajo |
 | 4 | Página 404 custom con enlace a home | P0 | ✅ | Implementado 2026-08-11 — `src/pages/404.astro`, bilingüe (ES+EN), enlaces a ambas home |
 | 5 | Corregir `name` de campos del formulario EN (nombre→firstname, etc.) | P0 | ✅ | Implementado 2026-08-11 — `id`/`name` de inputs en `en/contact.astro` y `en/guide.astro` pasan a `firstname`/`lastname`/`company`; payload al Worker sigue con claves `nombre`/`apellidos`/`empresa` (esquema fijo, no tocado en `worker/src/index.ts`) |
-| 6 | H1/subtítulo home hacia intención comercial ("IA privada para empresas") | P1 | ❌ | Actual: "IA soberana, bajo tu control" |
-| 7 | `organizationSchema` solo en home (no en todas las páginas) + `SoftwareApplication` schema | P1 | ❌ | Hoy se inyecta en cada página vía `Layout.astro` |
+| 6 | H1/subtítulo home hacia intención comercial ("IA privada para empresas") | P1 | ✅ | Implementado 2026-08-11 — H1 ES: "IA privada para tu empresa" (antes "IA soberana, bajo tu control"); H1 EN: "Private AI for your business" (antes "Sovereign AI, under your control"). Subtítulo sin cambios |
+| 7 | `organizationSchema` solo en home (no en todas las páginas) + `SoftwareApplication` schema | P1 | ✅ | Implementado 2026-08-11 — `Layout.astro`: nuevo `isHome` (`pathname === "/" \|\| "/en/"`) gatea el `<script>` de `organizationSchema`, que antes se inyectaba en todas las páginas; añadido `softwareApplicationSchema` (`@type: SoftwareApplication`), también solo en home. Verificado en `dist/`: home tiene Organization+SoftwareApplication+FAQPage, `/contact/` ya no tiene ninguno |
 | 8 | Páginas legales (privacidad, aviso legal) | P1 | ❌ | Obligatorio con formularios que recogen datos (RGPD) |
 | 9 | Página ancla `/ia-privada/` | P1 | ❌ | Qué es / cómo funciona / vs ChatGPT / FAQ / CTA |
 | 10 | Página ancla `/rag-empresarial/` o `/rag-on-premise/` | P1 | ❌ | Segunda página comercial ancla |

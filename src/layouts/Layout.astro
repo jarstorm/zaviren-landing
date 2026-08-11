@@ -19,12 +19,24 @@ const ogImageURL = new URL(ogImage, Astro.site);
 const locale = lang === "es" ? "es_ES" : "en_US";
 const altLocale = lang === "es" ? "en_US" : "es_ES";
 
+const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "/en/";
+
 const organizationSchema = {
 	"@context": "https://schema.org",
 	"@type": "Organization",
 	name: "Zaviren",
 	url: "https://zaviren.com",
 	logo: new URL("/favicon.svg", Astro.site).toString(),
+	description,
+};
+
+const softwareApplicationSchema = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	name: "Zaviren",
+	applicationCategory: "BusinessApplication",
+	operatingSystem: "Web",
+	url: "https://zaviren.com",
 	description,
 };
 ---
@@ -58,7 +70,8 @@ const organizationSchema = {
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImageURL} />
 
-		<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+		{isHome && <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />}
+		{isHome && <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />}
 
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-EXXBQFZ869"></script>
 		<script>
