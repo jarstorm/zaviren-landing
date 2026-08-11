@@ -1,0 +1,387 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BackLink from "../components/BackLink.astro";
+---
+
+<Layout
+	lang="es"
+	title="IA privada para empresas: qué es, por qué importa y cómo implementarla — Zaviren"
+	description="Qué es la IA privada, por qué protege el moat competitivo y los datos de tu empresa, cómo se implementa con un servidor dedicado en tus oficinas y en qué se diferencia de ChatGPT. Guía práctica."
+	altHref="/en/private-ai"
+>
+	<section class="hero">
+		<span class="eyebrow">Guía práctica</span>
+		<h1>IA privada <span class="gradient">para empresas</span></h1>
+		<p class="subtitle">
+			Qué es, cómo funciona sobre tus propios documentos y en qué se
+			diferencia de usar ChatGPT o Copilot directamente.
+		</p>
+		<div class="cta-row">
+			<a class="cta" href="/contact">Cuéntanos tu caso</a>
+			<a class="cta cta-secondary" href="/guide">Descarga la guía gratuita</a>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">01 · Definición</span>
+			<h2>¿Qué es <span class="gradient">la IA privada</span>?</h2>
+			<p>
+				Un asistente de IA que responde con los documentos de tu empresa —
+				pero corriendo dentro de tu propia infraestructura, sin enviar nada a
+				un tercero.
+			</p>
+		</div>
+		<div class="risk-grid">
+			<div class="card">
+				<h3>Responde con tus documentos</h3>
+				<p>Manuales, contratos, políticas, presupuestos — la respuesta sale de ahí, no de la memoria genérica del modelo.</p>
+			</div>
+			<div class="card">
+				<h3>RAG: busca antes de responder</h3>
+				<p>Primero recupera los pasajes relevantes en tus documentos, y solo después redacta la respuesta a partir de ellos.</p>
+			</div>
+			<div class="card">
+				<h3>Cita la fuente, no improvisa</h3>
+				<p>Cada respuesta queda anclada a un documento concreto de tu empresa, no a lo que el modelo aprendió al entrenarse.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">02 · Por qué importa</span>
+			<h2>Por qué tu empresa <span class="gradient">necesita IA privada</span></h2>
+			<p>
+				No es solo una cuestión técnica — es proteger lo que hace competitiva
+				a tu empresa.
+			</p>
+		</div>
+		<div class="risk-grid">
+			<div class="card">
+				<h3>Protege tu moat competitivo</h3>
+				<p>
+					Tus procesos, tus contratos, tu forma de resolver problemas — eso es
+					lo que te diferencia. Si cada consulta sobre ese conocimiento pasa
+					por la nube de un proveedor externo, dependes de su infraestructura
+					y de su política de uso de datos para algo que debería ser tuyo en
+					exclusiva.
+				</p>
+			</div>
+			<div class="card">
+				<h3>Privacidad y confidencialidad reales</h3>
+				<p>
+					Nóminas, datos de clientes, propiedad intelectual, negociaciones en
+					curso: si algún día hay una brecha en el proveedor cloud, el riesgo
+					legal y reputacional es tuyo, no suyo. Con un perímetro propio,
+					decides tú quién accede y queda registrado.
+				</p>
+			</div>
+			<div class="card">
+				<h3>El coste de no actuar</h3>
+				<p>
+					Mientras evalúas si merece la pena, tus competidores que ya adoptan
+					IA bien implementada acumulan ventaja en velocidad de respuesta y en
+					aprovechamiento de su propio conocimiento interno. Esa distancia es
+					más difícil de recuperar cuanto más tiempo pasa.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">03 · Cómo funciona</span>
+			<h2>De la pregunta <span class="gradient">a la respuesta citada</span></h2>
+		</div>
+		<div class="cap-grid">
+			<div class="card">
+				<span class="cap-num">01</span>
+				<div>
+					<h3>Tus documentos, indexados</h3>
+					<p>Manuales, contratos y políticas se procesan una vez y quedan listos para consultarse en lenguaje natural.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">02</span>
+				<div>
+					<h3>Recuperación del pasaje relevante</h3>
+					<p>Ante cada pregunta, el sistema busca qué fragmentos de qué documentos contienen la respuesta.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">03</span>
+				<div>
+					<h3>El modelo redacta, sin inventar</h3>
+					<p>La respuesta se genera a partir de esos fragmentos concretos, citando el documento y la página.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">04</span>
+				<div>
+					<h3>Todo dentro de tu perímetro</h3>
+					<p>Documentos, búsqueda y modelo corren en tu infraestructura — nada sale a la nube de un tercero.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="split">
+			<div class="copy">
+				<span class="eyebrow">04 · Implementación</span>
+				<h2>Un servidor <span class="gradient">dedicado en tus oficinas</span></h2>
+				<p>
+					En la práctica, la IA privada vive en un equipo físico (o un
+					pequeño clúster, según el volumen) conectado a tu red interna —
+					dentro de tu oficina o tu propio datacenter. No es una cuenta en la
+					nube de otro con más candados: es hardware que controlas tú.
+				</p>
+				<p>
+					Ese servidor aloja el modelo de lenguaje, la búsqueda sobre tus
+					documentos y toda la orquestación entre ambos. Las preguntas de tus
+					empleados nunca salen de tu red — ni al entrenar, ni al consultar.
+				</p>
+			</div>
+			<div class="illustration">
+				<svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<defs>
+						<linearGradient id="implGrad" x1="0" y1="0" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+							<stop offset="0" stop-color="#3b82f6" />
+							<stop offset="1" stop-color="#8b5cf6" />
+						</linearGradient>
+					</defs>
+					<rect x="30" y="20" width="100" height="120" rx="12" stroke="url(#implGrad)" stroke-width="2" fill="#ffffff08" />
+					<rect x="42" y="38" width="76" height="14" rx="4" fill="url(#implGrad)" opacity="0.6" />
+					<rect x="42" y="60" width="76" height="14" rx="4" fill="url(#implGrad)" opacity="0.4" />
+					<rect x="42" y="82" width="76" height="14" rx="4" fill="url(#implGrad)" opacity="0.25" />
+					<circle cx="112" cy="112" r="4" fill="url(#implGrad)" />
+					<circle cx="112" cy="128" r="4" fill="url(#implGrad)" opacity="0.6" />
+				</svg>
+			</div>
+		</div>
+		<div class="risk-grid cols-2">
+			<div class="card">
+				<h3>Dimensionado a tu medida</h3>
+				<p>El hardware se calcula según tu volumen de documentos y usuarios simultáneos — no se sobredimensiona ni se infravalora.</p>
+			</div>
+			<div class="card">
+				<h3>Sobre tu almacenamiento actual</h3>
+				<p>Se conecta a las carpetas, intranet o gestor documental que ya usas — no hace falta migrar nada de sitio para empezar.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">05 · Ventajas</span>
+			<h2>Qué ganas <span class="gradient">con IA privada</span></h2>
+		</div>
+		<div class="cap-grid">
+			<div class="card">
+				<span class="cap-num">01</span>
+				<div>
+					<h3>Control total de tus datos</h3>
+					<p>Nunca salen de tu perímetro, ni para responder ni para entrenar nada.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">02</span>
+				<div>
+					<h3>Protege tu ventaja competitiva</h3>
+					<p>Tu conocimiento interno no alimenta ni queda expuesto a la infraestructura de un tercero.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">03</span>
+				<div>
+					<h3>Cumplimiento RGPD nativo</h3>
+					<p>Sin transferencia a terceros que auditar — encaja de serie, no como parche.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">04</span>
+				<div>
+					<h3>Coste predecible</h3>
+					<p>Sin factura variable por token o por uso de una API externa que crece con tu adopción.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">05</span>
+				<div>
+					<h3>Funciona sin depender de internet</h3>
+					<p>Una vez desplegado, corre dentro de tu red — sin depender de la disponibilidad de un servicio externo.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">06</span>
+				<div>
+					<h3>Trazable y auditable</h3>
+					<p>Cada respuesta cita su documento y página de origen — sabes exactamente de dónde sale cada dato.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">07</span>
+				<div>
+					<h3>Escala contigo</h3>
+					<p>El mismo servidor va cubriendo más casos de uso a medida que la adopción crece dentro de la empresa.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">08</span>
+				<div>
+					<h3>Sin fuga de propiedad intelectual</h3>
+					<p>Contratos, presupuestos y procesos propios nunca pasan por un modelo que no controlas.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">06 · Comparativa</span>
+			<h2>IA privada <span class="gradient">vs ChatGPT</span></h2>
+			<p>ChatGPT, Copilot y similares son excelentes asistentes generalistas — pero no fueron pensados para responder con el conocimiento interno y confidencial de tu empresa.</p>
+		</div>
+		<div class="compare-grid">
+			<div class="compare-row compare-header">
+				<span></span>
+				<span>ChatGPT / IA genérica</span>
+				<span>IA privada (Zaviren)</span>
+			</div>
+			<div class="compare-row">
+				<span class="compare-label">Dónde viven tus datos</span>
+				<span data-label="ChatGPT / IA genérica">Salen a los servidores del proveedor</span>
+				<span data-label="Zaviren">Se quedan dentro de tu infraestructura</span>
+			</div>
+			<div class="compare-row">
+				<span class="compare-label">Conoce tus documentos</span>
+				<span data-label="ChatGPT / IA genérica">No, salvo que se los pegues manualmente</span>
+				<span data-label="Zaviren">Sí, indexados y siempre disponibles</span>
+			</div>
+			<div class="compare-row">
+				<span class="compare-label">Cita la fuente exacta</span>
+				<span data-label="ChatGPT / IA genérica">Rara vez, y sin garantía</span>
+				<span data-label="Zaviren">Sí — documento y página en cada respuesta</span>
+			</div>
+			<div class="compare-row">
+				<span class="compare-label">RGPD</span>
+				<span data-label="ChatGPT / IA genérica">Depende de la política del proveedor</span>
+				<span data-label="Zaviren">Nativo — no hay transferencia a terceros que auditar</span>
+			</div>
+			<div class="compare-row">
+				<span class="compare-label">Riesgo de alucinación</span>
+				<span data-label="ChatGPT / IA genérica">Alto en temas específicos de tu empresa</span>
+				<span data-label="Zaviren">Bajo — responde solo con lo que encuentra en tus documentos</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">07 · Preguntas frecuentes</span>
+			<h2>Antes de que <span class="gradient">preguntes</span></h2>
+		</div>
+		<div class="faq-list">
+			<details class="faq-item">
+				<summary>¿Es lo mismo que usar ChatGPT Enterprise o Microsoft Copilot?</summary>
+				<p>No. Esas herramientas siguen procesando tus datos en la nube del proveedor, aunque con contratos empresariales. La IA privada corre el modelo y la búsqueda dentro de tu propia infraestructura — no hay transferencia de datos a un tercero en ningún punto.</p>
+			</details>
+			<details class="faq-item">
+				<summary>¿Necesito servidores propios muy potentes?</summary>
+				<p>Depende del volumen de documentos y usuarios simultáneos. Un piloto con unos cientos de documentos corre en hardware moderado, sin GPU dedicada. Dimensionamos el hardware exacto para tu caso antes de empezar.</p>
+			</details>
+			<details class="faq-item">
+				<summary>¿Dónde se instala exactamente el servidor?</summary>
+				<p>Dentro de tu red — en tus propias oficinas o en tu datacenter si ya tienes uno. No es una máquina virtual en la nube de un tercero con más permisos: es un equipo físico bajo tu control, conectado solo a tu infraestructura interna.</p>
+			</details>
+			<details class="faq-item">
+				<summary>¿Deja de funcionar si se cae internet?</summary>
+				<p>No, una vez desplegado. El modelo y la búsqueda corren dentro de tu red local, así que la disponibilidad depende de tu propia infraestructura, no de un servicio externo.</p>
+			</details>
+			<details class="faq-item">
+				<summary>¿Es más lenta o peor que ChatGPT?</summary>
+				<p>Para preguntas generales, no compite — ChatGPT tiene más mundo detrás. Pero para preguntas sobre tus propios documentos, la IA privada responde con más precisión porque busca en la fuente real en vez de adivinar.</p>
+			</details>
+			<details class="faq-item">
+				<summary>¿Puedo probarlo antes de comprometerme?</summary>
+				<p>Sí. Empezamos por un caso concreto y acotado con tus propios documentos, medible en semanas, antes de hablar de nada más grande.</p>
+			</details>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="final-cta">
+			<div>
+				<h2>Veámoslo con tus datos</h2>
+				<p>Una llamada de 30 minutos para ver qué caso tiene sentido empezar en tu empresa.</p>
+			</div>
+			<a class="cta" href="/contact">Solicita una llamada</a>
+		</div>
+	</section>
+
+	<BackLink lang="es" />
+</Layout>
+
+<style>
+	.risk-grid.cols-2 {
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 720px;
+	}
+	.compare-grid {
+		display: grid;
+		gap: 0.5rem;
+		margin-top: 1.5rem;
+	}
+	.compare-row {
+		display: grid;
+		grid-template-columns: 1fr 1.2fr 1.2fr;
+		gap: 1rem;
+		padding: 0.9rem 1.1rem;
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		background: var(--card);
+		font-size: 0.88rem;
+		line-height: 1.5;
+	}
+	.compare-header {
+		background: transparent;
+		border: none;
+		padding: 0 1.1rem;
+		font-weight: 700;
+		color: var(--muted);
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+	}
+	.compare-label {
+		font-weight: 700;
+	}
+	@media (max-width: 640px) {
+		.compare-row {
+			grid-template-columns: 1fr;
+			gap: 0.35rem;
+		}
+		.compare-header {
+			display: none;
+		}
+		.compare-row:not(.compare-header) span:not(.compare-label)::before {
+			content: attr(data-label) ": ";
+			font-weight: 700;
+			color: var(--muted);
+		}
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: [
+		{ "@type": "Question", name: "¿Es lo mismo que usar ChatGPT Enterprise o Microsoft Copilot?", acceptedAnswer: { "@type": "Answer", text: "No. Esas herramientas siguen procesando tus datos en la nube del proveedor, aunque con contratos empresariales. La IA privada corre el modelo y la búsqueda dentro de tu propia infraestructura — no hay transferencia de datos a un tercero en ningún punto." } },
+		{ "@type": "Question", name: "¿Necesito servidores propios muy potentes?", acceptedAnswer: { "@type": "Answer", text: "Depende del volumen de documentos y usuarios simultáneos. Un piloto con unos cientos de documentos corre en hardware moderado, sin GPU dedicada. Dimensionamos el hardware exacto para tu caso antes de empezar." } },
+		{ "@type": "Question", name: "¿Dónde se instala exactamente el servidor?", acceptedAnswer: { "@type": "Answer", text: "Dentro de tu red — en tus propias oficinas o en tu datacenter si ya tienes uno. No es una máquina virtual en la nube de un tercero con más permisos: es un equipo físico bajo tu control, conectado solo a tu infraestructura interna." } },
+		{ "@type": "Question", name: "¿Deja de funcionar si se cae internet?", acceptedAnswer: { "@type": "Answer", text: "No, una vez desplegado. El modelo y la búsqueda corren dentro de tu red local, así que la disponibilidad depende de tu propia infraestructura, no de un servicio externo." } },
+		{ "@type": "Question", name: "¿Es más lenta o peor que ChatGPT?", acceptedAnswer: { "@type": "Answer", text: "Para preguntas generales, no compite — ChatGPT tiene más mundo detrás. Pero para preguntas sobre tus propios documentos, la IA privada responde con más precisión porque busca en la fuente real en vez de adivinar." } },
+		{ "@type": "Question", name: "¿Puedo probarlo antes de comprometerme?", acceptedAnswer: { "@type": "Answer", text: "Sí. Empezamos por un caso concreto y acotado con tus propios documentos, medible en semanas, antes de hablar de nada más grande." } },
+	],
+})} />

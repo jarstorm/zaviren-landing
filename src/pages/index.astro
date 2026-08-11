@@ -189,6 +189,7 @@ import Layout from "../layouts/Layout.astro";
 				</svg>
 			</div>
 		</div>
+		<p class="detail-link"><a href="/ia-privada">Cómo funciona la IA privada, en detalle →</a></p>
 	</section>
 
 	<section class="block">
@@ -338,6 +339,21 @@ import Layout from "../layouts/Layout.astro";
 		</div>
 	</section>
 </Layout>
+
+<style>
+	.detail-link {
+		text-align: center;
+		margin-top: 1.25rem;
+	}
+	.detail-link a {
+		color: var(--purple);
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.detail-link a:hover {
+		text-decoration: underline;
+	}
+</style>
 
 <script type="application/ld+json" set:html={JSON.stringify({
 	"@context": "https://schema.org",

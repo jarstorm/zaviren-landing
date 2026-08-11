@@ -18,7 +18,7 @@ de qué se hizo — mismo estilo que el catálogo de
 | 6 | H1/subtítulo home hacia intención comercial ("IA privada para empresas") | P1 | ✅ | Implementado 2026-08-11 — H1 ES: "IA privada para tu empresa" (antes "IA soberana, bajo tu control"); H1 EN: "Private AI for your business" (antes "Sovereign AI, under your control"). Subtítulo sin cambios |
 | 7 | `organizationSchema` solo en home (no en todas las páginas) + `SoftwareApplication` schema | P1 | ✅ | Implementado 2026-08-11 — `Layout.astro`: nuevo `isHome` (`pathname === "/" \|\| "/en/"`) gatea el `<script>` de `organizationSchema`, que antes se inyectaba en todas las páginas; añadido `softwareApplicationSchema` (`@type: SoftwareApplication`), también solo en home. Verificado en `dist/`: home tiene Organization+SoftwareApplication+FAQPage, `/contact/` ya no tiene ninguno |
 | 8 | Páginas legales (privacidad, aviso legal) | P1 | ⚠️ | Implementado 2026-08-11 con placeholders — ver nota abajo, falta rellenar datos reales |
-| 9 | Página ancla `/ia-privada/` | P1 | ❌ | Qué es / cómo funciona / vs ChatGPT / FAQ / CTA |
+| 9 | Página ancla `/ia-privada/` | P1 | ✅ | Implementada 2026-08-11 — ver detalle abajo |
 | 10 | Página ancla `/rag-empresarial/` o `/rag-on-premise/` | P1 | ❌ | Segunda página comercial ancla |
 | 11 | Artículo "¿Puede una empresa usar IA sin enviar datos a la nube?" | P2 | ❌ | Plantilla para el resto de contenido |
 | 12 | Comparativa "IA privada vs ChatGPT" | P2 | ❌ | Intención comercial de evaluación |
@@ -28,6 +28,46 @@ de qué se hizo — mismo estilo que el catálogo de
 | 16 | YouTube / vídeo | P3 | ❌ | |
 | 17 | Link building activo | P3 | ❌ | |
 | 18 | Internacionalización más allá de ES/EN | P3 | ❌ | |
+
+## Detalle #9 — Página ancla `/ia-privada/` (2026-08-11)
+
+Páginas nuevas `/ia-privada` (ES) + `/en/private-ai` (EN), `hreflang`
+cruzado entre ambas vía `altHref`. Estructura (mismos componentes/clases
+CSS que ya usa `index.astro`, sin CSS global nuevo salvo un `.compare-grid`
+con scope de página para la tabla comparativa):
+
+1. Qué es la IA privada — definición corta + 3 cards (RAG explicado sin
+   jerga).
+2. Por qué importa — moat competitivo, privacidad/confidencialidad real,
+   coste de no actuar (pedido explícito del usuario, no estaba en el plan
+   original del roadmap).
+3. Cómo funciona — mismo patrón de 4 pasos que la home.
+4. Cómo se implementa — servidor dedicado en las oficinas del cliente:
+   dimensionado a medida, sobre el almacenamiento actual (pedido explícito
+   del usuario). Card de "mantenimiento remoto por Zaviren" quitada
+   2026-08-11 — el usuario indicó que esa afirmación no es del todo
+   correcta hoy, no forzar un claim de servicio no confirmado.
+5. Ventajas — grid de 8 (control de datos, moat, RGPD, coste predecible,
+   funciona sin internet, trazabilidad, escala, sin fuga de IP).
+6. Comparativa IA privada vs ChatGPT/Copilot (dónde viven los datos, cita
+   de fuente, RGPD, riesgo de alucinación).
+7. FAQ (6 preguntas, incluidas dos nuevas sobre dónde vive el servidor y
+   qué pasa si cae internet) + schema `FAQPage`.
+8. CTA final a `/contact`.
+
+Ajuste post-primera-versión: la sección 1 (Qué es) originalmente eran 2
+párrafos largos — el usuario pidió reformatearlo, se partió en frase corta
++ 3 cards cortas, mismo patrón que el resto de la página en vez de bloque
+de texto corrido.
+
+Enlazado interno añadido desde la home (`index.astro` + `en/index.astro`,
+sección "03 · Cómo lo resolvemos") con un link "Cómo funciona la IA
+privada, en detalle →" hacia la página ancla — el roadmap original no lo
+pedía explícitamente pero es lo que le da valor SEO a la página ancla
+(recibir enlaces internos desde la home).
+
+**Pendiente:** desplegar a `deploy` (ver "Deploy" en `CLAUDE.md`) — hecho
+en local/build, falta el push.
 
 ## Detalle #8 — Páginas legales (2026-08-11)
 
