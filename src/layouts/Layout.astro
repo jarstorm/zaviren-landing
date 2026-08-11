@@ -87,14 +87,15 @@ const softwareApplicationSchema = {
 		{isHome && <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />}
 		{isHome && <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />}
 
-		<script>
+		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				dataLayer.push(arguments);
 			}
 			window.gtag = gtag;
 			gtag("js", new Date());
-
+		</script>
+		<script>
 			document.addEventListener("click", (event) => {
 				const cta = (event.target as HTMLElement).closest("a.cta");
 				if (!cta) return;
