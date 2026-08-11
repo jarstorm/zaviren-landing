@@ -20,7 +20,7 @@ de qué se hizo — mismo estilo que el catálogo de
 | 8 | Páginas legales (privacidad, aviso legal) | P1 | ⚠️ | Implementado 2026-08-11 con placeholders — ver nota abajo, falta rellenar datos reales |
 | 9 | Página ancla `/ia-privada/` | P1 | ✅ | Implementada 2026-08-11 — ver detalle abajo |
 | 10 | Página ancla `/rag-empresarial/` | P1 | ✅ | Implementada 2026-08-11 — ver detalle abajo |
-| 11 | Artículo "¿Puede una empresa usar IA sin enviar datos a la nube?" | P2 | ❌ | Plantilla para el resto de contenido |
+| 11 | Artículo "¿Puede una empresa usar IA sin enviar datos a la nube?" | P2 | ✅ | Implementado 2026-08-11 — ver detalle abajo |
 | 12 | Comparativa "IA privada vs ChatGPT" | P2 | ❌ | Intención comercial de evaluación |
 | 13 | Primer caso de éxito (solo si hay datos reales demostrables) | P2 | ❌ | No inventar cifras |
 | 14 | Páginas sectoriales (`/ia-para-despachos/`, etc.) | P3 | ❌ | Solo si hay negocio real en el sector |
@@ -189,9 +189,10 @@ versionado en vez de en un panel de terceros.
 
 ## Bloqueante actual
 
-Ninguno. P0 completo (#1-#5). P1 en marcha: #6/#7/#8/#9/#10 ya
-implementados. Siguiente P1 pendiente: #11 (artículo "¿Puede una empresa
-usar IA sin enviar datos a la nube?").
+Ninguno. P0 completo (#1-#5). P1 completo salvo #8 (placeholders legales
+pendientes de datos reales). #11 (P2, primer artículo del blog) también
+implementado — siguiente pendiente es #12 (comparativa "IA privada vs
+ChatGPT").
 
 ## Detalle #10 — Página ancla `/rag-empresarial/` (2026-08-11)
 
@@ -233,3 +234,37 @@ lo resolvemos" de la home (ES+EN), junto al de `/ia-privada` ya existente.
 Decisión de URL: `/rag-empresarial` sobre `/rag-on-premise` (opción
 original del roadmap) — pick del usuario, mejor intención de búsqueda en
 español.
+
+## Detalle #11 — Artículo `/blog/puede-empresa-usar-ia-sin-nube` (2026-08-11)
+
+Primer post del blog (no existía la sección antes de este pick). Decisión
+de estructura (confirmada con el usuario): `/blog/slug` en vez de página
+ancla suelta — escala mejor para #12/#13 y el resto de contenido P2/P3 —
+y sin enlace en el nav de sitio todavía (esperar a 2-3 artículos antes de
+añadir "Blog" al `topbar`).
+
+Contenido, en línea con la intención de búsqueda informacional (top of
+funnel, no comercial): respuesta directa arriba (bloque `callout` con
+borde azul, pensado para featured snippet/AEO), contexto de por qué la
+pregunta surge ahora, qué significa arquitectónicamente "sin nube", qué
+hace falta para implementarlo (3 piezas), RGPD, FAQ (schema `FAQPage`) +
+schema `BlogPosting`. Enlaza a `/ia-privada` y `/rag-empresarial` como
+profundización. Páginas: `/blog/puede-empresa-usar-ia-sin-nube` (ES) +
+`/en/blog/can-a-company-use-ai-without-sending-data-to-the-cloud` (EN),
+`hreflang` cruzado vía `altHref`.
+
+Estilo alineado con #9/#10 (mismas clases CSS globales, sin CSS nuevo
+fuera de lo específico del post): eyebrows numerados por sección,
+`cap-grid` para los 3 pasos de implementación, `split` + ilustración
+reutilizada (`secure-server.svg`, la misma de `/ia-privada`) para la
+sección de arquitectura — la primera versión era un muro de texto plano
+sin ese tratamiento, corregido a petición del usuario.
+
+Enlazado interno (para que el artículo no quede huérfano de SEO, mismo
+motivo por el que existe este ítem): tercer pill (`detail-btn-outline`,
+estilo nuevo — outline en vez de sólido, para distinguir contenido
+editorial de las páginas de producto) en la sección "03 · Cómo lo
+resolvemos" de la home (ES+EN), junto a los de #9/#10; y enlace "Leer
+más" desde el pie de `/ia-privada`, `/rag-empresarial` y sus
+equivalentes EN, en la misma fila que "Volver a la portada"
+(`justify-content: space-between`).
