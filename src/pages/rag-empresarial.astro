@@ -1,0 +1,294 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BackLink from "../components/BackLink.astro";
+---
+
+<Layout
+	lang="es"
+	title="RAG empresarial: busca y pregunta sobre todos tus documentos — Zaviren"
+	description="Qué es el RAG empresarial (retrieval-augmented generation), cómo sustituye al buscador interno que no encuentra nada, qué formatos de documento soporta y cómo se implementa en tu empresa."
+	altHref="/en/rag-for-business"
+>
+	<section class="hero">
+		<span class="eyebrow">Guía práctica</span>
+		<h1>RAG <span class="gradient">empresarial</span></h1>
+		<p class="subtitle">
+			Pregunta en lenguaje natural y recibe respuestas citadas sobre
+			manuales, contratos, políticas y correos — sin depender de que
+			alguien recuerde en qué carpeta está el documento.
+		</p>
+		<div class="cta-row">
+			<a class="cta" href="/contact">Cuéntanos tu caso</a>
+			<a class="cta cta-secondary" href="/guide">Descarga la guía gratuita</a>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">01 · Definición</span>
+			<h2>¿Qué es <span class="gradient">el RAG empresarial</span>?</h2>
+			<p>
+				RAG (retrieval-augmented generation) es la técnica que permite a un
+				modelo de lenguaje responder con el contenido real de tus documentos,
+				en vez de con lo que aprendió al entrenarse.
+			</p>
+		</div>
+		<div class="risk-grid">
+			<div class="card">
+				<h3>Sustituye al buscador que no encuentra nada</h3>
+				<p>El buscador de la intranet o el gestor documental busca coincidencias de texto exacto. RAG entiende la pregunta y recupera el pasaje relevante aunque no use las mismas palabras.</p>
+			</div>
+			<div class="card">
+				<h3>Funciona sobre lo que ya tienes</h3>
+				<p>Manuales, contratos, actas, políticas, hojas de cálculo — se indexan tal cual están hoy, sin reorganizar carpetas ni migrar de sistema.</p>
+			</div>
+			<div class="card">
+				<h3>Cada respuesta cita su fuente</h3>
+				<p>Documento y página concretos, no una respuesta genérica sin forma de verificarla.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">02 · Por qué importa</span>
+			<h2>El coste real <span class="gradient">de no encontrar la información</span></h2>
+		</div>
+		<div class="risk-grid">
+			<div class="card">
+				<h3>Tiempo perdido buscando, no trabajando</h3>
+				<p>
+					Cada empleado que interrumpe su trabajo para buscar un dato en
+					un manual o preguntarle a un compañero es tiempo que no se
+					recupera. Multiplicado por toda la plantilla, es uno de los
+					costes ocultos más grandes de una empresa mediana.
+				</p>
+			</div>
+			<div class="card">
+				<h3>Conocimiento que se va con las personas</h3>
+				<p>
+					Cuando la única forma de saber algo es preguntarle a quien
+					lleva más tiempo en la empresa, ese conocimiento desaparece el
+					día que esa persona se va. RAG lo deja consultable para
+					cualquiera, indefinidamente.
+				</p>
+			</div>
+			<div class="card">
+				<h3>Decisiones tomadas sin toda la información</h3>
+				<p>
+					Si encontrar el documento correcto cuesta demasiado, muchas
+					veces se decide sin él. Un sistema que responde en segundos
+					cambia esa dinámica.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">03 · Cómo funciona</span>
+			<h2>De la pregunta <span class="gradient">a la respuesta citada</span></h2>
+		</div>
+		<div class="cap-grid">
+			<div class="card">
+				<span class="cap-num">01</span>
+				<div>
+					<h3>Ingesta multi-formato</h3>
+					<p>PDF, Word, Excel, PowerPoint, correos — cada tipo de documento se procesa con su propio parser, incluidas tablas e imágenes.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">02</span>
+				<div>
+					<h3>Indexado semántico</h3>
+					<p>El contenido se trocea y se convierte en vectores que capturan significado, no solo palabras exactas.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">03</span>
+				<div>
+					<h3>Recuperación híbrida</h3>
+					<p>Ante cada pregunta, combina búsqueda semántica y por palabra clave para encontrar los pasajes más relevantes.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">04</span>
+				<div>
+					<h3>Respuesta generada y citada</h3>
+					<p>El modelo redacta la respuesta a partir de esos pasajes, indicando siempre de qué documento y página sale cada dato.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">04 · Casos de uso</span>
+			<h2>Dónde se nota <span class="gradient">el retorno</span></h2>
+		</div>
+		<div class="cap-grid">
+			<div class="card">
+				<span class="cap-num">01</span>
+				<div>
+					<h3>Soporte interno / IT</h3>
+					<p>Responde preguntas repetidas sobre procedimientos sin que un técnico tenga que intervenir cada vez.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">02</span>
+				<div>
+					<h3>Legal y contratos</h3>
+					<p>Encuentra cláusulas concretas en cientos de contratos en segundos, con la página exacta.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">03</span>
+				<div>
+					<h3>RR. HH.</h3>
+					<p>Empleados consultan políticas de vacaciones, beneficios o procedimientos sin abrir un ticket.</p>
+				</div>
+			</div>
+			<div class="card">
+				<span class="cap-num">04</span>
+				<div>
+					<h3>Operaciones y calidad</h3>
+					<p>Consulta manuales de procedimiento y normativa técnica sin depender de quién se los sepa de memoria.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">05 · Comparativa</span>
+			<h2>RAG empresarial <span class="gradient">vs buscador interno</span></h2>
+			<p>El buscador clásico de intranet o gestor documental indexa palabras. RAG entiende preguntas.</p>
+		</div>
+		<div class="compare-grid">
+			<div class="compare-row compare-header">
+				<span></span>
+				<span>Buscador interno clásico</span>
+				<span>RAG empresarial (Zaviren)</span>
+			</div>
+			<div class="compare-row">
+				<span class="compare-label">Cómo busca</span>
+				<span data-label="Buscador interno clásico">Coincidencia de palabra exacta</span>
+				<span data-label="Zaviren">Entiende el significado de la pregunta</span>
+			</div>
+			<div class="compare-row">
+				<span class="compare-label">Formato de respuesta</span>
+				<span data-label="Buscador interno clásico">Lista de documentos que hay que abrir uno a uno</span>
+				<span data-label="Zaviren">Respuesta directa, con la fuente citada</span>
+			</div>
+			<div class="compare-row">
+				<span class="compare-label">Sinónimos y paráfrasis</span>
+				<span data-label="Buscador interno clásico">No los reconoce</span>
+				<span data-label="Zaviren">Sí — busca por significado, no por texto literal</span>
+			</div>
+			<div class="compare-row">
+				<span class="compare-label">Dónde viven tus datos</span>
+				<span data-label="Buscador interno clásico">En tu servidor, pero sin IA real</span>
+				<span data-label="Zaviren">En tu propia infraestructura, con IA privada</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="block-head">
+			<span class="eyebrow">06 · Preguntas frecuentes</span>
+			<h2>Antes de que <span class="gradient">preguntes</span></h2>
+		</div>
+		<div class="faq-list">
+			<details class="faq-item">
+				<summary>¿Qué formatos de documento soporta?</summary>
+				<p>PDF, Word, Excel, PowerPoint y varios más, incluidas tablas y contenido escaneado vía OCR cuando hace falta.</p>
+			</details>
+			<details class="faq-item">
+				<summary>¿Hace falta reorganizar nuestras carpetas antes de empezar?</summary>
+				<p>No. Se conecta a la estructura de carpetas, intranet o gestor documental que ya usas tal cual está hoy.</p>
+			</details>
+			<details class="faq-item">
+				<summary>¿Cuánto tarda en indexar nuestros documentos?</summary>
+				<p>Depende del volumen, pero un corpus de varios miles de documentos suele estar listo en horas, no días.</p>
+			</details>
+			<details class="faq-item">
+				<summary>¿Puede equivocarse o inventar una respuesta?</summary>
+				<p>El sistema está diseñado para responder solo con lo que encuentra en tus documentos; si no encuentra una fuente suficientemente buena, lo dice en vez de inventar una respuesta.</p>
+			</details>
+			<details class="faq-item">
+				<summary>¿Es lo mismo que la IA privada de Zaviren?</summary>
+				<p>RAG es la técnica que hace posible responder con tus documentos; la IA privada es que todo eso corre dentro de tu propia infraestructura, sin salir a la nube de un tercero. Van juntas — <a href="/ia-privada">más detalle aquí</a>.</p>
+			</details>
+		</div>
+	</section>
+
+	<section class="block">
+		<div class="final-cta">
+			<div>
+				<h2>Veámoslo con tus datos</h2>
+				<p>Una llamada de 30 minutos para ver qué caso tiene sentido empezar en tu empresa.</p>
+			</div>
+			<a class="cta" href="/contact">Solicita una llamada</a>
+		</div>
+	</section>
+
+	<BackLink lang="es" />
+</Layout>
+
+<style>
+	.compare-grid {
+		display: grid;
+		gap: 0.5rem;
+		margin-top: 1.5rem;
+	}
+	.compare-row {
+		display: grid;
+		grid-template-columns: 1fr 1.2fr 1.2fr;
+		gap: 1rem;
+		padding: 0.9rem 1.1rem;
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		background: var(--card);
+		font-size: 0.88rem;
+		line-height: 1.5;
+	}
+	.compare-header {
+		background: transparent;
+		border: none;
+		padding: 0 1.1rem;
+		font-weight: 700;
+		color: var(--muted);
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+	}
+	.compare-label {
+		font-weight: 700;
+	}
+	@media (max-width: 640px) {
+		.compare-row {
+			grid-template-columns: 1fr;
+			gap: 0.35rem;
+		}
+		.compare-header {
+			display: none;
+		}
+		.compare-row:not(.compare-header) span:not(.compare-label)::before {
+			content: attr(data-label) ": ";
+			font-weight: 700;
+			color: var(--muted);
+		}
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: [
+		{ "@type": "Question", name: "¿Qué formatos de documento soporta?", acceptedAnswer: { "@type": "Answer", text: "PDF, Word, Excel, PowerPoint y varios más, incluidas tablas y contenido escaneado vía OCR cuando hace falta." } },
+		{ "@type": "Question", name: "¿Hace falta reorganizar nuestras carpetas antes de empezar?", acceptedAnswer: { "@type": "Answer", text: "No. Se conecta a la estructura de carpetas, intranet o gestor documental que ya usas tal cual está hoy." } },
+		{ "@type": "Question", name: "¿Cuánto tarda en indexar nuestros documentos?", acceptedAnswer: { "@type": "Answer", text: "Depende del volumen, pero un corpus de varios miles de documentos suele estar listo en horas, no días." } },
+		{ "@type": "Question", name: "¿Puede equivocarse o inventar una respuesta?", acceptedAnswer: { "@type": "Answer", text: "El sistema está diseñado para responder solo con lo que encuentra en tus documentos; si no encuentra una fuente suficientemente buena, lo dice en vez de inventar una respuesta." } },
+		{ "@type": "Question", name: "¿Es lo mismo que la IA privada de Zaviren?", acceptedAnswer: { "@type": "Answer", text: "RAG es la técnica que hace posible responder con tus documentos; la IA privada es que todo eso corre dentro de tu propia infraestructura, sin salir a la nube de un tercero. Van juntas." } },
+	],
+})} />

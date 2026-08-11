@@ -75,6 +75,30 @@ header.topbar {
 	letter-spacing: 0.28em;
 }
 
+.site-nav {
+	display: flex;
+	align-items: center;
+	gap: 1.6rem;
+}
+
+.site-nav a {
+	color: var(--muted);
+	text-decoration: none;
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+	color: var(--text);
+}
+
+@media (max-width: 720px) {
+	.site-nav {
+		display: none;
+	}
+}
+
 .lang-link {
 	display: inline-flex;
 	align-items: center;

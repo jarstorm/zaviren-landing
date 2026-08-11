@@ -19,7 +19,7 @@ de qué se hizo — mismo estilo que el catálogo de
 | 7 | `organizationSchema` solo en home (no en todas las páginas) + `SoftwareApplication` schema | P1 | ✅ | Implementado 2026-08-11 — `Layout.astro`: nuevo `isHome` (`pathname === "/" \|\| "/en/"`) gatea el `<script>` de `organizationSchema`, que antes se inyectaba en todas las páginas; añadido `softwareApplicationSchema` (`@type: SoftwareApplication`), también solo en home. Verificado en `dist/`: home tiene Organization+SoftwareApplication+FAQPage, `/contact/` ya no tiene ninguno |
 | 8 | Páginas legales (privacidad, aviso legal) | P1 | ⚠️ | Implementado 2026-08-11 con placeholders — ver nota abajo, falta rellenar datos reales |
 | 9 | Página ancla `/ia-privada/` | P1 | ✅ | Implementada 2026-08-11 — ver detalle abajo |
-| 10 | Página ancla `/rag-empresarial/` o `/rag-on-premise/` | P1 | ❌ | Segunda página comercial ancla |
+| 10 | Página ancla `/rag-empresarial/` | P1 | ✅ | Implementada 2026-08-11 — ver detalle abajo |
 | 11 | Artículo "¿Puede una empresa usar IA sin enviar datos a la nube?" | P2 | ❌ | Plantilla para el resto de contenido |
 | 12 | Comparativa "IA privada vs ChatGPT" | P2 | ❌ | Intención comercial de evaluación |
 | 13 | Primer caso de éxito (solo si hay datos reales demostrables) | P2 | ❌ | No inventar cifras |
@@ -189,6 +189,47 @@ versionado en vez de en un panel de terceros.
 
 ## Bloqueante actual
 
-Ninguno. P0 completo (#1-#5) — #3 (www→non-www) resuelto sin depender de
-soporte Hostinger, vía `.htaccess`. Siguiente: P1 pendiente es #10
-(segunda página ancla, `/rag-empresarial/` o `/rag-on-premise/`).
+Ninguno. P0 completo (#1-#5). P1 en marcha: #6/#7/#8/#9/#10 ya
+implementados. Siguiente P1 pendiente: #11 (artículo "¿Puede una empresa
+usar IA sin enviar datos a la nube?").
+
+## Detalle #10 — Página ancla `/rag-empresarial/` (2026-08-11)
+
+Segunda página comercial ancla, mismo molde que #9 (`/ia-privada/`):
+páginas `/rag-empresarial` (ES) + `/en/rag-for-business` (EN), `hreflang`
+cruzado vía `altHref`, mismos componentes/clases CSS (sin CSS global
+nuevo). Ángulo distinto al de #9 — #9 vende "por qué IA privada
+(soberanía de datos)", esta vende "por qué RAG (encontrar información
+real en tus documentos)", con su propio ángulo de búsqueda:
+
+1. Qué es el RAG empresarial — definición + 3 cards, sustituye al
+   buscador interno que no encuentra nada.
+2. Por qué importa — coste oculto de no encontrar información (tiempo
+   perdido, conocimiento que se va con la gente, decisiones sin toda la
+   información).
+3. Cómo funciona — 4 pasos (ingesta multi-formato, indexado semántico,
+   recuperación híbrida, respuesta citada).
+4. Casos de uso — grid de 4 (soporte/IT, legal, RR. HH., operaciones).
+5. Comparativa RAG empresarial vs buscador interno clásico.
+6. FAQ (5 preguntas, incluida "¿es lo mismo que la IA privada de
+   Zaviren?" enlazando a `/ia-privada`) + schema `FAQPage`.
+7. CTA final a `/contact`.
+
+**Nav de sitio añadido** (pedido explícito del usuario, no estaba en el
+roadmap original): antes `topbar` (`Layout.astro`) solo tenía logo +
+switch de idioma, sin forma de navegar entre páginas salvo enlaces sueltos
+dentro del copy — con 2 páginas ancla + contacto + guía ya no escalaba.
+Añadido `<nav class="site-nav">` entre logo y switch de idioma, links
+generados en `Layout.astro` según `lang` (`IA privada` / `RAG empresarial`
+/ `Contacto`, y su equivalente EN), con estado `active` por
+`Astro.url.pathname`. Sin "Inicio"/"Home" en el nav — pedido explícito del
+usuario, el logo ya cubre esa función. Oculto bajo 720px (`site.css`,
+mismo breakpoint que el resto del sitio) para no romper el `topbar` en
+mobile — no se construyó menú hamburguesa, fuera de alcance de este pick.
+
+Enlazado interno: añadido segundo `.detail-link` en la sección "03 · Cómo
+lo resolvemos" de la home (ES+EN), junto al de `/ia-privada` ya existente.
+
+Decisión de URL: `/rag-empresarial` sobre `/rag-on-premise` (opción
+original del roadmap) — pick del usuario, mejor intención de búsqueda en
+español.
