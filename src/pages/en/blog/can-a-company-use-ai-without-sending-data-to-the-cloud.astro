@@ -194,7 +194,10 @@ const faq = [
 			</div>
 		</section>
 
-		<BackLink lang="en" />
+		<div class="post-footer-links">
+			<BackLink lang="en" />
+			<a class="back-link" href="/en/blog/private-ai-vs-chatgpt">Read more: private AI vs ChatGPT, an honest comparison →</a>
+		</div>
 	</article>
 </Layout>
 
@@ -249,6 +252,13 @@ const faq = [
 	.cap-grid + .prose {
 		margin-top: 1.8rem;
 		text-align: center;
+	}
+	.post-footer-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
 	}
 </style>
 

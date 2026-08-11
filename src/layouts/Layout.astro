@@ -27,13 +27,19 @@ const navLinks =
 		? [
 				{ href: "/ia-privada", label: "IA privada" },
 				{ href: "/rag-empresarial", label: "RAG empresarial" },
+				{ href: "/blog", label: "Blog" },
 				{ href: "/contact", label: "Contacto" },
 			]
 		: [
 				{ href: "/en/private-ai", label: "Private AI" },
 				{ href: "/en/rag-for-business", label: "Enterprise RAG" },
+				{ href: "/en/blog", label: "Blog" },
 				{ href: "/en/contact", label: "Contact" },
 			];
+
+const blogRoot = lang === "es" ? "/blog" : "/en/blog";
+const isActiveNav = (href: string) =>
+	href === blogRoot ? Astro.url.pathname.startsWith(blogRoot) : Astro.url.pathname === href;
 
 const organizationSchema = {
 	"@context": "https://schema.org",
@@ -116,7 +122,7 @@ const softwareApplicationSchema = {
 				</a>
 				<nav class="site-nav">
 					{navLinks.map((link) => (
-						<a href={link.href} class:list={{ active: Astro.url.pathname === link.href }}>
+						<a href={link.href} class:list={{ active: isActiveNav(link.href) }}>
 							{link.label}
 						</a>
 					))}

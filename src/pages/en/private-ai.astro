@@ -264,6 +264,9 @@ import BackLink from "../../components/BackLink.astro";
 				<span data-label="Zaviren">Low — answers only with what it finds in your documents</span>
 			</div>
 		</div>
+		<p class="compare-more">
+			<a href="/en/blog/private-ai-vs-chatgpt">Full comparison, downsides of private AI included →</a>
+		</p>
 	</section>
 
 	<section class="block">
@@ -348,6 +351,18 @@ import BackLink from "../../components/BackLink.astro";
 	}
 	.compare-label {
 		font-weight: 700;
+	}
+	.compare-more {
+		text-align: center;
+		margin: 1.5rem 0 0;
+		font-size: 0.9rem;
+	}
+	.compare-more a {
+		color: var(--blue);
+		text-decoration: none;
+	}
+	.compare-more a:hover {
+		text-decoration: underline;
 	}
 	@media (max-width: 640px) {
 		.compare-row {

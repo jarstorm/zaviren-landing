@@ -1,0 +1,433 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BackLink from "../../components/BackLink.astro";
+
+const publishedDate = "2026-08-11";
+const title = "IA privada vs ChatGPT: comparativa honesta (ventajas y desventajas) — Zaviren";
+const description =
+	"Comparamos IA privada frente a ChatGPT, Copilot o Claude: dónde gana cada opción, dónde pierde, y qué mirar según tu caso. Sin filtro de venta — incluye cuándo la nube es la mejor opción.";
+
+const tradeoffs = [
+	{
+		title: "Amplitud de conocimiento general",
+		winner: "cloud",
+		winnerLabel: "Gana la nube",
+		cloud: "Modelos de última generación entrenados sobre una porción enorme de internet, actualizados con frecuencia. Para preguntas generales, no hay color.",
+		private: "Suele apoyarse en modelos abiertos algo por detrás del estado del arte en cultura general. No es su terreno — y no debería serlo.",
+	},
+	{
+		title: "Control y privacidad de tus datos",
+		winner: "private",
+		winnerLabel: "Gana la IA privada",
+		cloud: "Cada consulta viaja a servidores de un tercero. Con planes empresariales hay contratos y garantías, pero el dato sale igual de tu perímetro.",
+		private: "El modelo y tus documentos corren dentro de tu propia infraestructura. Nada sale, ni para responder ni para entrenar nada.",
+	},
+	{
+		title: "Velocidad para empezar",
+		winner: "cloud",
+		winnerLabel: "Gana la nube",
+		cloud: "Una cuenta, una tarjeta de crédito, y estás usándolo en minutos.",
+		private: "Hay que dimensionar, instalar y conectar el servidor a tus documentos — se mide en semanas, no en minutos.",
+	},
+	{
+		title: "Coste a largo plazo con uso alto",
+		winner: "private",
+		winnerLabel: "Gana la IA privada",
+		cloud: "Barato para empezar, pero la factura crece con cada usuario y cada consulta — variable y difícil de prever a escala.",
+		private: "Coste inicial más alto (el servidor), pero plano después: el mismo hardware sigue respondiendo aunque crezca el uso interno.",
+	},
+	{
+		title: "Mantenimiento",
+		winner: "cloud",
+		winnerLabel: "Gana la nube",
+		cloud: "Cero. El proveedor gestiona actualizaciones, disponibilidad e infraestructura por ti.",
+		private: "Alguien tiene que cuidar el servidor — no es distinto de mantener cualquier otra aplicación interna, pero es una tarea real, no automática.",
+	},
+	{
+		title: "Cumplimiento normativo en sectores regulados",
+		winner: "private",
+		winnerLabel: "Gana la IA privada",
+		cloud: "Depende de la política y la región del proveedor — hay que auditar dónde vive el dato y con qué base legal se procesa.",
+		private: "No hay transferencia a un tercero que auditar. Encaja de serie en legal, salud o finanzas, no como parche añadido después.",
+	},
+	{
+		title: "Funciona sin conexión a internet",
+		winner: "private",
+		winnerLabel: "Gana la IA privada",
+		cloud: "Si se cae tu conexión o el servicio del proveedor, no hay respuesta.",
+		private: "El modelo corre en tu red local — sigue funcionando aunque se caiga la conexión de la oficina.",
+	},
+	{
+		title: "Calidad de respuesta sobre tus propios documentos",
+		winner: "tie",
+		winnerLabel: "Empate, si ambas están bien configuradas",
+		cloud: "Los planes empresariales (ChatGPT Enterprise, Copilot con Graph) también pueden conectarse a tus documentos y buscar en ellos.",
+		private: "El RAG local hace lo mismo, con la garantía añadida de que la búsqueda y la respuesta nunca salen de tu red.",
+	},
+];
+
+const profiles = [
+	{
+		title: "Equipo pequeño, sin datos sensibles, quiere probar ya",
+		verdict: "Empieza con la nube",
+		text: "Si nadie va a pegar contratos, datos de clientes o nóminas en el chat, una suscripción a ChatGPT o Copilot Enterprise resuelve el 80% del valor en un día, sin instalar nada.",
+	},
+	{
+		title: "Datos sensibles o sector regulado (legal, salud, finanzas)",
+		verdict: "IA privada",
+		text: "Si la actividad implica información confidencial de clientes o cumplimiento normativo estricto, la conversación sobre \"qué política de datos tiene el proveedor\" desaparece por completo con un servidor propio.",
+	},
+	{
+		title: "Uso ya alto y previsto que siga creciendo",
+		verdict: "IA privada, con vista al break-even",
+		text: "Con pocos usuarios, la nube casi siempre sale más barata al mes. A partir de cierto volumen de uso, el coste plano de un servidor propio empieza a compensar frente a una factura que sube con cada consulta.",
+	},
+];
+
+const faq = [
+	{
+		q: "¿Es ChatGPT peor que una IA privada?",
+		a: "No — son herramientas para trabajos distintos. ChatGPT es mejor en conocimiento general y en no requerir ninguna infraestructura. Una IA privada es mejor cuando lo que importa es no enviar datos a un tercero y responder con precisión sobre tus propios documentos.",
+	},
+	{
+		q: "¿Puedo usar las dos a la vez?",
+		a: "Sí, y muchas empresas lo hacen: ChatGPT o Copilot para tareas generales del día a día, y una IA privada para lo que toca datos de clientes, contratos o información estratégica.",
+	},
+	{
+		q: "¿Cuánto cuesta una IA privada frente a una suscripción de ChatGPT Team o Enterprise?",
+		a: "Depende del volumen de documentos y usuarios, así que no publicamos una cifra genérica que no aplicaría a tu caso. La forma honesta de verlo: la nube tiene coste variable que crece con el uso, la IA privada tiene un coste inicial más alto y luego plano. Te lo dimensionamos con tus números reales en una llamada.",
+	},
+	{
+		q: "¿Copilot no resuelve ya esto dentro de Microsoft 365?",
+		a: "Resuelve parte: conecta con tus documentos de Microsoft 365. Pero sigue siendo un servicio en la nube de Microsoft — el dato sigue saliendo de tu perímetro, solo que con el contrato de Microsoft de por medio.",
+	},
+	{
+		q: "¿Por qué tratáis igual a ChatGPT, Copilot, Claude y Gemini en esta comparativa?",
+		a: "Porque lo que cambia el análisis es la arquitectura — dónde vive el modelo y a dónde viaja tu dato — no qué logo tiene. Las cuatro son IA en la nube de un proveedor externo; para esta comparación es la categoría la que importa, no el matiz entre una y otra.",
+	},
+];
+---
+
+<Layout
+	lang="es"
+	title={title}
+	description={description}
+	altHref="/en/blog/private-ai-vs-chatgpt"
+>
+	<article>
+		<section class="hero">
+			<span class="eyebrow">Blog</span>
+			<h1>IA privada <span class="gradient">vs ChatGPT</span></h1>
+			<p class="subtitle">
+				Comparativa honesta: dónde gana un servidor propio, dónde gana la
+				nube, y qué mirar antes de decidir.
+			</p>
+			<span class="verdict-pill">Spoiler: no hay un ganador único — depende de tu caso</span>
+			<div class="post-meta">
+				<span class="badge">11 ago 2026</span>
+				<span class="badge">7 min de lectura</span>
+			</div>
+			<div class="cta-row">
+				<a class="cta" href="/contact">Cuéntanos tu caso</a>
+				<a class="cta cta-secondary" href="/guide">Descarga la guía gratuita</a>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="callout">
+				<span class="eyebrow">Antes de empezar</span>
+				<p>
+					En esta comparativa tratamos <strong>ChatGPT, Copilot, Claude y
+					Gemini como una misma categoría</strong>: IA que corre en la nube de
+					un proveedor externo. No es que sean iguales entre sí — es que, para
+					decidir entre nube y servidor propio, lo que cambia el análisis es
+					la arquitectura, no el logo. Si buscas diferencias entre ChatGPT y
+					Claude en concreto, esta no es esa comparativa.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">01 · Cara a cara</span>
+				<h2>Ocho criterios, <span class="gradient">sin maquillar ninguno</span></h2>
+				<p>Tres los gana la nube. Cuatro los gana la IA privada. Uno queda en empate.</p>
+			</div>
+			<div class="tradeoff-list">
+				{tradeoffs.map((item) => (
+					<div class="tradeoff-card">
+						<div class="tradeoff-head">
+							<h3>{item.title}</h3>
+							<span class:list={["chip", `chip-${item.winner}`]}>{item.winnerLabel}</span>
+						</div>
+						<div class="tradeoff-body">
+							<div class="tradeoff-side">
+								<span class="side-label">Nube</span>
+								<p>{item.cloud}</p>
+							</div>
+							<div class="tradeoff-side">
+								<span class="side-label">IA privada</span>
+								<p>{item.private}</p>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">02 · Según tu caso</span>
+				<h2>Entonces, <span class="gradient">¿cuál te conviene?</span></h2>
+			</div>
+			<div class="profile-grid">
+				{profiles.map((p) => (
+					<div class="profile-card">
+						<h3>{p.title}</h3>
+						<span class="profile-verdict">{p.verdict}</span>
+						<p>{p.text}</p>
+					</div>
+				))}
+			</div>
+			<div class="prose">
+				<p>
+					Más detalle sobre la opción de servidor propio: qué es la <a href="/ia-privada">IA privada</a> y cómo se implementa, o cómo funciona la búsqueda sobre tus documentos con <a href="/rag-empresarial">RAG empresarial</a>.
+				</p>
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="block-head">
+				<span class="eyebrow">03 · Preguntas frecuentes</span>
+				<h2>Antes de que <span class="gradient">preguntes</span></h2>
+			</div>
+			<div class="faq-list">
+				{faq.map((item) => (
+					<details class="faq-item">
+						<summary>{item.q}</summary>
+						<p>{item.a}</p>
+					</details>
+				))}
+			</div>
+		</section>
+
+		<section class="block">
+			<div class="final-cta">
+				<div>
+					<h2>Veámoslo con tus datos</h2>
+					<p>Una llamada de 30 minutos para ver qué opción tiene sentido en tu caso — sin presión hacia ninguna de las dos.</p>
+				</div>
+				<a class="cta" href="/contact">Solicita una llamada</a>
+			</div>
+		</section>
+
+		<BackLink lang="es" />
+	</article>
+</Layout>
+
+<style>
+	.verdict-pill {
+		display: inline-flex;
+		align-items: center;
+		border: 1px solid var(--border);
+		background: var(--card);
+		border-radius: 999px;
+		padding: 0.45rem 1rem;
+		font-size: 0.82rem;
+		color: var(--muted);
+	}
+	.post-meta {
+		display: flex;
+		justify-content: center;
+		gap: 0.6rem;
+	}
+	.post-meta .badge {
+		font-size: 0.75rem;
+		color: var(--muted);
+	}
+	.callout {
+		max-width: 720px;
+		margin: 0 auto;
+		border: 1px solid var(--border);
+		border-left: 3px solid var(--purple);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.6rem 1.8rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.callout p {
+		margin: 0;
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+
+	/* Tradeoff cards */
+	.tradeoff-list {
+		max-width: 820px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	.tradeoff-card {
+		border: 1px solid var(--border);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.4rem 1.6rem;
+	}
+	.tradeoff-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+		margin-bottom: 1rem;
+	}
+	.tradeoff-head h3 {
+		margin: 0;
+		font-size: 1.02rem;
+		font-weight: 700;
+	}
+	.chip {
+		flex-shrink: 0;
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		padding: 0.3rem 0.7rem;
+		border-radius: 999px;
+		white-space: nowrap;
+	}
+	.chip-cloud {
+		color: var(--blue);
+		background: #3b82f61f;
+		border: 1px solid #3b82f640;
+	}
+	.chip-private {
+		color: var(--purple);
+		background: #8b5cf61f;
+		border: 1px solid #8b5cf640;
+	}
+	.chip-tie {
+		color: var(--muted);
+		background: transparent;
+		border: 1px solid var(--border);
+	}
+	.tradeoff-body {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.4rem;
+	}
+	.tradeoff-side {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+	}
+	.side-label {
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+	.tradeoff-side p {
+		margin: 0;
+		font-size: 0.9rem;
+		line-height: 1.6;
+		color: var(--muted);
+	}
+
+	/* Profiles */
+	.profile-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.1rem;
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	.profile-card {
+		border: 1px solid var(--border);
+		background: var(--card);
+		border-radius: 16px;
+		padding: 1.6rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.profile-card h3 {
+		margin: 0;
+		font-size: 0.95rem;
+		font-weight: 700;
+		line-height: 1.4;
+	}
+	.profile-verdict {
+		display: inline-flex;
+		align-self: flex-start;
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: #fff;
+		background: linear-gradient(90deg, var(--blue), var(--purple));
+		border-radius: 999px;
+		padding: 0.3rem 0.75rem;
+	}
+	.profile-card p {
+		margin: 0;
+		font-size: 0.88rem;
+		line-height: 1.6;
+		color: var(--muted);
+	}
+
+	.prose {
+		max-width: 720px;
+		margin: 2rem auto 0;
+		text-align: center;
+	}
+	.prose p {
+		margin: 0;
+		line-height: 1.7;
+		color: var(--muted);
+	}
+	.prose a {
+		color: var(--text);
+		text-decoration: underline;
+		text-decoration-color: var(--border);
+		text-underline-offset: 3px;
+	}
+	.prose a:hover {
+		text-decoration-color: currentColor;
+	}
+
+	@media (max-width: 720px) {
+		.tradeoff-body {
+			grid-template-columns: 1fr;
+			gap: 0.9rem;
+		}
+		.profile-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: "IA privada vs ChatGPT: comparativa honesta",
+	description,
+	datePublished: publishedDate,
+	dateModified: publishedDate,
+	author: { "@type": "Organization", name: "Zaviren" },
+	publisher: { "@type": "Organization", name: "Zaviren" },
+	mainEntityOfPage: "https://zaviren.com/blog/ia-privada-vs-chatgpt",
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faq.map((item) => ({
+		"@type": "Question",
+		name: item.q,
+		acceptedAnswer: { "@type": "Answer", text: item.a },
+	})),
+})} />

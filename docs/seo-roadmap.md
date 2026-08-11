@@ -21,7 +21,7 @@ de qué se hizo — mismo estilo que el catálogo de
 | 9 | Página ancla `/ia-privada/` | P1 | ✅ | Implementada 2026-08-11 — ver detalle abajo |
 | 10 | Página ancla `/rag-empresarial/` | P1 | ✅ | Implementada 2026-08-11 — ver detalle abajo |
 | 11 | Artículo "¿Puede una empresa usar IA sin enviar datos a la nube?" | P2 | ✅ | Implementado 2026-08-11 — ver detalle abajo |
-| 12 | Comparativa "IA privada vs ChatGPT" | P2 | ❌ | Intención comercial de evaluación |
+| 12 | Comparativa "IA privada vs ChatGPT" | P2 | ✅ | Implementado 2026-08-11 — ver detalle abajo. Incluye índice de blog + entrada en el nav |
 | 13 | Primer caso de éxito (solo si hay datos reales demostrables) | P2 | ❌ | No inventar cifras |
 | 14 | Páginas sectoriales (`/ia-para-despachos/`, etc.) | P3 | ❌ | Solo si hay negocio real en el sector |
 | 15 | SEO local España | P3 | ❌ | |
@@ -190,9 +190,10 @@ versionado en vez de en un panel de terceros.
 ## Bloqueante actual
 
 Ninguno. P0 completo (#1-#5). P1 completo salvo #8 (placeholders legales
-pendientes de datos reales). #11 (P2, primer artículo del blog) también
-implementado — siguiente pendiente es #12 (comparativa "IA privada vs
-ChatGPT").
+pendientes de datos reales). P2: #11 y #12 implementados; queda #13 (primer
+caso de éxito), **bloqueado por falta de cliente real con datos
+demostrables** — no inventar cifras. Siguiente desbloqueable: los P3
+(#14-#18).
 
 ## Detalle #10 — Página ancla `/rag-empresarial/` (2026-08-11)
 
@@ -268,3 +269,79 @@ resolvemos" de la home (ES+EN), junto a los de #9/#10; y enlace "Leer
 más" desde el pie de `/ia-privada`, `/rag-empresarial` y sus
 equivalentes EN, en la misma fila que "Volver a la portada"
 (`justify-content: space-between`).
+
+## Detalle #12 — Comparativa `/blog/ia-privada-vs-chatgpt` (2026-08-11)
+
+Segundo post del blog. Páginas `/blog/ia-privada-vs-chatgpt` (ES) +
+`/en/blog/private-ai-vs-chatgpt` (EN), `hreflang` cruzado vía `altHref`.
+
+**Decisión de tono (pedido explícito del usuario): comparativa honesta, no
+página de venta.** El artículo reconoce abiertamente dónde pierde la IA
+privada — de los 8 criterios cara a cara, la nube gana 3 (amplitud de
+conocimiento general, velocidad para empezar, mantenimiento cero), la IA
+privada gana 4 y uno queda en empate. La sección "según tu caso" llega a
+recomendar **empezar por la nube** para equipos pequeños sin datos
+sensibles. Motivo: en intención de búsqueda de evaluación comercial, una
+comparativa que solo dice que gana el producto propio no convierte y
+además se lee como publicidad; la credibilidad es el activo aquí.
+
+**Todos los proveedores cloud tratados como una misma categoría** (también
+pedido explícito): ChatGPT, Copilot, Claude y Gemini se analizan juntos
+porque lo que cambia el análisis es la arquitectura (dónde vive el modelo,
+a dónde viaja el dato), no el proveedor. Hay un `callout` al principio que
+lo dice explícitamente, y una FAQ que responde a "¿por qué los tratáis
+igual?" — así se evita que el lector lo lea como un descuido.
+
+**Diseño distinto al de #9/#10/#11** (pedido explícito: "mismos estilos
+pero que no sea la misma página"). En vez de `risk-grid`/`cap-grid` de
+cards uniformes, el patrón visual propio es:
+
+- `tradeoff-card` — una tarjeta ancha por criterio, con título a la
+  izquierda y un `chip` de veredicto a la derecha (azul = gana la nube,
+  morado = gana la IA privada, gris/outline = empate), y el cuerpo partido
+  en dos columnas etiquetadas ("Nube" / "IA privada"). Colapsa a una
+  columna bajo 720px.
+- `profile-card` — 3 tarjetas de perfil de empresa, cada una con un pill
+  de veredicto en degradado.
+- `verdict-pill` en el hero ("Spoiler: no hay un ganador único").
+- `callout` con borde morado (el de #11 es azul) para distinguirlo.
+
+Todo el CSS nuevo vive con scope de página; no se tocó `site.css` salvo
+nada. Los colores salen de las variables existentes (`--blue`,
+`--purple`), así que encaja con el resto sin ser la misma plantilla.
+
+Schemas: `BlogPosting` + `FAQPage` (5 preguntas, incluida la de coste, que
+se responde de forma honesta — no publicamos cifra genérica porque
+dependería del volumen).
+
+### Índice de blog + entrada en el nav (mismo pick)
+
+Con 2 artículos ya tocaba (#11 dejó anotado "esperar a 2-3 artículos"):
+
+- `src/data/posts.ts` — fuente única de la lista de posts (`postsEs` /
+  `postsEn`: href, título, extracto, fecha, tiempo de lectura, tag).
+  **Al publicar un artículo nuevo hay que añadirlo ahí**, o no aparece en
+  el índice.
+- `/blog` (ES) + `/en/blog` (EN) — índice con `post-card` (tag, fecha,
+  tiempo de lectura, extracto), CTA final y `BackLink`.
+- `Layout.astro` — "Blog" añadido a `navLinks` (ahora 4 items). El estado
+  `active` del nav pasó de comparación exacta de `pathname` a
+  `isActiveNav()`: para el enlace de blog usa `startsWith(blogRoot)`, así
+  el nav marca "Blog" también dentro de un artículo. El resto de enlaces
+  sigue con igualdad exacta.
+
+Enlazado interno añadido: cuarto pill en "03 · Cómo lo resolvemos" de la
+home (ES+EN); enlace "Comparativa completa, con las desventajas incluidas
+→" bajo la tabla comparativa de `/ia-privada` y `/en/private-ai`; y enlace
+"Leer más" en el pie del post #11 hacia este.
+
+Bug corregido durante la revisión en navegador: en el párrafo de cierre de
+la sección 02, los `<a>` en línea propia dentro del JSX perdían el espacio
+previo al renderizar ("es laIA privada", "conRAG empresarial") — Astro
+colapsa el salto de línea antes de un elemento inline sin dejar espacio.
+Fix: el párrafo entero en una sola línea. Aplicado en ES y EN.
+
+Pendiente de verificación: no se pudo forzar el viewport móvil en el
+Chrome de pruebas (ventana en fullscreen, `resize_window` sin efecto) —
+las reglas responsive siguen el mismo patrón ya usado en el resto del
+sitio (grid a `1fr` bajo 720px) pero no se vieron renderizadas.
