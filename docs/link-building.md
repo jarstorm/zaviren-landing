@@ -123,7 +123,15 @@ Longitudes verificadas contra el límite de cada formulario.
 - **Short description:** elevator pitch EN de arriba.
 - **Tags:** ai, rag, enterprise-search, knowledge-management, self-hosted,
   privacy, gdpr, document-search
-- Submission form: `https://alternativeto.net/manage/new/` (requiere cuenta).
+- Submission form real: `https://alternativeto.net/manage-item/` (menú de
+  usuario → "Suggest new application"). La URL `/manage/new/` que circula en
+  blogs es un **404**.
+- Campos: Name, Short Description (tagline), Website, Full Description,
+  Supported Languages (English + Spanish), Pricing = Commercial, Tags,
+  Platforms = Self-Hosted, Company/Author (crear "Zaviren", país España,
+  web), icono e imagen de pantalla, nota para el admin.
+- Cola gratuita: la propia página avisa de **meses de backlog**; hay opción
+  de pagar $5 para revisión en 1-2 días laborables.
 
 ### SaaSHub
 
@@ -194,7 +202,7 @@ y la más alérgica al marketing: hablar de la implementación real
 | Sitio | Coste | Estado | Fecha | Nota |
 |---|:---:|:---:|---|---|
 | SaaSHub | gratis | ❌ | | DR alto, alta gratis. Fuentes 2026 discrepan sobre si el enlace del plan gratis sigue siendo dofollow — enviar igual, el tráfico cualificado vale por sí solo |
-| AlternativeTo | gratis | ❌ | | Alta en `/manage/new/`. Listar como alternativa a ChatGPT Enterprise / Copilot / Glean |
+| AlternativeTo | gratis | 🟡 | 2026-08-11 | **Formulario relleno, pendiente de que el usuario pulse "Submit the application"** en `https://alternativeto.net/manage-item/`. Cola gratis = meses; $5 opcional para 1-2 días |
 | G2 | gratis | ❌ | | Perfil de vendor gratis; solo se paga PPC/leads. Se necesitan ~10 reviews para entrar en el Grid — el perfil se puede crear ya |
 | Capterra | gratis | ❌ | | **G2 compró Capterra + GetApp + Software Advice (ene-2026)**: un alta cubre las tres. Hacerlo después del perfil de G2 para no duplicar datos |
 | There's An AI For That | **$347** | 🚫 | | Descartado: submission de pago (verificado 2026-08-11). Reconsiderar solo con presupuesto de marketing |
@@ -254,6 +262,10 @@ de enviar.
 
 - 2026-08-11: fichero creado, copy redactado, roadmap de tiers definido.
   Nada enviado todavía.
+- 2026-08-11 (3ª pasada): formulario de AlternativeTo relleno en la sesión
+  del usuario (todos los campos requeridos + icono + screenshot + nota al
+  admin). Sin enviar: el botón lo pulsa el usuario. Corregida la URL del
+  formulario en este doc (`/manage-item/`, no `/manage/new/`).
 - 2026-08-11 (2ª pasada): TODOs de assets cerrados — logo cuadrado
   512/1024 (transparente + fondo oscuro) y screenshot 1280x800 ES/EN
   generados en `docs/assets/link-building/`, con los HTML fuente para
