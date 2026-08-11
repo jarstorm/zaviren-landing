@@ -24,8 +24,8 @@ export const postsEs: Post[] = [
 		title: "¿Puede una empresa usar IA sin enviar datos a la nube?",
 		excerpt:
 			"Sí: con un servidor propio y RAG local puedes dar IA a tu equipo sin que un solo documento salga de tu red. Qué hace falta y cómo funciona.",
-		date: "2026-08-11",
-		dateLabel: "11 ago 2026",
+		date: "2026-07-15",
+		dateLabel: "15 jul 2026",
 		readingTime: "5 min",
 		tag: "Guía",
 	},
@@ -47,8 +47,8 @@ export const postsEn: Post[] = [
 		title: "Can a company use AI without sending data to the cloud?",
 		excerpt:
 			"Yes: with your own server and local RAG you can give your team AI without a single document leaving your network. What it takes and how it works.",
-		date: "2026-08-11",
-		dateLabel: "11 Aug 2026",
+		date: "2026-07-15",
+		dateLabel: "15 Jul 2026",
 		readingTime: "5 min",
 		tag: "Guide",
 	},

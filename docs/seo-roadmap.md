@@ -345,3 +345,32 @@ Pendiente de verificación: no se pudo forzar el viewport móvil en el
 Chrome de pruebas (ventana en fullscreen, `resize_window` sin efecto) —
 las reglas responsive siguen el mismo patrón ya usado en el resto del
 sitio (grid a `1fr` bajo 720px) pero no se vieron renderizadas.
+
+### Ajustes posteriores del mismo día (2026-08-11)
+
+- **Nota de vigencia en el artículo #12.** Pregunta del usuario sobre si es
+  legal nombrar a ChatGPT/Copilot/Claude por su marca. Sí lo es: la
+  publicidad comparativa está permitida por el art. 10 de la Ley 3/1991 de
+  Competencia Desleal (transposición de la Directiva 2006/114/CE) siempre
+  que compare productos con la misma finalidad, sea objetiva sobre
+  características verificables, no denigre y no se aproveche de la
+  reputación ajena — el artículo cumple las cuatro (de hecho reconoce que
+  la nube gana 3 criterios y llega a recomendarla). No se usan logos, solo
+  uso referencial del nombre. Decisión del usuario: **mantener los nombres
+  en título, URL y cuerpo** — es de donde sale el tráfico de búsqueda, y
+  neutralizarlo a "IA en la nube" dejaría el artículo sin intención de
+  búsqueda. Se añadió eso sí un `callout-note` al pie del callout inicial:
+  "comparación basada en información pública a 11 de agosto de 2026, las
+  políticas de los proveedores cambian" — el riesgo real aquí no es legal,
+  es que una comparativa sin fecha envejezca mal. Cuidado al editar el
+  copy: afirmar cosas tipo "ChatGPT entrena con tus datos" sí sería
+  atacable (falso para los planes Enterprise) — el texto actual está
+  matizado a propósito ("con planes empresariales hay contratos y
+  garantías, pero el dato sale igual de tu perímetro").
+- **Fecha del artículo #11 retrasada a 2026-07-15** (pedido del usuario:
+  "que sea de hace unos 27 días") — para espaciar el calendario editorial
+  en vez de tener los dos posts publicados el mismo día. Tocados
+  `publishedDate` y el badge visible en ES y EN, más `src/data/posts.ts`.
+  `dateModified` del schema `BlogPosting` queda fijado a `2026-08-11`
+  (fecha real de la última edición), así que ya no se deriva de
+  `publishedDate` como antes.
