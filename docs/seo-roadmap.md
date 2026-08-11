@@ -12,7 +12,7 @@ de qué se hizo — mismo estilo que el catálogo de
 |---|--------|:---:|:---:|------|
 | 1 | Verificar indexación real en Search Console | P0 | ✅ | Verificado 2026-08-11 — `https://zaviren.com/` está indexada, con clics registrados |
 | 2 | Confirmar/descartar interstitial anti-bot bloqueando Googlebot | P0 | ✅ | Verificado 2026-08-11 — sin bloqueo. Encontrado bug distinto en el proceso: ver nota abajo |
-| 3 | Confirmar redirect www→non-www | P0 | ⏳ | SSL propagado 2026-08-11 (SAN ya incluye `www.zaviren.com`, verificado). `www` sirve 200 directo — falta pedir a soporte Hostinger el redirect 301 www→non-www, fuera del repo |
+| 3 | Confirmar redirect www→non-www | P0 | ✅ | Resuelto 2026-08-11 sin depender de soporte Hostinger (su forwarding de hPanel no soporta el alias CDN de `www`) — 301 vía `.htaccess`/mod_rewrite (`public/.htaccess`), ya activo en el hosting por el fix previo de `/contacto`. Verificado en producción: `curl -I https://www.zaviren.com/about` → `301` `location: https://zaviren.com/about` |
 | 4 | Página 404 custom con enlace a home | P0 | ✅ | Implementado 2026-08-11 — `src/pages/404.astro`, bilingüe (ES+EN), enlaces a ambas home |
 | 5 | Corregir `name` de campos del formulario EN (nombre→firstname, etc.) | P0 | ✅ | Implementado 2026-08-11 — `id`/`name` de inputs en `en/contact.astro` y `en/guide.astro` pasan a `firstname`/`lastname`/`company`; payload al Worker sigue con claves `nombre`/`apellidos`/`empresa` (esquema fijo, no tocado en `worker/src/index.ts`) |
 | 6 | H1/subtítulo home hacia intención comercial ("IA privada para empresas") | P1 | ✅ | Implementado 2026-08-11 — H1 ES: "IA privada para tu empresa" (antes "IA soberana, bajo tu control"); H1 EN: "Private AI for your business" (antes "Sovereign AI, under your control"). Subtítulo sin cambios |
@@ -168,13 +168,18 @@ versionado en vez de en un panel de terceros.
 
   2026-08-11, vía soporte de Hostinger (chat): confirman que reemitieron
   el certificado a las 06:23 UTC incluyendo `www.zaviren.com` en el SAN.
-  Verificado desde el repo a las 07:23 UTC — **todavía no propagado**,
-  `curl`/`openssl` externos siguen viendo el cert viejo (`CN=zaviren.com`
-  sin `www` en SAN). Soporte estima 1-2h de propagación en el borde CDN
-  (no es DNS, eso ya está propagado). **Pendiente**: reverificar más
-  adelante y, una vez el cert negocie bien para `www`, pedirle a soporte
-  que aplique el redirect 301 `www.zaviren.com` → `https://zaviren.com/`
-  — nivel Hostinger, fuera del repo.
+  Verificado desde el repo más tarde el mismo día — SSL ya propagado, SAN
+  correcto. Pedido a soporte el redirect 301 a nivel CDN — responden que
+  su forwarding de hPanel no puede crear esa regla sobre el alias CDN de
+  `www` (mismo falso positivo de nameservers de antes). En vez de esperar
+  más vueltas de soporte, resuelto desde el repo: `www` y el dominio
+  principal comparten el mismo despliegue (`deploy` branch) y `.htaccess`
+  ya se ejecuta ahí (mod_rewrite activo, usado para el 301 de
+  `/contacto`) — añadida `RewriteCond %{HTTP_HOST} ^www\.zaviren\.com$`
+  al principio de `public/.htaccess` antes de las reglas de path, 301 a
+  `https://zaviren.com$1` preservando ruta. Verificado en producción:
+  `curl -I https://www.zaviren.com/about` → `301` +
+  `location: https://zaviren.com/about`.
 
 ## Descartado (ya resuelto o no aplica)
 
@@ -184,9 +189,6 @@ versionado en vez de en un panel de terceros.
 
 ## Bloqueante actual
 
-P0 #1 y #2 verificados y resueltos 2026-08-11 (indexación real +
-bug de auto-redirect corregido). Solo queda #3 (SSL/redirect de `www`),
-que requiere acción del usuario en hPanel — no ejecutable desde el
-código. Con #1/#2 despejados, P1 (H1 comercial, schema, páginas ancla)
-ya tiene sentido empezar a trabajarse en paralelo a que el usuario
-resuelva #3.
+Ninguno. P0 completo (#1-#5) — #3 (www→non-www) resuelto sin depender de
+soporte Hostinger, vía `.htaccess`. Siguiente: P1 pendiente es #10
+(segunda página ancla, `/rag-empresarial/` o `/rag-on-premise/`).
