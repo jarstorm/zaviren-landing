@@ -225,6 +225,34 @@ section.hero .badges {
 	margin-top: 0.5rem;
 }
 
+.hero-illustration {
+	position: relative;
+	max-width: 320px;
+	width: 100%;
+	margin: 0.5rem auto 0;
+	padding: 1.75rem;
+	border-radius: 28px;
+	background: linear-gradient(145deg, #ffffff14, #ffffff06);
+	border: 1px solid var(--border);
+}
+
+.hero-illustration::before {
+	content: "";
+	position: absolute;
+	inset: -25%;
+	z-index: -1;
+	background:
+		radial-gradient(closest-side, #3b82f640, transparent 70%),
+		radial-gradient(closest-side, #8b5cf633, transparent 70%);
+	filter: blur(32px);
+}
+
+.hero-illustration img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
 /* Generic content section */
 section.block {
 	padding: 4rem 0;
