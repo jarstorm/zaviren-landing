@@ -1,3 +1,5 @@
 RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.zaviren\.com$ [NC]
+RewriteRule ^(.*)$ https://zaviren.com/$1 [R=301,L]
 RewriteRule ^contacto/gracias/?$ /contact/gracias [R=301,L]
 RewriteRule ^contacto/?$ /contact [R=301,L]
