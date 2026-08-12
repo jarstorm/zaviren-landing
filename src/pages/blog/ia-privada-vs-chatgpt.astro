@@ -3,9 +3,9 @@ import Layout from "../../layouts/Layout.astro";
 import BackLink from "../../components/BackLink.astro";
 
 const publishedDate = "2026-08-11";
-const title = "IA privada vs ChatGPT: comparativa honesta (ventajas y desventajas) — Zaviren";
+const title = "IA privada vs ChatGPT: comparativa honesta (ventajas y desventajas) | Zaviren";
 const description =
-	"Comparamos IA privada frente a ChatGPT, Copilot o Claude: dónde gana cada opción, dónde pierde, y qué mirar según tu caso. Sin filtro de venta — incluye cuándo la nube es la mejor opción.";
+	"Comparamos IA privada frente a ChatGPT, Copilot o Claude: dónde gana cada opción, dónde pierde, y qué mirar según tu caso. Sin filtro de venta: incluye cuándo la nube es la mejor opción.";
 
 const tradeoffs = [
 	{
@@ -13,7 +13,7 @@ const tradeoffs = [
 		winner: "cloud",
 		winnerLabel: "Gana la nube",
 		cloud: "Modelos de última generación entrenados sobre una porción enorme de internet, actualizados con frecuencia. Para preguntas generales, no hay color.",
-		private: "Suele apoyarse en modelos abiertos algo por detrás del estado del arte en cultura general. No es su terreno — y no debería serlo.",
+		private: "Suele apoyarse en modelos abiertos algo por detrás del estado del arte en cultura general. No es su terreno, ni tiene por qué serlo.",
 	},
 	{
 		title: "Control y privacidad de tus datos",
@@ -27,13 +27,13 @@ const tradeoffs = [
 		winner: "cloud",
 		winnerLabel: "Gana la nube",
 		cloud: "Una cuenta, una tarjeta de crédito, y estás usándolo en minutos.",
-		private: "Hay que dimensionar, instalar y conectar el servidor a tus documentos — se mide en semanas, no en minutos.",
+		private: "Hay que dimensionar, instalar y conectar el servidor a tus documentos. Eso se mide en semanas, no en minutos.",
 	},
 	{
 		title: "Coste a largo plazo con uso alto",
 		winner: "private",
 		winnerLabel: "Gana la IA privada",
-		cloud: "Barato para empezar, pero la factura crece con cada usuario y cada consulta — variable y difícil de prever a escala.",
+		cloud: "Barato para empezar, pero la factura crece con cada usuario y cada consulta, y a escala se vuelve difícil de prever.",
 		private: "Coste inicial más alto (el servidor), pero plano después: el mismo hardware sigue respondiendo aunque crezca el uso interno.",
 	},
 	{
@@ -41,13 +41,13 @@ const tradeoffs = [
 		winner: "cloud",
 		winnerLabel: "Gana la nube",
 		cloud: "Cero. El proveedor gestiona actualizaciones, disponibilidad e infraestructura por ti.",
-		private: "Alguien tiene que cuidar el servidor — no es distinto de mantener cualquier otra aplicación interna, pero es una tarea real, no automática.",
+		private: "Alguien tiene que cuidar el servidor. No es muy distinto de mantener cualquier otra aplicación interna, pero es una tarea real y no se hace sola.",
 	},
 	{
 		title: "Cumplimiento normativo en sectores regulados",
 		winner: "private",
 		winnerLabel: "Gana la IA privada",
-		cloud: "Depende de la política y la región del proveedor — hay que auditar dónde vive el dato y con qué base legal se procesa.",
+		cloud: "Depende de la política y la región del proveedor. Hay que auditar dónde vive el dato y con qué base legal se procesa.",
 		private: "No hay transferencia a un tercero que auditar. Encaja de serie en legal, salud o finanzas, no como parche añadido después.",
 	},
 	{
@@ -55,7 +55,7 @@ const tradeoffs = [
 		winner: "private",
 		winnerLabel: "Gana la IA privada",
 		cloud: "Si se cae tu conexión o el servicio del proveedor, no hay respuesta.",
-		private: "El modelo corre en tu red local — sigue funcionando aunque se caiga la conexión de la oficina.",
+		private: "El modelo corre en tu red local, así que sigue funcionando aunque se caiga la conexión de la oficina.",
 	},
 	{
 		title: "Calidad de respuesta sobre tus propios documentos",
@@ -87,7 +87,7 @@ const profiles = [
 const faq = [
 	{
 		q: "¿Es ChatGPT peor que una IA privada?",
-		a: "No — son herramientas para trabajos distintos. ChatGPT es mejor en conocimiento general y en no requerir ninguna infraestructura. Una IA privada es mejor cuando lo que importa es no enviar datos a un tercero y responder con precisión sobre tus propios documentos.",
+		a: "No. Son herramientas para trabajos distintos. ChatGPT es mejor en conocimiento general y en no requerir ninguna infraestructura. Una IA privada es mejor cuando lo que importa es no enviar datos a un tercero y responder con precisión sobre tus propios documentos.",
 	},
 	{
 		q: "¿Puedo usar las dos a la vez?",
@@ -99,11 +99,11 @@ const faq = [
 	},
 	{
 		q: "¿Copilot no resuelve ya esto dentro de Microsoft 365?",
-		a: "Resuelve parte: conecta con tus documentos de Microsoft 365. Pero sigue siendo un servicio en la nube de Microsoft — el dato sigue saliendo de tu perímetro, solo que con el contrato de Microsoft de por medio.",
+		a: "Resuelve parte: conecta con tus documentos de Microsoft 365. Pero sigue siendo un servicio en la nube de Microsoft: el dato sale igual de tu perímetro, solo que con el contrato de Microsoft de por medio.",
 	},
 	{
 		q: "¿Por qué tratáis igual a ChatGPT, Copilot, Claude y Gemini en esta comparativa?",
-		a: "Porque lo que cambia el análisis es la arquitectura — dónde vive el modelo y a dónde viaja tu dato — no qué logo tiene. Las cuatro son IA en la nube de un proveedor externo; para esta comparación es la categoría la que importa, no el matiz entre una y otra.",
+		a: "Porque lo que cambia el análisis es la arquitectura, es decir dónde vive el modelo y a dónde viaja tu dato, no qué logo lleva. Las cuatro son IA en la nube de un proveedor externo; para esta comparación es la categoría la que importa, no el matiz entre una y otra.",
 	},
 ];
 ---
@@ -122,7 +122,7 @@ const faq = [
 				Comparativa honesta: dónde gana un servidor propio, dónde gana la
 				nube, y qué mirar antes de decidir.
 			</p>
-			<span class="verdict-pill">Spoiler: no hay un ganador único — depende de tu caso</span>
+			<span class="verdict-pill">Spoiler: no hay un ganador único, depende de tu caso</span>
 			<div class="post-meta">
 				<span class="badge">11 ago 2026</span>
 				<span class="badge">7 min de lectura</span>
@@ -139,14 +139,14 @@ const faq = [
 				<p>
 					En esta comparativa tratamos <strong>ChatGPT, Copilot, Claude y
 					Gemini como una misma categoría</strong>: IA que corre en la nube de
-					un proveedor externo. No es que sean iguales entre sí — es que, para
-					decidir entre nube y servidor propio, lo que cambia el análisis es
+					un proveedor externo. No son iguales entre sí, pero para
+					decidir entre nube y servidor propio lo que cambia el análisis es
 					la arquitectura, no el logo. Si buscas diferencias entre ChatGPT y
 					Claude en concreto, esta no es esa comparativa.
 				</p>
 				<p class="callout-note">
 					Comparación basada en información pública a 11 de agosto de 2026.
-					Los planes y las políticas de datos de los proveedores cambian —
+					Los planes y las políticas de datos de los proveedores cambian, así que
 					verifica los detalles concretos antes de decidir.
 				</p>
 			</div>
@@ -220,7 +220,7 @@ const faq = [
 			<div class="final-cta">
 				<div>
 					<h2>Veámoslo con tus datos</h2>
-					<p>Una llamada de 30 minutos para ver qué opción tiene sentido en tu caso — sin presión hacia ninguna de las dos.</p>
+					<p>Una llamada de 30 minutos para ver qué opción tiene sentido en tu caso, sin empujar hacia ninguna de las dos.</p>
 				</div>
 				<a class="cta" href="/contact">Solicita una llamada</a>
 			</div>

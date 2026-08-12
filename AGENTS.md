@@ -22,6 +22,30 @@ git push origin deploy
 cd - && git worktree remove /tmp/deploy-wt --force
 ```
 
+## Redacción de contenido (que no parezca escrito por IA)
+
+Todo el copy del sitio (páginas, posts, `title`/`description`, excerpts de
+`src/data/posts.ts`) debe leerse como escrito por una persona. Reglas
+obligatorias al escribir o editar texto visible:
+
+- **Nada de raya (`—`) como conector de frase.** Usar punto, coma, dos
+  puntos o paréntesis. En `title`, el separador de marca es `|`, no `—`.
+  El sitio está hoy a cero rayas: `grep -rn '—' src/` debe seguir vacío.
+- **No abusar de la antítesis "no es X, es Y" / "en vez de" / "no A, sino
+  B".** Como mucho una o dos por página; si aparece en párrafos seguidos,
+  es la marca más visible de texto generado.
+- **Romper el ritmo.** No escribir todas las cards/bullets con frases de
+  la misma longitud y la misma estructura. Mezclar frases cortas con
+  alguna larga; dejar que unas tengan dos oraciones y otras una.
+- **Sin jerga de consultoría ni metáforas de slide deck**: "foso/moat
+  competitivo", "el nuevo suelo", "proyecto faraónico", "cero fricción",
+  "manos a la obra", "desbloquear valor". Decirlo llano.
+- **Nada de pares de adjetivos decorativos** ("rápido y consistente",
+  "concreto y medible") si uno solo ya dice lo mismo.
+- **No inventar material humano.** No fabricar casos de cliente, cifras,
+  fechas, plazos ni testimonios que el usuario no haya dado. Si un texto
+  ganaría con un dato real, pedírselo al usuario en vez de rellenarlo.
+
 ## SEO
 
 En cualquier cambio (páginas nuevas, renombradas o borradas, copy,

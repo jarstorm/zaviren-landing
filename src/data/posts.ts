@@ -53,7 +53,7 @@ export const postsEs: Post[] = [
 		href: "/blog/ia-privada-clinicas",
 		title: "IA privada para clínicas médicas y dentales",
 		excerpt:
-			"Protocolos que nadie encuentra, recepción saturada de preguntas repetidas y rotación constante de personal — sin sacar ni un dato de salud a la nube.",
+			"Protocolos que nadie encuentra, recepción saturada de preguntas repetidas y rotación constante de personal, sin sacar ni un dato de salud a la nube.",
 		date: "2026-06-10",
 		dateLabel: "10 jun 2026",
 		readingTime: "6 min",
@@ -73,7 +73,7 @@ export const postsEs: Post[] = [
 		href: "/blog/ia-privada-despachos-abogados",
 		title: "IA privada para despachos de abogados",
 		excerpt:
-			"Buscar en el fondo documental, rehacer escritos que ya existen y responder las mismas consultas internas — sin que un expediente salga de la red.",
+			"Buscar en el fondo documental, rehacer escritos que ya existen y responder las mismas consultas internas, sin que un expediente salga de la red.",
 		date: "2026-05-13",
 		dateLabel: "13 may 2026",
 		readingTime: "6 min",
@@ -126,7 +126,7 @@ export const postsEn: Post[] = [
 		href: "/en/blog/private-ai-medical-dental-clinics",
 		title: "Private AI for medical and dental clinics",
 		excerpt:
-			"Protocols nobody can find, a front desk drowning in repeat questions, and constant staff turnover — with no health data going to the cloud.",
+			"Protocols nobody can find, a front desk drowning in repeat questions, and constant staff turnover, with no health data going to the cloud.",
 		date: "2026-06-10",
 		dateLabel: "10 Jun 2026",
 		readingTime: "6 min",
@@ -146,7 +146,7 @@ export const postsEn: Post[] = [
 		href: "/en/blog/private-ai-law-firms",
 		title: "Private AI for law firms",
 		excerpt:
-			"Searching the archive, rewriting filings that already exist and answering the same internal questions — without a case file leaving the network.",
+			"Searching the archive, rewriting filings that already exist and answering the same internal questions, without a case file leaving the network.",
 		date: "2026-05-13",
 		dateLabel: "13 May 2026",
 		readingTime: "6 min",

@@ -3,18 +3,18 @@ import Layout from "../../layouts/Layout.astro";
 import BackLink from "../../components/BackLink.astro";
 
 const publishedDate = "2026-07-15";
-const title = "¿Puede una empresa usar IA sin enviar datos a la nube? — Zaviren";
+const title = "¿Puede una empresa usar IA sin enviar datos a la nube? | Zaviren";
 const description =
 	"Sí: con un servidor propio y RAG local puedes dar IA a tu equipo sin que un solo documento salga de tu red. Qué hace falta, cómo funciona y qué preguntar antes de empezar.";
 
 const faq = [
 	{
 		q: "¿Es lo mismo instalar ChatGPT en un servidor propio?",
-		a: "No — OpenAI no vende ChatGPT como software instalable en tu infraestructura. Lo que se instala en un servidor propio son modelos de lenguaje de código abierto (Llama, Mistral, Qwen y similares), que corren enteramente en tu red.",
+		a: "No. OpenAI no vende ChatGPT como software instalable en tu infraestructura. Lo que se instala en un servidor propio son modelos de lenguaje de código abierto (Llama, Mistral, Qwen y similares), que corren enteramente en tu red.",
 	},
 	{
 		q: "¿El modelo funciona tan bien como ChatGPT?",
-		a: "Para responder sobre tus propios documentos, sí — porque la calidad depende sobre todo de la búsqueda (RAG) sobre tu contenido, no de que el modelo lo tenga memorizado. Para conocimiento general muy amplio, ChatGPT sigue teniendo más mundo detrás.",
+		a: "Para responder sobre tus propios documentos, sí, porque la calidad depende sobre todo de la búsqueda (RAG) sobre tu contenido, no de que el modelo lo tenga memorizado. Para conocimiento general muy amplio, ChatGPT sigue teniendo más mundo detrás.",
 	},
 	{
 		q: "¿Cuánto tarda en implementarse?",
@@ -61,7 +61,7 @@ const faq = [
 					procesan cada consulta en la nube del proveedor, lo cual es un
 					problema si esa consulta incluye contratos, datos de clientes o
 					información estratégica. La alternativa no es prohibir la IA en la
-					empresa — es desplegar un modelo de lenguaje y un motor de búsqueda
+					empresa. Es desplegar un modelo de lenguaje y un motor de búsqueda
 					documental (<a href="/rag-empresarial">RAG</a>) dentro de tu propia
 					red, en un servidor que controla tu empresa. Ninguna pregunta,
 					ninguna respuesta y ningún documento sale de ahí. A esto lo llamamos <a href="/ia-privada">IA privada</a>.
@@ -76,8 +76,8 @@ const faq = [
 			</div>
 			<div class="prose">
 				<p>
-					La adopción de IA generativa en el trabajo diario fue muy rápida —
-					más rápida que la revisión legal y de seguridad que normalmente
+					La adopción de IA generativa en el trabajo diario fue muy rápida, más
+					rápida que la revisión legal y de seguridad que normalmente
 					precede a una herramienta nueva en la empresa. El resultado es
 					habitual: empleados pegando fragmentos de contratos o datos de
 					clientes en ChatGPT para ahorrar tiempo, sin que nadie haya evaluado
@@ -96,7 +96,7 @@ const faq = [
 					<h2>Qué significa <span class="gradient">"sin enviar datos a la nube"</span></h2>
 					<p>
 						No es una promesa de marketing sobre cifrado o contratos de
-						confidencialidad con el proveedor — es una diferencia de
+						confidencialidad con el proveedor. Es una diferencia de
 						arquitectura. En el modelo habitual (ChatGPT, Copilot, la mayoría
 						de asistentes empresariales), tu pregunta viaja por internet hasta
 						un servidor que no controlas, se procesa ahí, y la respuesta
@@ -107,7 +107,7 @@ const faq = [
 						El modelo de lenguaje corre localmente, la búsqueda sobre tus
 						documentos corre localmente, y la orquestación entre ambos
 						también. No hay un punto en el proceso donde el contenido salga a
-						internet — y, de paso, el sistema sigue funcionando aunque se
+						internet, y de paso el sistema sigue funcionando aunque se
 						caiga la conexión de la oficina.
 					</p>
 				</div>
@@ -128,14 +128,14 @@ const faq = [
 					<span class="cap-num">01</span>
 					<div>
 						<h3>Un servidor dedicado</h3>
-						<p>Dimensionado según el volumen de documentos y usuarios simultáneos — un piloto con unos cientos de documentos corre en hardware moderado, sin necesitar GPU de gama alta.</p>
+						<p>Dimensionado según el volumen de documentos y usuarios simultáneos. Un piloto con unos cientos de documentos corre en hardware moderado, sin necesitar GPU de gama alta.</p>
 					</div>
 				</div>
 				<div class="card">
 					<span class="cap-num">02</span>
 					<div>
 						<h3>Indexación de tus documentos</h3>
-						<p>Se conecta a la carpeta compartida, intranet o gestor documental que ya usas — no hace falta migrar nada de sitio para empezar.</p>
+						<p>Se conecta a la carpeta compartida, intranet o gestor documental que ya usas. Para empezar no hace falta migrar nada de sitio.</p>
 					</div>
 				</div>
 				<div class="card">
@@ -165,7 +165,7 @@ const faq = [
 					de raíz buena parte de las preguntas de cumplimiento que sí aplican
 					al usar un proveedor externo: dónde se almacenan los datos, con qué
 					base legal se procesan, si hay transferencia internacional. No es
-					que haya que auditar menos — es que hay una superficie menor que
+					que haya que auditar menos. Es que hay una superficie menor que
 					auditar, porque los datos nunca salen de tu perímetro.
 				</p>
 			</div>
