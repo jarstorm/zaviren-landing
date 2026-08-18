@@ -8,6 +8,7 @@ const gaId = "G-EXXBQFZ869";
 const cookiesHref = lang === "es" ? "/cookies" : "/en/cookies";
 ---
 
+<div class="cookie-overlay" id="cookie-overlay" hidden></div>
 <div class="cookie-banner" id="cookie-banner" hidden>
 	<p>
 		{
@@ -30,6 +31,7 @@ const cookiesHref = lang === "es" ? "/cookies" : "/en/cookies";
 <script define:vars={{ gaId }}>
 	const CONSENT_KEY = "zaviren_cookie_consent";
 	const banner = document.getElementById("cookie-banner");
+	const overlay = document.getElementById("cookie-overlay");
 	const acceptBtn = document.getElementById("cookie-accept");
 	const rejectBtn = document.getElementById("cookie-reject");
 
@@ -48,16 +50,19 @@ const cookiesHref = lang === "es" ? "/cookies" : "/en/cookies";
 		loadAnalytics();
 	} else if (consent !== "rejected") {
 		banner.hidden = false;
+		overlay.hidden = false;
 	}
 
 	acceptBtn.addEventListener("click", () => {
 		localStorage.setItem(CONSENT_KEY, "accepted");
 		loadAnalytics();
 		banner.hidden = true;
+		overlay.hidden = true;
 	});
 
 	rejectBtn.addEventListener("click", () => {
 		localStorage.setItem(CONSENT_KEY, "rejected");
 		banner.hidden = true;
+		overlay.hidden = true;
 	});
 </script>
