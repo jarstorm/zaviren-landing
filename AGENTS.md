@@ -60,6 +60,14 @@ su contraparte en el otro idioma para el `hreflang`/canonical (ver
 `src/layouts/Layout.astro`). Si una URL existente cambia, valorar dejar
 un enlace o redirect desde la ruta vieja en vez de un 404 silencioso.
 
+**`public/llms.txt` (mismo mecanismo que `robots.txt` — a mano,
+`@astrojs/sitemap` no lo toca) hay que mantenerlo a mano en sync con el
+sitio.** Página nueva relevante (no legal/cookies), renombrada o borrada
+→ actualizar su entrada (y la de ES/EN) en `llms.txt`. Cambio de fondo en
+el modelo comercial (precios, CTAs de contacto/guía) → revisar el párrafo
+resumen. Contexto de por qué existe: histórico del ítem #166 en
+`/Users/javi/workspace/rag-offline/docs/operations/24-mejoras-historico.md`.
+
 ## Development
 
 When starting the dev server, use background mode:
