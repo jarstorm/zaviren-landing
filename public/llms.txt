@@ -1,0 +1,37 @@
+# Zaviren
+
+> Zaviren implementa IA privada con RAG para pymes: el modelo responde consultando los documentos de la empresa (manuales, contratos, políticas) citando fuente y página, sin que los datos salgan del perímetro del cliente.
+
+Sitio disponible en español (raíz `/`) e inglés (`/en/`), con contenido equivalente en ambos idiomas. No hay checkout ni API pública: el modelo comercial es una llamada de consulta (`/contact`) o una guía descargable por email (`/guide`); no hay precios publicados, se cotiza caso por caso tras esa llamada.
+
+## Páginas principales
+
+- [Inicio](https://zaviren.com/): qué es Zaviren, por qué IA privada, cómo se empieza, preguntas frecuentes.
+- [IA privada, en detalle](https://zaviren.com/ia-privada): cómo funciona un modelo corriendo dentro del perímetro del cliente.
+- [RAG empresarial, en detalle](https://zaviren.com/rag-empresarial): qué es el RAG (retrieval-augmented generation) y cómo se aplica a documentos internos.
+- [Contacto](https://zaviren.com/contact): formulario para solicitar una llamada de 30 minutos.
+- [Guía gratuita](https://zaviren.com/guide): formulario para recibir por email una guía introductoria en PDF.
+
+## Blog (casos por sector)
+
+- [¿Puede tu empresa usar IA sin enviar datos a la nube?](https://zaviren.com/blog/puede-empresa-usar-ia-sin-nube)
+- [IA privada vs ChatGPT: comparativa honesta](https://zaviren.com/blog/ia-privada-vs-chatgpt)
+- [IA privada para clínicas](https://zaviren.com/blog/ia-privada-clinicas)
+- [IA privada para despachos de abogados](https://zaviren.com/blog/ia-privada-despachos-abogados)
+- [IA privada para gestorías y asesorías](https://zaviren.com/blog/ia-privada-gestorias-asesorias)
+- [IA privada para ingeniería y arquitectura](https://zaviren.com/blog/ia-privada-ingenieria-arquitectura)
+- [IA privada para inmobiliarias y administración de fincas](https://zaviren.com/blog/ia-privada-inmobiliarias-administracion-fincas)
+
+## English version
+
+- [Home](https://zaviren.com/en/)
+- [Private AI, in detail](https://zaviren.com/en/private-ai)
+- [Enterprise RAG, in detail](https://zaviren.com/en/rag-for-business)
+- [Contact](https://zaviren.com/en/contact)
+- [Free guide](https://zaviren.com/en/guide)
+- [Blog index](https://zaviren.com/en/blog/)
+
+## Optional
+
+- [Sitemap](https://zaviren.com/sitemap-index.xml): índice completo de URLs indexadas, generado en build.
+- [Legal notice](https://zaviren.com/aviso-legal) / [Privacy policy](https://zaviren.com/privacidad)
